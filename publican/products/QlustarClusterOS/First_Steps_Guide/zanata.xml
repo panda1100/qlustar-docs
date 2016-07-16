@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<config xmlns="http://zanata.org/namespace/config/">
-  <url>https://translate.zanata.org/</url>
-  <project>qlustar-docs-ja</project>
-  <project-version>9.1</project-version>
-  <project-type>podir</project-type>
-
-</config>
