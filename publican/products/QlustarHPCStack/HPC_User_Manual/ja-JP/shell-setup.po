@@ -1,0 +1,130 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-18 19:12+0200\n"
+"PO-Revision-Date: 2016-07-18 19:12+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Default Shell Setup"
+msgstr ""
+
+msgid "Shell initialization"
+msgstr ""
+
+msgid "The Qlustar shell setup supports <application>tcsh</application> and <application>bash</application>. There are global initialization files, that affect the setup of both shell types. Hence, the administrator has to modify only a single file to set environment variables, aliases and path variables for both shells and all users. These global files are:"
+msgstr ""
+
+msgid "<filename>/etc/qlustar/common/skel/env</filename>"
+msgstr ""
+
+msgid "This file is used to add or modify environment variables that are not path variables. The syntax of this file is as follows: lines beginning with a hash sign (<code>#</code>) and empty lines are ignored. Every other line should consist of the name of an environment variable followed by its value and separated by a space. Example: the following line sets the environment variable <varname>VISUAL</varname> to <application>vi</application>:"
+msgstr ""
+
+msgid ""
+"\n"
+"VISUAL vi\n"
+"	  "
+msgstr ""
+
+msgid "A file <filename>~/.ql-env</filename> in the user home directory can be used to define personal environment variables in the same manner."
+msgstr ""
+
+msgid "<filename>/etc/qlustar/common/skel/alias</filename>"
+msgstr ""
+
+msgid "This file is used to define shell aliases. It has the same syntax as the file <filename>env</filename> described above. A file <filename>~/.ql-alias</filename> in the user home directory may again define personal aliases."
+msgstr ""
+
+msgid "<filename>/etc/qlustar/common/skel/paths</filename>"
+msgstr ""
+
+msgid "This directory contains files with a name of the form <replaceable>&lt;varname&gt;</replaceable>.Linux. The <replaceable>&lt;varname&gt;</replaceable> is converted to upper case and specifies a <emphasis>PATH like</emphasis> environment variable (e.g. <envar>PATH</envar>, <envar>MANPATH</envar>, <envar>LD_LIBRARY_PATH</envar>, <envar>CLASSPATH</envar>, &hellipsis;). Each line in such a file should be a directory to be added to this particular environment variable. If the line begins with a <literal>p</literal> followed by a space followed by a directory, then this directory is prepended to the path variable, otherwise it is appended. A user may create a personal <filename>~/.paths</filename> directory, where the same rules apply."
+msgstr ""
+
+msgid "Bash Setup"
+msgstr ""
+
+msgid "Qlustar provides an extensible <application>bash</application> setup and bash is the recommended login shell. The bash initialization procedure consists of global settings and user specific settings. Global settings are stored in files under <filename>/etc/qlustar/common/skel</filename>. User specific settings are stored in files in the corresponding home directory. The following files are used:"
+msgstr ""
+
+msgid "<filename>/etc/qlustar/common/skel/bash/bashrc</filename>"
+msgstr ""
+
+msgid "This file sources the other bash files. Do not modify."
+msgstr ""
+
+msgid "<filename>/etc/qlustar/common/skel/bash/bash-vars</filename>"
+msgstr ""
+
+msgid "This file is used for setting bash variables."
+msgstr ""
+
+msgid "<filename>/etc/qlustar/common/skel/bash/alias</filename>"
+msgstr ""
+
+msgid "This file defines bash aliases"
+msgstr ""
+
+msgid "<filename>/etc/qlustar/common/skel/bash/functions</filename>"
+msgstr ""
+
+msgid "This file can be used to make bash functions available to all users."
+msgstr ""
+
+msgid "The file <filename>~/.bashrc</filename> also sources the following user specific files which have the same purpose as the global bash files."
+msgstr ""
+
+msgid "<filename>~/.bash/env</filename>"
+msgstr ""
+
+msgid "<filename>~/.bash/bash-vars</filename>"
+msgstr ""
+
+msgid "<filename>~/.bash/alias</filename>"
+msgstr ""
+
+msgid "<filename>~/.bash/functions</filename>"
+msgstr ""
+
+msgid "Tcsh Setup"
+msgstr ""
+
+msgid "A similar setup exists for the <application>tcsh</application>. The following files are used:"
+msgstr ""
+
+msgid "<filename>/etc/qlustar/common/skel/tcsh/tcshrc</filename>"
+msgstr ""
+
+msgid "This global tcshrc is sourced first and sources other startup files."
+msgstr ""
+
+msgid "<filename>/etc/qlustar/common/skel/tcsh/tcsh-vars</filename>"
+msgstr ""
+
+msgid "Used to set tcsh variables."
+msgstr ""
+
+msgid "<filename>/etc/qlustar/common/skel/tcsh/alias</filename>"
+msgstr ""
+
+msgid "Used to define tcsh aliases."
+msgstr ""
+
+msgid "The file <filename>~/.tcshrc</filename> also sources the following user specific files, which have the same purpose as the global <application>tcsh</application> files."
+msgstr ""
+
+msgid "<filename>~/.tcsh/alias</filename>"
+msgstr ""
+
+msgid "<filename>~/.tcsh/env</filename>"
+msgstr ""
+
+msgid "<filename>~/.tcsh/tcsh-vars</filename>"
+msgstr ""
+

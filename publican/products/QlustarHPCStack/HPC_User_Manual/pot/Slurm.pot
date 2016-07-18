@@ -1,0 +1,1040 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-18 19:12+0200\n"
+"PO-Revision-Date: 2016-07-18 19:12+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Using the Slurm workload manager"
+msgstr ""
+
+msgid "Job Submission"
+msgstr ""
+
+msgid "Use the <command>sbatch</command> command to submit a batch script."
+msgstr ""
+
+msgid "Important sbatch flags:"
+msgstr ""
+
+msgid "--partition=<replaceable>partname</replaceable>"
+msgstr ""
+
+msgid "Job to run on partition <replaceable>partname</replaceable>. If no partition is specified, the job will run on the cluster's default partition."
+msgstr ""
+
+msgid "-N, --nodes=&lt;<replaceable>minnodes</replaceable>[-<replaceable>maxnodes</replaceable>]&gt;"
+msgstr ""
+
+msgid "Minimum number of nodes for the job. A maximum node count may also be specified with <replaceable>maxnodes</replaceable>. If only one number is specified, this is used as both the minimum and maximum node count."
+msgstr ""
+
+msgid "--ntasks-per-node=&lt;tasks&gt;"
+msgstr ""
+
+msgid "Number of tasks (processes) to be run per node of the job. Mostly used together with the <literal>-N</literal> flag."
+msgstr ""
+
+msgid "-n, --ntasks=&lt;tasks&gt;"
+msgstr ""
+
+msgid "Number of tasks (processes) to be run. Mostly used, if you don't care about how hour tasks are placed on individual nodes."
+msgstr ""
+
+msgid "-c, --cpus-per-task=&lt;cpus&gt;"
+msgstr ""
+
+msgid "Number of CPUs required for each task (e.g. <literal>8</literal> for an 8-way multi-threaded job)."
+msgstr ""
+
+msgid "--ntasks-per-core=1"
+msgstr ""
+
+msgid "Do not use hyper-threading (this flag is typically used for parallel jobs). Note, that this is only needed, if the compute nodes in your cluster have activated hyper-threading. On most clusters, this is not the case."
+msgstr ""
+
+msgid "--mem=&lt;mem&gt;"
+msgstr ""
+
+msgid "Memory required for the job. If your job exceeds this value, it might be terminated, depending on the general Slurm configuration of your cluster. The default memory allocation is cluster specific and might also be unlimited."
+msgstr ""
+
+msgid "--exclusive"
+msgstr ""
+
+msgid "Allocate the node exclusively. Only this job will run on the nodes allocated for it."
+msgstr ""
+
+msgid "--no-requeue | --requeue"
+msgstr ""
+
+msgid "If an allocated node hangs, determine whether the job should be requeued or not."
+msgstr ""
+
+msgid "--error=<replaceable>/path/to/dir/filename</replaceable>"
+msgstr ""
+
+msgid "Location of <filename>stderr</filename> file (by default, <filename>slurm<replaceable>&lt;jobid&gt;</replaceable>.out</filename> in the submitting directory)."
+msgstr ""
+
+msgid "--output=<replaceable>/path/to/dir/filename</replaceable>"
+msgstr ""
+
+msgid "Location of <filename>stdout</filename> file (by default, <filename>slurm<replaceable>&lt;jobid&gt;</replaceable>.out</filename> in the submitting directory)"
+msgstr ""
+
+msgid "--ignore-pbs"
+msgstr ""
+
+msgid "Ignore PBS directives in batch scripts. (by default, Slurm will try to utilize all PBS directives)"
+msgstr ""
+
+msgid "--license=<replaceable>&lt;license type&gt;</replaceable>"
+msgstr ""
+
+msgid "Request a license of type <replaceable>&lt;license type&gt;</replaceable>. Only applies for clusters where license bookkeeping is set up. If in doubt, ask your local administrator."
+msgstr ""
+
+msgid "Submitting a single-threaded batch job"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sbatch -N 4 --mem=64G --ntasks-per-node=12 jobscript</command>\n"
+"	    "
+msgstr ""
+
+msgid "This job will be allocated 4 nodes with 12 CPUs each, and 64 GB of memory."
+msgstr ""
+
+msgid "Submitting a multi-threaded batch job"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sbatch --cpus-per-task=12 --mem=128G jobscript</command>\n"
+"	  "
+msgstr ""
+
+msgid "The above job will be allocated 16 CPUs, and 128 GB of memory."
+msgstr ""
+
+msgid "If required, you may use the Slurm environment variable <envar>$SLURM_CPUS_PER_TASK</envar> within your job script to specify the number of threads to your program. For example, to run a job with 8 OpenMP threads of your program <replaceable>&lt;my_program&gt;</replaceable>, set up a batch script like this:"
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"\n"
+"export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK\n"
+"<replaceable>&lt;my_program&gt;</replaceable>\n"
+"	    "
+msgstr ""
+
+msgid "and submit with:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sbatch --cpus-per-task=8  jobscript</command>\n"
+"	    "
+msgstr ""
+
+msgid "When jobs are submitted without specifying the number of CPUs per task explicitly, the <envar>$SLURM_CPUS_PER_TASK</envar> environment variable is not set."
+msgstr ""
+
+msgid "Exclusively allocating nodes"
+msgstr ""
+
+msgid "Add <parameter>--exclusive</parameter> to your sbatch command line to exclusively allocate a node."
+msgstr ""
+
+msgid "Even if this option is used, Slurm will still limit you to the requested CPUs and memory, or, if not explicitly set, to the possibly defined default values for your cluster."
+msgstr ""
+
+msgid "Auto-threading apps"
+msgstr ""
+
+msgid "Programs that 'auto-thread' (i.e. attempt to use all available CPUs on a node) should always be run with the <parameter>--exclusive</parameter> flag."
+msgstr ""
+
+msgid "Parallel Jobs"
+msgstr ""
+
+msgid "For submitting parallel jobs, a few rules have to be understood and followed. In general they depend on the type of parallelization and the architecture."
+msgstr ""
+
+msgid "OpenMP Jobs"
+msgstr ""
+
+msgid "An OpenMP(SMP)-parallel job can only run within a single node, so it necessary to include the option <parameter>-N 1</parameter>. The maximum number of processors for such a program is cluster and possibly node specific. Using <parameter>--cpus-per-task N</parameter>, Slurm will start one task and you will have N CPUs available for your job. An example job file would look like:"
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=1\n"
+"#SBATCH --tasks-per-node=1\n"
+"#SBATCH --cpus-per-task=8\n"
+"#SBATCH --mail-type=end\n"
+"#SBATCH --mail-user=<replaceable>user@example.org</replaceable>\n"
+"#SBATCH --time=08:00:00\n"
+"\n"
+"export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK\n"
+"<replaceable>&lt;my_program&gt;</replaceable>\n"
+"	  "
+msgstr ""
+
+msgid "MPI Jobs"
+msgstr ""
+
+msgid "For MPI jobs, one typically allocates one core per task."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --ntasks=128\n"
+"#SBATCH --mail-type=end\n"
+"#SBATCH --mail-user=<replaceable>user@example.org</replaceable>\n"
+"#SBATCH --time=08:00:00\n"
+"\n"
+"srun <replaceable>&lt;my_program&gt;</replaceable>\n"
+"	  "
+msgstr ""
+
+msgid "Allocating GPUs"
+msgstr ""
+
+msgid "Allocating GPUs is very much cluster-specific. Depending on your local Slurm setup you might have dedicated GPU partitions, possibly coupled to QOS definitions, or you might have to specify GPUs directly using an option like <literal>--gres=gpu:&lt;gpu_name&gt;:&lt;# of GPUs&gt;</literal>. Ask your local administrator how to optimally submit GPU jobs on your cluster. Examples:"
+msgstr ""
+
+msgid ""
+"\n"
+"# one GPU\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sbatch --partition=gpu --gres=gpu:k80:1 script.sh</command>\n"
+"\n"
+"# two GPUs\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sbatch --partition=gpu --gres=gpu:k80:2 script.sh</command>\n"
+"    "
+msgstr ""
+
+msgid "Interactive Jobs"
+msgstr ""
+
+msgid "Interactive tasks like editing, compiling etc. are normally limited to the FrontEnd (login) nodes. For longer interactive sessions, one can also allocate resources on compute nodes with the commands <command>salloc</command> or directly <command>srun</command>. To specify the required resources, they mostly take the same options as <command>sbatch</command>."
+msgstr ""
+
+msgid "<command>salloc</command> is special in that it returns a new shell on the node, where you submitted the job. You then need to use the command <command>srun</command> in front of the following commands to have them executed on the allocated resources. Please be aware, that if you request more than one task, <command>srun</command> will run the command once for each allocated task."
+msgstr ""
+
+msgid "An example of an interactive session using <command>srun</command> looks as follows:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>srun --pty -n 1 -c 4 --time=1:00:00 --mem-per-cpu=4G bash</command>\n"
+"srun: job 13598400 queued and waiting for resources\n"
+"srun: job 13598400 has been allocated resources\n"
+"\n"
+"<prompt>0 user@compute-node ~ $</prompt>\n"
+"<command>start interactive work with the 4 cores.</command>\n"
+"    "
+msgstr ""
+
+msgid "Walltime Limits"
+msgstr ""
+
+msgid "Often, partitions have walltime limits. Use the command <command>sinfo --summarize</command> to see the most important properties of the partitions in your cluster."
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sinfo  --summarize</command>\n"
+"PARTITION AVAIL  TIMELIMIT   NODES(A/I/O/T)  NODELIST\n"
+"demo         up   infinite          0/0/4/4  beo-[201-204]\n"
+"long*        up   infinite        9/11/0/20  node-[11-30]\n"
+"gpu          up 1-00:00:00         8/2/0/10  node-[01-10]\n"
+"short        up   infinite          0/3/0/3  node-[31-36]\n"
+"    "
+msgstr ""
+
+msgid "If no walltime is requested on the command line, the walltime set for the job will be the default walltime of the partition. To request a specific walltime, use the <parameter>--time</parameter> option to <command>sbatch</command>. For example:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sbatch  --time=36:00:00  jobscript</command>\n"
+"    "
+msgstr ""
+
+msgid "will submit a job to the default partition, and request a walltime of 36 hours. If the job runs over 36 hours, it will be killed by the batch system."
+msgstr ""
+
+msgid "To check the walltime limits and current runtimes for jobs, you can use the <command>squeue</command> command."
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>squeue -O jobid,timelimit,timeused -u  <replaceable>username</replaceable></command>\n"
+"JOBID               TIME_LIMIT          TIME\n"
+"1418444             10-00:00:00         5-05:44:09\n"
+"1563535             5-00:00:00          1:35:12\n"
+"1493019             3-00:00:00          2-17:03:27\n"
+"1501256             5-00:00:00          2-03:08:42\n"
+"1501257             5-00:00:00          2-03:08:42\n"
+"1501258             5-00:00:00          2-03:08:42\n"
+"1501259             5-00:00:00          2-03:08:42\n"
+"1501260             5-00:00:00          2-03:08:42\n"
+"1501261             5-00:00:00          2-03:08:42\n"
+"    "
+msgstr ""
+
+msgid "For many more <command>squeue</command> options, see the squeue man page."
+msgstr ""
+
+msgid "Deleting Jobs"
+msgstr ""
+
+msgid "The <command>scancel</command> command is used to delete jobs. Examples:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>scancel 2377</command>\n"
+"(delete job 2377)\n"
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>scancel -u <replaceable>username</replaceable></command>\n"
+"(delete all jobs belonging to <replaceable>username</replaceable>)\n"
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>scancel --name=<replaceable>JobName</replaceable></command>\n"
+"(delete job with the name <replaceable>JobName</replaceable>)\n"
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>scancel --state=PENDING</command>\n"
+"(delete all PENDING jobs)\n"
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>scancel --state=RUNNING</command>\n"
+"(delete all RUNNING jobs)\n"
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>scancel --nodelist=node-15</command>\n"
+"(delete any jobs running on node node-15)\n"
+"    "
+msgstr ""
+
+msgid "Job States"
+msgstr ""
+
+msgid "Common job states:"
+msgstr ""
+
+msgid "Job State Code"
+msgstr ""
+
+msgid "Means"
+msgstr ""
+
+msgid "R"
+msgstr ""
+
+msgid "Running"
+msgstr ""
+
+msgid "PD"
+msgstr ""
+
+msgid "Pending (Queued). Some possible reasons: QOSMaxCpusPerUserLimit (User has reached the maximum allocation) Dependency (Job is dependent on another job which has not completed) Resources (currently not enough resources to run the job) Licenses (job is waiting for a license, e.g. Matlab)"
+msgstr ""
+
+msgid "CG"
+msgstr ""
+
+msgid "Completing"
+msgstr ""
+
+msgid "CA"
+msgstr ""
+
+msgid "Cancelled"
+msgstr ""
+
+msgid "F"
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "TO"
+msgstr ""
+
+msgid "Timeout"
+msgstr ""
+
+msgid "NF"
+msgstr ""
+
+msgid "Node failure"
+msgstr ""
+
+msgid "Use the <command>sacct</command> command to check on the states of completed jobs."
+msgstr ""
+
+msgid "Show all your jobs in any state since midnight:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sacct</command>\n"
+"    "
+msgstr ""
+
+msgid "Show all jobs that failed since midnight:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sacct --state f</command>\n"
+"    "
+msgstr ""
+
+msgid "Show all jobs that failed since March 1st 2016:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sacct --state f --starttime 2016-03-01 </command>\n"
+"    "
+msgstr ""
+
+msgid "Exit codes"
+msgstr ""
+
+msgid "The completion status of a job is essentially the exit status of the job script with all the complications that entails. For example consider the following job script:"
+msgstr ""
+
+msgid ""
+"\n"
+"#! /bin/bash\n"
+"\n"
+"export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK\n"
+"<replaceable>&lt;my_buggy_program&gt;</replaceable>\n"
+"echo \"DONE\"\n"
+"    "
+msgstr ""
+
+msgid "This script tries to run <replaceable>my_buggy_program</replaceable> which fails with an exit code 1. However, bash by default keeps executing, even if a command fails, so the script will eventually print 'DONE'. Since the exit status of a bash script is the exit status of the last command in the script, and echo returns 0 (SUCCESS), the script as a whole will exit with an exit code of 0. This signals sucess and the job state will show COMPLETED, since Slurm uses the script exit code to judge if a job completed sucessfully."
+msgstr ""
+
+msgid "Similarly, if a command in the middle of the job script were killed for exceeding memory, the rest of the job script would still be executed and could potentially return an exit code of 0 (SUCCESS), resulting again in a state of COMPLETED."
+msgstr ""
+
+msgid "Some more careful bash programming techniques can help ensure, that a job script will show a final state of FAILED if anything goes wrong."
+msgstr ""
+
+msgid "Use set -e"
+msgstr ""
+
+msgid "Starting a bash script with <parameter>set -e</parameter> will tell bash to stop executing a script if a command fails. This will then signal failure with a non-zero exit code and will be reflected as a FAILED state in <application>Slurm</application>."
+msgstr ""
+
+msgid ""
+"\n"
+"#! /bin/bash\n"
+"set -e\n"
+"\n"
+"export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK\n"
+"<replaceable>&lt;my_buggy_program&gt;</replaceable>\n"
+"echo \"DONE\"\n"
+"    "
+msgstr ""
+
+msgid "One complication with this approach is, that some commands will return non-zero exit codes. For example grepping for a string that does not exist."
+msgstr ""
+
+msgid "Check errors for individual commands"
+msgstr ""
+
+msgid "A more selective and superior approach involves carefully checking the exit codes of the important parts of a job script. This can be done with conventional if/else statements or with conditional short circuit evaluation often seen in scripts. For example:"
+msgstr ""
+
+msgid ""
+"\n"
+"#! /bin/bash\n"
+"\n"
+"function fail {\n"
+"    echo \"FAIL: $@\" &gt;&amp;2\n"
+"    exit 1  # signal failure\n"
+"}\n"
+"\n"
+"export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK\n"
+"<replaceable>&lt;my_buggy_program&gt;</replaceable> || fail \"my_buggy_program failed\"\n"
+"echo \"DONE\"\n"
+"    "
+msgstr ""
+
+msgid "Array Jobs"
+msgstr ""
+
+msgid "Array jobs can be used to create a sequence of jobs which will be submitted, controlled, and monitored as a single unit. This job sequence shares the same executable and resource requirements, but individual executions have different input files. The arguments <parameter>-a</parameter> or <parameter>--array</parameter> take an additional parameter that specify the array indices. Within an array job, you can read the environment variables <envar>SLURM_ARRAY_JOB_ID</envar>, which will be set to the first job ID of the array, and <envar>SLURM_ARRAY_TASK_ID</envar>, which will be set individually for each step."
+msgstr ""
+
+msgid "Within an array job, you can use <varname>%a</varname> and <varname>%A</varname> in addition to <varname>%j</varname> and <varname>%N</varname> (described above) to make the output file name specific to the job. <varname>%A</varname> will be replaced by the value of <envar>SLURM_ARRAY_JOB_ID</envar> and <varname>%a</varname> will be replaced by the value of <envar>SLURM_ARRAY_TASK_ID</envar>."
+msgstr ""
+
+msgid "Here is an example how an array job may look like:"
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --array 0-9\n"
+"#SBATCH -o arraytest-%A_%a.out\n"
+"#SBATCH -e arraytest-%A_%a.err\n"
+"#SBATCH --ntasks=256\n"
+"#SBATCH --mail-type=end\n"
+"#SBATCH --mail-user=<replaceable>user@example.org</replaceable>\n"
+"#SBATCH --time=08:00:00\n"
+"\n"
+"echo \"Hi, I am step $SLURM_ARRAY_TASK_ID in this array job $SLURM_ARRAY_JOB_ID\"\n"
+"    "
+msgstr ""
+
+msgid "For further details, please read the corresponding part of the general <link xlink:href=\"http://slurm.schedmd.com/job_array.html\">Slurm documentation</link>."
+msgstr ""
+
+msgid "Chain Jobs"
+msgstr ""
+
+msgid "You can use <firstterm>chain jobs</firstterm> to create dependencies between jobs. This is often the case, if a job relies on the result of one or more preceding jobs. Chain jobs can also be used, if the runtime limit of the batch queues is not sufficient for your job. <application>Slurm</application> has an option <parameter>-d</parameter> or <parameter>--dependency</parameter> that allows to specify that a job is only allowed to start if another job finished."
+msgstr ""
+
+msgid "Here is an example of a chain job. It submits 4 jobs (described in a job file) that will be executed one after each other with different CPU numbers:"
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"TASK_NUMBERS=\"1 2 4 8\"\n"
+"DEPENDENCY=\"\"\n"
+"JOB_FILE=\"myjob.slurm\"\n"
+"\n"
+"for TASKS in $TASK_NUMBERS ; do\n"
+"    JOB_CMD=\"sbatch --ntasks=$TASKS\"\n"
+"    if [ -n \"$DEPENDENCY\" ] ; then\n"
+"        JOB_CMD=\"$JOB_CMD --dependency afterany:$DEPENDENCY\"\n"
+"    fi\n"
+"    JOB_CMD=\"$JOB_CMD $JOB_FILE\"\n"
+"    echo -n \"Running command: $JOB_CMD  \"\n"
+"    OUT=`$JOB_CMD`\n"
+"    echo \"Result: $OUT\"\n"
+"    DEPENDENCY=`echo $OUT | awk '{print $4}'`\n"
+"done\n"
+"    "
+msgstr ""
+
+msgid "Monitoring Jobs"
+msgstr ""
+
+msgid "<command>squeue</command> will report all jobs on the cluster. <command>squeue -u $USER</command> will report your running jobs. Slurm commands like squeue are very flexible, so that you can easily create your own aliases."
+msgstr ""
+
+msgid "Example of squeue:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>squeue</command>\n"
+"JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)\n"
+"22392     gpu    gromacs-1   mike PD       0:00      1 (Dependency)\n"
+"22393     gpu    gromacs-2   mike PD       0:00      1 (Dependency)\n"
+"22404     gpu    gromacs-2   mike  R      10:04      1 node-07\n"
+"22391     gpu    gromacs-1   mike  R      10:06      1 node-08\n"
+"    "
+msgstr ""
+
+msgid "Email notifications"
+msgstr ""
+
+msgid "Using the <parameter>--mail-type=<replaceable>&lt;type&gt;</replaceable></parameter> option to <command>sbatch</command>, users can request email notifications from <application>Slurm</application> as certain events occur. Multiple event types can be specified as a comma separated list. For example:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sbatch --mail-type=BEGIN,TIME_LIMIT_90,END batch_script.sh</command>\n"
+"    "
+msgstr ""
+
+msgid "Available event types:"
+msgstr ""
+
+msgid "Event type"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "BEGIN"
+msgstr ""
+
+msgid "Job started"
+msgstr ""
+
+msgid "END"
+msgstr ""
+
+msgid "Job finished"
+msgstr ""
+
+msgid "FAIL"
+msgstr ""
+
+msgid "Job failed"
+msgstr ""
+
+msgid "REQUEUE"
+msgstr ""
+
+msgid "Job was requeued"
+msgstr ""
+
+msgid "ALL"
+msgstr ""
+
+msgid "BEGIN,END,FAIL,REQUEUE"
+msgstr ""
+
+msgid "TIME_LIMIT_50"
+msgstr ""
+
+msgid "Job reached 50% of its time limit"
+msgstr ""
+
+msgid "TIME_LIMIT_80"
+msgstr ""
+
+msgid "Job reached 80% of its time limit"
+msgstr ""
+
+msgid "TIME_LIMIT_90"
+msgstr ""
+
+msgid "Job reached 90% of its time limit"
+msgstr ""
+
+msgid "TIME_LIMIT"
+msgstr ""
+
+msgid "Job reached its time limit"
+msgstr ""
+
+msgid "Modifying a job after submission"
+msgstr ""
+
+msgid "After a job is submitted, some of the submission parameters can be modified using the <command>scontrol</command> command. Examples:"
+msgstr ""
+
+msgid "Change the job dependency:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>scontrol update JobId=181766 dependency=afterany:18123</command>\n"
+"    "
+msgstr ""
+
+msgid "Request a matlab license:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>scontrol update JobId=181755 licenses=matlab</command>\n"
+"    "
+msgstr ""
+
+msgid "Job was submitted to the default partition, resend to gpu partition:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>scontrol update JobID=181755 partition=gpu QOS=gpu-single</command>\n"
+"    "
+msgstr ""
+
+msgid "Reduce the walltime to 12 hrs:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>scontrol update JobID=181744 TimeLimit=12:00:00</command>\n"
+"    "
+msgstr ""
+
+msgid "Users can only <emphasis>reduce</emphasis> the walltime of their submitted jobs."
+msgstr ""
+
+msgid "Binding and Distribution of Tasks"
+msgstr ""
+
+msgid "<application>Slurm</application> provides several binding strategies to place and bind the tasks and/or threads of your job to cores, sockets and nodes."
+msgstr ""
+
+msgid "Keep in mind that the distribution method may have a direct impact on the execution time of your application. The manipulation of the distribution can possibly speedup or slow down your application."
+msgstr ""
+
+msgid "The default allocation of tasks/threads for <application>OpenMP</application>, <application>MPI</application> and <application>Hybrid</application> (MPI and OpenMP) applications are as follows:"
+msgstr ""
+
+msgid "Default binding of a pure OpenMP job"
+msgstr ""
+
+msgid "OpenMP"
+msgstr ""
+
+msgid "The illustration shows the default binding of a pure OpenMP job on 1 node with 8 CPUs on which 8 threads are allocated."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=1\n"
+"#SBATCH --tasks-per-node=1\n"
+"#SBATCH --cpus-per-task=8\n"
+"\n"
+"export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK\n"
+"\n"
+"srun --cpus-per-task=$SLURM_CPUS_PER_TASK ./<replaceable>application</replaceable>\n"
+"    "
+msgstr ""
+
+msgid "MPI"
+msgstr ""
+
+msgid "Default binding of a pure MPI job"
+msgstr ""
+
+msgid "The illustration shows the default binding of a pure MPI job. 16 global ranks are distributed onto 2 nodes with 8 cores each. Each rank has 1 core assigned to it."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --tasks-per-node=8\n"
+"#SBATCH --cpus-per-task=1\n"
+"\n"
+"srun ./<replaceable>application</replaceable>\n"
+"    "
+msgstr ""
+
+msgid "Hybrid (MPI and OpenMP)"
+msgstr ""
+
+msgid "Default binding of a hybrid job"
+msgstr ""
+
+msgid "In the illustration the default binding of a hybrid job is shown. Four global MPI ranks are distributed onto 2 nodes with 8 cores each. Each rank has 4 cores assigned to it."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --tasks-per-node=2\n"
+"#SBATCH --cpus-per-task=2\n"
+"\n"
+"export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK\n"
+"\n"
+"srun --cpus-per-task=$SLURM_CPUS_PER_TASK ./<replaceable>application</replaceable>\n"
+"    "
+msgstr ""
+
+msgid "Detailed Description"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "To specify a pattern the commands <parameter>--cpu_bind=&lt;cores | sockets&gt;</parameter> and <parameter>--distribution=&lt;block | cyclic&gt;</parameter> are needed. <parameter>cpu_bind</parameter> defines the resolution, while <parameter>--distribution</parameter> determines the order in which the tasks will be allocated to the CPUs. Keep in mind, that the allocation pattern also depends on your specification."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash \n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --cpus-per-task=4\n"
+"#SBATCH --tasks-per-node=2               # allocate 2 tasks per node - 1 per socket \n"
+"\n"
+"srun --cpus-per-task $SLURM_CPUS_PER_TASK --cpu_bind=<replaceable>cores</replaceable> \\n  --distribution=block:block ./<replaceable>application</replaceable>\n"
+"	"
+msgstr ""
+
+msgid "In the following sections there are some selected examples of the combinations between <parameter>--cpu_bind</parameter> and <parameter>--distribution</parameter> for different job types."
+msgstr ""
+
+msgid "MPI Strategies"
+msgstr ""
+
+msgid "Default Binding and Distribution Pattern"
+msgstr ""
+
+msgid "The default binding."
+msgstr ""
+
+msgid "The default binding uses <parameter>--cpu_bind=<replaceable>cores</replaceable></parameter> in combination with <parameter>--distribution=block:cyclic</parameter>. The default (as well as block:cyclic) allocation method will fill up one node after another, while filling socket one and two in alternation. Resulting in only even ranks on the first socket of each node and odd on each second socket of each node."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --tasks-per-nodes=8\n"
+"#SBATCH --cpus-per-task=1\n"
+"\n"
+"srun ./<replaceable>application</replaceable>\n"
+"	"
+msgstr ""
+
+msgid "Core Bound"
+msgstr ""
+
+msgid "With the following settings, the tasks will be bound to a core for the entire runtime of your application. This usually improves execution speed by eliminating the overhead from context switches occurring when processes/tasks are being auto-moved (by the kernel) from one core to another."
+msgstr ""
+
+msgid "Distribution: block:block"
+msgstr ""
+
+msgid "Allocates the tasks linearly to the cores."
+msgstr ""
+
+msgid "This method allocates the tasks linearly to the cores."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --tasks-per-node=8\n"
+"#SBATCH --cpus-per-task=1\n"
+"\n"
+"srun --cpu_bind=cores --distribution=block:block <replaceable>./application</replaceable>\n"
+"	      "
+msgstr ""
+
+msgid "Distribution: cyclic:cyclic"
+msgstr ""
+
+msgid "Allocates your tasks in a round-robin approach to the cores."
+msgstr ""
+
+msgid "<parameter>--distribution=cyclic:cyclic</parameter> will allocate your tasks to the cores in a round-robin approach. It starts with the first socket of the first node, then the first socket of the second node until one task is placed on every first socket of every node. After that, it will place a task on the second socket of every node and so on."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --tasks-per-node=8\n"
+"#SBATCH --cpus-per-task=1\n"
+"\n"
+"srun --cpu_bind=cores --distribution=cycle:cycle\n"
+"	      "
+msgstr ""
+
+msgid "Distribution: cyclic:block"
+msgstr ""
+
+msgid "Allocates the tasks in alternation on node level."
+msgstr ""
+
+msgid "The cyclic:block distribution will allocate the tasks of your job in alternation on the node level, starting with the first node filling the sockets linearly."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --tasks-per-node=8\n"
+"#SBATCH --cpus-per-task=1\n"
+"\n"
+"srun --cpu_bind=cores --distribution=clyclic:block ./<replaceable>application</replaceable>\n"
+"	      "
+msgstr ""
+
+msgid "Socket Bound"
+msgstr ""
+
+msgid "The general distribution onto the nodes and sockets stays the same. The major difference between socket and cpu bound lies within the ability of the tasks to jump from one core to another inside a socket while executing the application. These jumps can slow down the execution time of your application."
+msgstr ""
+
+msgid "Default Distribution"
+msgstr ""
+
+msgid "Allocates one node after another, while filling socket one and two in alternation."
+msgstr ""
+
+msgid "The default distribution uses <parameter>--cpu_bind=sockets</parameter> with <parameter>--distribution=block:cyclic</parameter>. The default allocation method (as well as block:cyclic) will fill up one node after another, while filling socket one and two in alternation. Resulting in only even ranks on the first socket of each node and odd on each second socket of each node."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --tasks-per-node=8\n"
+"#SBATCH --cpus-per-task=1\n"
+"\n"
+"srun -cpu_bind=sockets ./<replaceable>application</replaceable>\n"
+"	      "
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --tasks-per-node=8\n"
+"#SBATCH --cpus-per-task=1\n"
+"\n"
+"srun --cpu_bind=sockets --distribution=block:block ./<replaceable>application</replaceable>\n"
+"	      "
+msgstr ""
+
+msgid "Allocates the tasks in alternation between the first and the second node."
+msgstr ""
+
+msgid "The cyclic:block distribution will allocate the tasks of your job in alternation between the first node and the second node while filling the sockets linearly."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCh --tasks-per-node=8\n"
+"#SBATCH --cpus-per-task=1\n"
+"\n"
+"srun --cpu_bind=sockets --distribution=cyclic:block ./<replaceable>application</replaceable>\n"
+"	      "
+msgstr ""
+
+msgid "Hybrid Strategies"
+msgstr ""
+
+msgid "Split the cores allocated to a rank between the sockets of a node."
+msgstr ""
+
+msgid "The default binding pattern of hybrid jobs will split the cores allocated to a rank between the sockets of a node. The example shows that Rank 0 has 4 cores at its disposal. Two of them on the first socket inside the first node and two on the second socket inside the first node."
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --tasks-per-node=2\n"
+"#SBATCH --cpus-per-task=4\n"
+"\n"
+"export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK\n"
+"\n"
+"srun --cpus-per-task $OMP_NUM_THREADS ./<replaceable>application</replaceable>\n"
+"	"
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --tasks-per-node=2\n"
+"#SBATCH --cpus-per-task=4\n"
+"\n"
+"export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK\n"
+"\n"
+"srun --cpus-per-task $OMP_NUM_THREADS --cpu_bind=<replaceable>cores</replaceable> \\n  --distribution=block:block ./<replaceable>application</replaceable>\n"
+"	      "
+msgstr ""
+
+msgid ""
+"\n"
+"#!/bin/bash\n"
+"#SBATCH --nodes=2\n"
+"#SBATCH --tasks-per-node=2\n"
+"#SBATCH --cpus-per-task=4\n"
+"\n"
+"export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK\n"
+"\n"
+"srun --cpus-per-task $OMP_NUM_THREADS --cpu_bind=<replaceable>cores</replaceable> \\n  --distribution=cyclic:block ./<replaceable>application</replaceable>\n"
+"	      "
+msgstr ""
+
+msgid "Accounting"
+msgstr ""
+
+msgid "The <application>Slurm</application> command <command>sacct</command> provides job statistics like memory usage, CPU time, energy usage etc. Examples:"
+msgstr ""
+
+msgid ""
+"\n"
+"# show all of your own jobs in the accounting database\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sacct</command>\n"
+"\n"
+"# show specific job\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sacct -j <replaceable>&lt;JOBID&gt;</replaceable></command>\n"
+"\n"
+"# specify fields\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sacct -j <replaceable>&lt;JOBID&gt;</replaceable> -o JobName,MaxRSS,MaxVMSize,CPUTime,ConsumedEnergy</command>\n"
+"\n"
+"# show all fields\n"
+"<prompt>0 user@fe-node ~ $</prompt>\n"
+"<command>sacct -j <replaceable>&lt;JOBID&gt;</replaceable> -o ALL</command>\n"
+"    "
+msgstr ""
+
+msgid "Read the manpage (<command>man sacct</command>) for information on the provided fields."
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "Running on specific hosts"
+msgstr ""
+
+msgid "If you want to place your job onto specific nodes, there are two options for doing this. Either use <parameter>-p</parameter> to specify a partition with a host group that fits your needs. Or, use the <parameter>-w</parameter> (alternatively <parameter>--nodelist</parameter>) parameter with a single or list of nodes, where you want your job to be executed."
+msgstr ""
+
+msgid "Useful external Slurm documentation links"
+msgstr ""
+
+msgid "<link xlink:href=\"http://slurm.schedmd.com/hdf5_profile_user_guide.html___blank___\"> Slurm Profiling </link> using HDF5"
+msgstr ""
+
+msgid "<link xlink:href=\"http://slurm.schedmd.com/sh5util.html___blank___\"> sh5util </link> - Tool for merging HDF5 files"
+msgstr ""
+

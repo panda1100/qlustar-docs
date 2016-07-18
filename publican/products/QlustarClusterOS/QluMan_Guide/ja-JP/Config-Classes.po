@@ -1,0 +1,235 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-18 19:09+0200\n"
+"PO-Revision-Date: 2016-07-18 19:09+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Config Classes"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "<classname>Config Classes</classname> manage configurations that are too complex to fit into the key + value scheme used by properties. Therefore, there is no common interface to configure all classes. Instead, each class has its own configuration dialog, presenting the specific options it provides. Furthermore, some classes depend on sub-classes (e.g. <classname>Boot Configs</classname> depend on <classname>Qlustar Images</classname>). Only the top-level <classname>Config Classes</classname> are directly assignable to a <classname>Config Set</classname> or a host. Sub-classes are assigned indirectly via their parent class. Most of the functional subsystems of <productname>Qlustar</productname> have a dedicated <classname>Config Class</classname>. Currently, there are four of them: <classname>Boot</classname>, <classname>DHCP</classname>, <classname>Disk</classname>, and <classname>Slurm Configs</classname> complemented by a single sub-class, <classname>Qlustar Images</classname>."
+msgstr ""
+
+msgid "Writing Config Files"
+msgstr ""
+
+msgid "The Write Files dialog"
+msgstr ""
+
+msgid "The Write Files dialog with pending changes"
+msgstr ""
+
+msgid "The configurations managed in the <application>QluMan</application> GUI via <classname>Config Classes</classname> and sub-classes, are translated into automatically generated configuration files on the head-node(s). While <application>QluMan</application> configuration options are usually saved in the <application>QluMan</application> database immediately after they have been entered in the GUI, the write process of the real configuration files on disk is a separate step, that needs to be specifically initiated and confirmed."
+msgstr ""
+
+msgid "Each configuration dialog of a config class has a <guibutton>Preview</guibutton> and a <guibutton>Write</guibutton> button for its own config files. Additionally, there is a dedicated dialog for writing and previewing <emphasis role=\"bold\">all</emphasis> configuration files. You can access the latter from <guimenuitem>Manage Cluster</guimenuitem>-&gt;<guimenuitem>Write Files</guimenuitem> or via the <guibutton>Write Files</guibutton> button at the bottom right of the main window."
+msgstr ""
+
+msgid "Display of a config's content"
+msgstr ""
+
+msgid "Display of a single config's content including a diff"
+msgstr ""
+
+msgid "Display of multiple configs including their diffs"
+msgstr ""
+
+msgid "If a config class has no pending changes, the <guibutton>Preview</guibutton> button becomes a <guibutton>View</guibutton> button and the <guibutton>Write</guibutton> button becomes ghosted. The Preview window shows both, the new version of the config file that will be written, as well as a <parameter>context diff</parameter> of the changes compared to the current file on disk (if there are any differences). If a <classname>Config Class</classname> changes only one file, that file will be shown directly. If multiple files are involved, there will be one tab for each file."
+msgstr ""
+
+msgid "Checking the optional <guibutton>Force</guibutton> button, will initiate a rewrite of all config files, even if they haven't changed."
+msgstr ""
+
+msgid "The actual write command is performed via the <link linkend=\"chap-RX-Engine\">Qlustar RXEngine</link>. This allows for <emphasis role=\"bold\">consistent management</emphasis> of multiple head-nodes e.g. in a high-availability configuration."
+msgstr ""
+
+msgid "Boot Configs"
+msgstr ""
+
+msgid "Boot Config dialog"
+msgstr ""
+
+msgid "The <classname>Boot Config</classname> dialog allows to define settings for the PXE/tftp boot server. A boot configuration determines which <link linkend=\"sec-Qlustar-OS-Images\">Qlustar OS image</link> is delivered to a node, and optionally permits the specification of <firstterm>PXELinux</firstterm> commands and/or Linux kernel parameters. When opened, the <classname>Boot Config</classname> window shows a collapsed tree-list of all boot configs currently defined, sorted by their names."
+msgstr ""
+
+msgid "Note that the <classname>default config</classname> is special: It applies to any node without a specifically assigned (either through a template or directly) <classname>Boot Config</classname>. This means, that in the simplest configuration, where all nodes should boot identically, having just the <classname>default config</classname> will be sufficient."
+msgstr ""
+
+msgid "Changing a Boot Config"
+msgstr ""
+
+msgid "By expanding a <classname>Boot Config</classname> item, the configured <productname>Qlustar</productname> image, PXELinux command, and kernel parameters become visible. You can change any of the values, by simply selecting a different option from the drop-down menus. In case of kernel parameters, you can also directly edit the entry and save the result by pressing <keycap>return</keycap>. Furthermore, it is possible to add more kernel parameters or remove them through the context menu."
+msgstr ""
+
+msgid "Creating new Boot Configs"
+msgstr ""
+
+msgid "The context menu also lets you create new <classname>Boot Configs</classname> and edit or delete an existing one. Alternatively, a new <classname>Boot Config</classname> can be created by clicking the <guibutton>New</guibutton> button at the bottom of the dialog. Both, the context menu and the button bring up the <classname>New Boot Config</classname> dialog. Simply enter the name and description for the new config, select a Qlustar image and (optionally) a PXELinux command. Finally press <guibutton>OK</guibutton> to create it. The new config will then appear in the <classname>Boot Config</classname> window and will be ready for use."
+msgstr ""
+
+msgid "Pressing the <guibutton>Boot Parameter Editor</guibutton> button at the bottom of the dialog, will bring up a small edit dialog, where kernel parameters can be created, edited, or deleted."
+msgstr ""
+
+msgid "DHCP Config"
+msgstr ""
+
+msgid "The <classname>DHCP config</classname> dialog allows the configuration of the DHCP server and is provide by the main menu <guimenuitem>Manage Configs</guimenuitem>-&gt;<guimenuitem>DHCP Configs</guimenuitem>. The final DHCP server configuration file on disk is assembled from the header which defines global settings and the host part which contains the MAC/IP address and hostname of all the hosts registered with <application>QluMan</application>. The header can freely be edited in the <classname>Global DHCP Template</classname> part of the dialog. An initial version of it is created during installation and in most cases doesn't need to be changed. It contains many important parameters required for the cluster to function properly. Please consult the documentation of the DHCP server and the <filename>dhcpd.conf</filename> man page for the syntax of this file."
+msgstr ""
+
+msgid "To prevent multiple persons from editing at the same time and overwriting each others changes accidentally you must acquire a lock for the template by clicking the <guibutton>Edit</guibutton> button. If another user is already editing the file the button will be ghosted and the tool tip will show which user is holding a lock for the template."
+msgstr ""
+
+msgid "After having finished editing a template don't forget to save your changes by clicking the <guibutton>Save</guibutton> button. It will be ghosted, if there is nothing to save. You can undo all your changes up to the last time the template was saved by clicking the <guibutton>Undo</guibutton> button. In case another admin has made changes to a template while you are viewing or editing it, the <guibutton>Refresh</guibutton> button will become enabled. By clicking it, the updated template is shown and you loose any unsaved changes you have already made in your own edit field. To delete a template click the <guibutton>Delete</guibutton> button."
+msgstr ""
+
+msgid "Note that the \"Global Template\" can not be deleted, since it is needed for the DHCP server to function correctly."
+msgstr ""
+
+msgid "The template lock expires automatically after some time without activity so that the template is not deadlocked if someone forgets to release the lock. In such a case the above dialog will be shown notifying you about it. By selecting <guibutton>OK</guibutton> a new lock will be requested. If another user is editing the template at that time though the request will fail and an error dialog will inform you of the failure."
+msgstr ""
+
+msgid "DHCP options can also be set in separate group templates and targeted to specific hosts. For simple clusters, this is hardly ever needed, but for large clusters e.g. you might want to have more than one boot server to speed up cluster boot time. In this case you could assign different groups of hosts to different boot servers using this method. The defined group templates are available as configs to be added to config sets or hosts directly. You can select a group template from the drop-down menu at the bottom to view or edit it. As an example 2 templates specifying different boot-servers are included."
+msgstr ""
+
+msgid "The drop-down menu also lets you create new templates by selecting the <guimenuitem>new DHCP group</guimenuitem> entry. Enter the name of the template in the text field and fill in the contents and description of the template. Pressing <keycap>return</keycap> after entering the name will automatically acquire a lock for the new template and go into edit mode. You can then enter the contents of the new template. Don't forget to click the <guibutton>Save</guibutton> button at the end."
+msgstr ""
+
+msgid "When you are satisfied with your changes, you can preview the resulting <filename>dhcpd.conf</filename> file together with a diff to the old version on disk by clicking the <guibutton>Preview</guibutton> button. The changes will only take full effect when you click the <guibutton>Write</guibutton> button. This will also tell the DHCP server to reload its configuration. The same can also be done through the main menus <guimenuitem>Manage Cluster</guimenuitem>-&gt;<guimenuitem>Write Files</guimenuitem> entry or the <guibutton>Write Files</guibutton> button at the bottom of the cluster window and then selecting <guibutton>Preview</guibutton> or <guibutton>Write</guibutton> button in the DHCP Configs row."
+msgstr ""
+
+msgid "Disk Configs"
+msgstr ""
+
+msgid "<productname>Qlustar</productname> has a powerful mechanism to manage the configuration of disks on a node. This mechanism is partly based on the setup_storage module of <link xlink:href=\"http://fai-project.org/___blank___\">FAI</link>. It basically allows for any automatic setup of your hard drives including kernel software RAID (md) and <firstterm>LVM</firstterm> setups. A detailed description of the syntax for disk configurations is <link xlink:href=\"http://fai-project.org/doc/man/setup-storage.html\"> available</link>. Since the OS of a <productname>Qlustar</productname> node is always running from RAM, a disk-less configuration is obviously also possible. Note, that for flawless operation this requires some extra configuration (handling of log messages and in/output of batch jobs) that will be explained in the <productname>Qlustar</productname> admin guide. Valid configurations require definitions for two filesystems /var and /scratch as well as swap space (see examples). To permit the initial formatting of a new disk configuration on a node, it must have assigned the <parameter>Schedule Format: always</parameter> generic property during the initial boot (see the discussion <xref endterm=\"PropConf-Sets\" linkend=\"PropConf-Sets\" />."
+msgstr ""
+
+msgid "Disk configurations can be managed using the <classname>Disk Configs</classname> dialog accessible from the main menu <guimenuitem>Manage Configs</guimenuitem>-&gt;<guimenuitem>Disk Configs</guimenuitem>. You can select the config to be viewed/edited from the drop-down menu at the bottom left. A couple of example configurations are created during the installation. Note that there are two special configs: (a) \"disk-less\" (not editable or deletable) and (b) \"default\" (editable but not deletable). The default config is used for any node that doesn't have a specific assignment to a disk config (via a Host Template, config set). The configuration itself can be edited in the text field at the top of the dialog and should conform to setup_storage syntax (see above). New configs can be created by choosing <guimenuitem>new disk config</guimenuitem> from the drop-down menu. As usual, enter the name of the new config in the text field and fill in the contents and description."
+msgstr ""
+
+msgid "Slurm Config"
+msgstr ""
+
+msgid "The slurm configuration module comes in four parts:"
+msgstr ""
+
+msgid "The overall slurm configuration being controlled through two templates in the <classname>Config Header</classname> tab."
+msgstr ""
+
+msgid "The configuration of slurm nodes done via the <classname>Node Groups</classname> tab."
+msgstr ""
+
+msgid "The configuration of partitions achieved by using the <classname>Partitions</classname> tab."
+msgstr ""
+
+msgid "The configuration of gres groups achieved using the <classname>Gres Groups</classname> tab."
+msgstr ""
+
+msgid "Assignment of hosts to node groups and/or partitions is possible by adding the latter to the relevant <classname>Config Sets</classname> and <classname>Host Templates</classname> or by direct assignment through the generic property context menu."
+msgstr ""
+
+msgid "Slurm Config Header"
+msgstr ""
+
+msgid "The overall slurm configuration is split into two templates, the slurm config and <filename>cgroups.conf</filename>. On write, <application>QluMan</application> adds the NodeName and PartitionName lines at the end of the slurm config template to generate the <filename>slurm.conf</filename> file, while the <filename>cgroup.conf</filename> file gets written as is. For the syntax of both templates, please refer to the slurm documentation (e.g. <code>man slurm.conf</code>). To edit one of the templates, select it, click the <guibutton>Edit</guibutton> button and start making changes. Click <guibutton>Save</guibutton> to save the changes or <guibutton>Undo</guibutton> to discard them. Use the <guibutton>Preview</guibutton> button to check changes before writing them."
+msgstr ""
+
+msgid "Slurm Node Groups"
+msgstr ""
+
+msgid "Slurm node properties are configured from two sources:"
+msgstr ""
+
+msgid "The <xref endterm=\"Hardware-Properties\" linkend=\"Hardware-Properties\" /> assigned to a host. The number of CPUs, sockets, cores and the size of its main memory is taken from there."
+msgstr ""
+
+msgid "The second source are the slurm node groups. Every host can belong to at most one such group. The membership is defined (see <xref linkend=\"sec-Slurm-Assign-Hosts\" />) by adding the desired group to the <link linkend=\"PropConf-Sets\">Config Set</link> that is assigned to the node via its <link linkend=\"Host-Templates\">Host Template</link>. Each Node Group is a collection of slurm node properties, that will be set for the members of the group. Per default, only the <code>MemSpecLimit</code> property is defined, but other properties like <parameter>Feature</parameter> or <parameter>Goes</parameter> can be added by using the <link linkend=\"sec-Slurm-Property-Editor\">Slurm Property Editor</link>."
+msgstr ""
+
+msgid "A new node group can be created by clicking the <guibutton>New Node Group</guibutton> button or selecting <guimenuitem>New Node Group</guimenuitem> from the context menu. This opens a dialog asking for the name of the new group. An existing node group can be renamed or deleted from the context menu."
+msgstr ""
+
+msgid "The context menu also allows to add properties to a group. Note, that some properties are <emphasis role=\"bold\">unique</emphasis>, i.e. only one value can be selected for the property. Adding a second value of the same property will automatically replace the old value in that case. Other properties are not unique. Adding multiple values to such properties results in a comma separated list of values in the <filename>slurm.conf</filename> file. An example for this is the <parameter>Feature</parameter> property. Properties can also be changed directly using the pull-down menu. If a change will cause a duplicate value, the previous (duplicate) value is automatically removed."
+msgstr ""
+
+msgid "Slurm Partitions"
+msgstr ""
+
+msgid "The management of Slurm partitions works exactly the same way as with slurm node groups. Please see <xref linkend=\"sec-Slurm-Node-Groups\" /> for how to create, rename and change partitions."
+msgstr ""
+
+msgid "Slurm Property Editor"
+msgstr ""
+
+msgid "The Slurm property editor for node or partition properties can be opened by clicking the <guibutton>Properties</guibutton> button at the bottom of the Slurm main dialog. If the <classname>Node Groups</classname> tab is selected, the editor for node properties will be opened. If the <classname>Partitions</classname> tab is selected, the editor for partition properties will be opened."
+msgstr ""
+
+msgid "To add a new property, enter the name of the property in the name field. If the name does not already exist, the <guibutton>New Property</guibutton> button will be enabled. Click on it to create the property. <application>QluMan</application> has a white-list of known valid properties, e.g. <parameter>Gres</parameter> and allows adding such a property without further questions. In this case, <application>QluMan</application> will also set the unique flag and add all known property values automatically."
+msgstr ""
+
+msgid "When a property is created that is not on the white-list (<parameter>Gres</parameter> in the screenshot) a dialog opens up, asking for confirmation. Note that adding an unknown property can lead to a failure when trying to restart slurm. Therefore make sure to only add properties you are certain slurm will know about. A property without values can be deleted by clicking the <guibutton>Delete</guibutton> button."
+msgstr ""
+
+msgid "To add values to a property, first select the desired property using the pull-down menu from the name. Then enter the new property using <guibutton>Add Value</guibutton> at the bottom and press <keycap>return</keycap> to add it. To delete a value, select <guimenuitem>Delete value</guimenuitem> from the context menu."
+msgstr ""
+
+msgid "Slurm Gres Groups"
+msgstr ""
+
+msgid "Currently, Slurm Gres Groups are used in Qluman mainly to handle the setup of GPUs for slurm. The <link linkend=\"sec-GPUwizard\">GPU Wizard</link> is the best way to create such resource groups. But the Gres Groups tab allows creating and managing any type of resource group, as well as binding GPUs to specific CPU sets, which the wizard does not use. To view or modify a Gres Group, select the group from the drop down menu. Use the <guibutton>Preview</guibutton> button to check changes before writing them."
+msgstr ""
+
+msgid "A new gres group can be created by clicking the <guibutton>New Gres Group</guibutton> button. This opens a dialog asking for the type, name and description of the new group. An existing type can be selected from the drop down menu or a new type can be entered directly. After entering a new unique group name the <guibutton>OK</guibutton> button becomes select-able. A group that is not in use can be deleted by clicking <guibutton>Delete Group</guibutton>."
+msgstr ""
+
+msgid "A Gres Group can have multiple entries. A new entry can be added to a group by clicking on <guibutton>New Entry</guibutton>. At first the entry is blank and at a minimum the type column must be filled in. For resources that can be allocated in pieces the a count can be set for the number of pieces available. For resources that have a device file associated with it that can be set in the File column. Note that resources that have a file associated the count is not applicable since there is always only exactly one file. Last the entry can be associated with a set of CPUs. The CPUs to use can be entered as comma separated list or, for recurring sets, selected from the drop down menu. An entry can be deleted from the group by selecting <guibutton>Delete Entry</guibutton> and a group that is no longer in use can be deleted by selecting <guibutton>Delete Group</guibutton>."
+msgstr ""
+
+msgid "Assigning Hosts to Slurm Node Groups, Partitions and Gres Groups"
+msgstr ""
+
+msgid "Host are assigned to Slurm <classname>Node Groups</classname> and <emphasis role=\"bold\">Partitions</emphasis> by use of a <link linkend=\"Host-Templates\">Host Template</link> and its corresponding <link linkend=\"PropConf-Sets\">Config Set</link>. A <classname>Config Set</classname> may contain at most one <classname>Node Group</classname> but any number of <emphasis role=\"bold\">Partitions</emphasis>, since a host can be member of an arbitrary number of slurm partitions. Both can be added by selecting them via <guimenuitem>Add Config</guimenuitem> in the context menu of the <classname>Config Set</classname>."
+msgstr ""
+
+msgid "GPU Wizard"
+msgstr ""
+
+msgid "Purpose"
+msgstr ""
+
+msgid "When setting up slurm, the general configuration for the hardware is taken from the hosts Hardware Properties. But configuring the GPUs is more complex and has is done through the Slurm Gres Groups as part of the slurm config glass. They are used to specify the type and number of GPUs, to determine what slurm jobs they should run. All the necessary steps for the desired configuration of the nodes can be done manually and also be changed later through the slurm config dialog from the main window."
+msgstr ""
+
+msgid "As a convenient alternative, the <classname>GPU Wizard</classname> guides you through the necessary configuration steps. It uses the auto-detected GPUs of hosts to suggest their optimal configuration options. Furthermore, it tries to keep a balance between the available configuration strategies: Using templates, config sets or individual config classes."
+msgstr ""
+
+msgid "Note: For GPUs to be detected on a host the host must first boot a Qlustar image that includes the nvidia module. Otherwise GPUs will be missed. Only nodes where GPUs have been detected can be configured through the GPU Wizard."
+msgstr ""
+
+msgid "Selecting Hosts"
+msgstr ""
+
+msgid "The host selection window"
+msgstr ""
+
+msgid "Selecting a host group for configuration"
+msgstr ""
+
+msgid "The first step is to select the hosts that should be configured. Initially, the lists of hosts is empty. One or more of the four buttons at the bottom have to be pressed to pre-select hosts that should be considered. The <guibutton>Unconfigured</guibutton> button adds all hosts that do not have any GPU configured at all. The <guibutton>Partially Configured</guibutton> button adds hosts that already have some GPUs configured correctly but not all of them. The <guibutton>Wrongly Configured</guibutton> button adds hosts, where the configured GPUs do not match the GPUs detected at boot, e.g. when the GPU cards have been swapped for a newer model on the hosts. Finally, the <guibutton>Selected</guibutton> button adds hosts, that have been selected in the enclosure view, including hosts that are configured correctly already."
+msgstr ""
+
+msgid "Note: Only hosts with auto-detected GPUs will be shown even if others are selected."
+msgstr ""
+
+msgid "Once one or more of the buttons are pressed, the affected hosts will show up in the table. To keep things compact, hosts with identically detected GPUs are grouped together and shown in <emphasis>hostlist syntax</emphasis>. Select one of the shown groups and click <guibutton>Next</guibutton> to start the configuration."
+msgstr ""
+

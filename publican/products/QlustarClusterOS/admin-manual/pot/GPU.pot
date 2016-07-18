@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-18 19:11+0200\n"
+"PO-Revision-Date: 2016-07-18 19:11+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "GPU computing"
+msgstr ""
+
+msgid "<primary>GPU computing</primary>"
+msgstr ""
+
+msgid "Qlustar supports the most common GPU hardware types for GPU computing. There are hardware dependent packages and general development tools."
+msgstr ""
+
+msgid "Nvidia CUDA GPU Platform"
+msgstr ""
+
+msgid "<primary>GPU computing</primary><secondary>Nvidia GPUs</secondary>"
+msgstr ""
+
+msgid "To support the CUDA GPU hardware platform, Nvidia provides the necessary kernel drivers as well as the user-space <emphasis>CUDA Toolkit</emphasis> for software development. Pre-built, up-to-date Nvidia kernel modules are available for all Qlustar Kernels and the <emphasis>Qlustar Nvidia image module </emphasis> can be added to Qlustar images for full support of the newset Nvidia hardware on GPU enabled compute nodes. Within Qlustar, the functionality of the CUDA Toolkit is split into a number of different packages."
+msgstr ""
+
+msgid "Hardware support"
+msgstr ""
+
+msgid "<primary>GPU computing</primary><secondary>Nvidia Hardware support</secondary>"
+msgstr ""
+
+msgid "- nvidia-smi - nvidia-tdk - nvidia-ml-py"
+msgstr ""
+
+msgid "CUDA"
+msgstr ""
+
+msgid "<primary>CUDA</primary>"
+msgstr ""
+
+msgid "The packages for development are split Need: nvidia-cuda-toolkit, nvidia-cuda-dev"
+msgstr ""
+
+msgid "AMD GPUs"
+msgstr ""
+
+msgid "Intel GPUs"
+msgstr ""
+
+msgid "Developing with OpenCL"
+msgstr ""
+
+msgid "<primary>OpenCL</primary>"
+msgstr ""
+

@@ -1,0 +1,380 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-18 19:11+0200\n"
+"PO-Revision-Date: 2016-07-18 19:11+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Node Customization"
+msgstr ""
+
+msgid "<primary>Node Customization</primary>"
+msgstr ""
+
+msgid "This section describes the customization options/tools for the configuration of Qlustar cluster-nodes."
+msgstr ""
+
+msgid "Dynamic Configuration Settings"
+msgstr ""
+
+msgid "<primary>Node Customization</primary> <secondary>Dynamic Configuration Settings</secondary>"
+msgstr ""
+
+msgid "A number of configuration options are configured dynamically when a node boots. These settings will be stored either in the file <filename>/etc/qlustar/options</filename> or in a separate file in the directory <filename>/etc/qlustar/options.d</filename> of the nodes root filesystem. Usual BASH shell syntax is used for the options. An example for the latter are the configuration settings for a nodes Infiniband stack. They will be placed in the file <filename>ib</filename>, which is created on the fly by the QluMan execd process while booting (see also the <xref linkend=\"admin-man-sect-qluman-execd\" xrefstyle=\"template:previous section\" /> and <xref linkend=\"admin-man-sect-infiniband\" />)."
+msgstr ""
+
+msgid "The settings in <filename>/etc/qlustar/options</filename> as well as the config files generated in <filename>/etc/qlustar/options.d</filename> should usually not be edited manually. However, when a node has trouble starting certain services or configuring some system components, it can make sense to inspect and possibly change the settings in these files to see whether that solves the problem. Please report such a situation as a bug, so that it can be fixed in a future release."
+msgstr ""
+
+msgid "DHCP-Client"
+msgstr ""
+
+msgid "<primary>Node Customization</primary> <secondary>DHCP-Client</secondary>"
+msgstr ""
+
+msgid "The dhclient process started during the boot process of compute-nodes will configure the IP addresses and other parameters given. By default, only the network interface from which the node boots is managed by DHCP. In a QluMan boot config, you can set the kernel parameter <parameter>dhcp_ifaces</parameter> to a comma separated list of interface names to manage other interfaces as well. Example: <parameter>dhcp_ifaces=eth0,eth1</parameter>. The first interface in this list is the primary interface. Extended information like NIS-domain and NIS-servers is queried through this interface."
+msgstr ""
+
+msgid "Setting <parameter>dhcp_ifaces=bond0:eth0:eth1</parameter> you can easily define a bonding interface. This line would cause the interfaces <interfacename>eth0</interfacename> and <interfacename>eth1</interfacename> to act as slave interfaces associated to <interfacename>bond0</interfacename>. You can add additional options for the bonding interface separated with plus signs. These options include mode (defaults to 0) and miimon (defaults to 100). See the output of the command <command>modinfo bonding</command> for a short explanation of these options."
+msgstr ""
+
+msgid "Examples"
+msgstr ""
+
+msgid "To set the mode to active-backup"
+msgstr ""
+
+msgid ""
+"\n"
+"dhcp_ifaces=bond0:eth0:eth1+mode=1\n"
+"	       "
+msgstr ""
+
+msgid "To increase the link check interval to 200ms:"
+msgstr ""
+
+msgid ""
+"\n"
+"dhcp_ifaces=bond0:eth0:eth1+miimon=200\n"
+"	       "
+msgstr ""
+
+msgid "To add another interface <interfacename>eth2</interfacename> that dhcp-client should configure:"
+msgstr ""
+
+msgid ""
+"\n"
+"dhcp_ifaces=bond0:eth0:eth1,eth2\n"
+"	       "
+msgstr ""
+
+msgid "Bridging"
+msgstr ""
+
+msgid "Additionally you can define a bridge interface like this:"
+msgstr ""
+
+msgid ""
+"\n"
+"dhcp_ifaces=br0:eth0\n"
+"	       "
+msgstr ""
+
+msgid "This makes the interface <interfacename>eth0</interfacename> be the the bridge port for <interfacename>br0</interfacename>."
+msgstr ""
+
+msgid "Cluster-wide Configuration Directory"
+msgstr ""
+
+msgid "<primary>Node Customization</primary> <secondary>Cluster-wide Configuration Directory</secondary>"
+msgstr ""
+
+msgid "The directory <filename>/etc/qlustar/common</filename> contains cluster-wide configuration files for the nodes. At an early stage of the boot processs this directory is mounted as an NFS directory from the head-node. By default the following arguments to mount are used:"
+msgstr ""
+
+msgid ""
+"\n"
+"-t nfs -o rw,hard,intr 192.168.52.254:/srv/ql-common\n"
+"     "
+msgstr ""
+
+msgid "If you want to use different arguments, you can set the following DHCP parameter in the QluMan DHCP template (see also <xref linkend=\"admin-man-sect-dhcp\" />):"
+msgstr ""
+
+msgid ""
+"\n"
+"option qlustar-cfgmnt code 132 = text;\n"
+"option qlustar-cfgmnt \"-t nfs -o rw,hard,intr 192.168.52.254:/srv/ql-common\";\n"
+"     "
+msgstr ""
+
+msgid "NFS boot scripts"
+msgstr ""
+
+msgid "<primary>Node Customization</primary> <secondary>NFS boot scripts</secondary>"
+msgstr ""
+
+msgid "To allow for flexible configuration of compute-nodes, a specific NFS directory (<filename>/etc/qlustar/common/rc.boot</filename>) is searched for executable scripts in a late phase of the boot process. The scripts found are then executed one by one. You can use this mechanism to perform arbitrary modifications/customization of the compute node OS."
+msgstr ""
+
+msgid "Adding directories, files, links"
+msgstr ""
+
+msgid "<primary>Node Customization</primary> <secondary>Adding directories, files, links</secondary>"
+msgstr ""
+
+msgid "The script <filename>/lib/qlustar/copy-files</filename>, which is also executed at boot, consults a configuration file <filename>/etc/qlustar/common/image-files/destinations</filename>, where each line describes a directory to be created, a file to be copied from an NFS path to a local path, or a link that needs to be created in the RAM-disk. Example:"
+msgstr ""
+
+msgid ""
+"\n"
+"# remotefile is a path relative to /etc/qlustar/common/image-files\n"
+"# and destdir is the absolute path of the directory where remotefile\n"
+"# should be copied to. mode is used as input to chmod.\n"
+"# Example:\n"
+"# authorized_keys   /root/.ssh    root:root   600\n"
+"\n"
+"# Directories\n"
+"/etc/ldap\n"
+"\n"
+"# remotefile            destdir         owner           permissions\n"
+"ssh/authorized_keys     /root/.ssh      root:root       644\n"
+"etc/nsswitch.conf       /etc            root:root       644\n"
+"etc/ldap.conf           /etc            root:root       644\n"
+"etc/timezone            /etc            root:root       644\n"
+"\n"
+"# Symbolic links\n"
+"# Source                target\n"
+"/l/home                 /home\n"
+"       "
+msgstr ""
+
+msgid "With this mechanism, it is also possible to specify additional files to process by adding an <parameter>#include</parameter> line like this:"
+msgstr ""
+
+msgid ""
+"\n"
+"#include ldapfiles\n"
+"       "
+msgstr ""
+
+msgid "In this example, the file <filename>ldapfile</filename> will be processed just like the <filename>destinations</filename> file."
+msgstr ""
+
+msgid "Furthermore, if the file <filename>/etc/qlustar/common/softgroups</filename> exists, it may specify a group name directly (without whitespace) followed by a colon followed by a hostlist. An example softgroups file may look like this:"
+msgstr ""
+
+msgid ""
+"\n"
+"version2: beo-[01-04]\n"
+"version3: beo-[05-08]\n"
+"       "
+msgstr ""
+
+msgid "This will make hosts <systemitem class=\"systemname\">beo-01</systemitem> - <systemitem class=\"systemname\">beo-04</systemitem> additionally consult the file <filename>/etc/qlustar/common/image-files/destinations.version2</filename> and hosts <systemitem class=\"systemname\">beo-05</systemitem> - <systemitem class=\"systemname\">beo-08</systemitem> consult <filename>/etc/qlustar/common/image-files/destinations.version3</filename>. The group name defined in the softgroups is the extension to the destinations file. The files could look like this:"
+msgstr ""
+
+msgid ""
+"# destinations.version2 - use version2 of the program:\n"
+"       /apps/prod/bin/program.version2 /usr/bin/program # destinations.version3 - use version3\n"
+"       of the program: /apps/prod/bin/program.version3 /usr/bin/program\n"
+"       "
+msgstr ""
+
+msgid "Hence, with this mechanism, you can have parts of your cluster use different versions of the same program."
+msgstr ""
+
+msgid "Hard disc initialization"
+msgstr ""
+
+msgid "<primary>Node Customization</primary> <secondary>Hard disc initialization</secondary>"
+msgstr ""
+
+msgid "The boot script <filename>/etc/init.d/disk-auto-setup</filename> is responsible for checking whether the hard disc of the compute-node is already partitioned correctly and has the needed filesystems and swap setup. If this is not the case, it partitions the drive, generates filesystems and swap space, and finally mounts the filesystems and activates swap. You can force creating of the partitions and filesystems by adding the hostnames to the initialize group in <filename>/etc/qlustar/common/disk-configs/raidgroups</filename>:"
+msgstr ""
+
+msgid "\n"
+"initialize: beo-01 beo-[12][0-9]"
+msgstr ""
+
+msgid "Note that you can also use regular expressions to match hostnames, so that a line like the one above would affect node <systemitem class=\"systemname\">beo-01</systemitem> as well as nodes 10 to 29. The disc is typically setup with a <filename>/var</filename> (1GB) filesystem, 2GB of swap space and a /scratch filesystem occupying the remainder of the disc. The configuration file resides in <filename>/etc/qlustar/common/disk-configs/initdisc.cf</filename> and by default looks like this:"
+msgstr ""
+
+msgid ""
+"\n"
+"disk_config sda\n"
+"primary   /var          1024       ;\n"
+"primary   swap          8192       ;\n"
+"primary   /scratch      1000-      ;"
+msgstr ""
+
+msgid "This instructs the script disk-auto-setup to create a <filename>/var partition/filesystem</filename> of size 1GB, a swap partition of size 8GB and to use the rest of the disk for the /scratch partition. Note that the partitions <filename>/var</filename> and <filename>/scratch</filename> are automatically mounted and swap automatically activated. Therefore you should define at least these three partitions. Special configurations with RAID 0 devices on multiple discs are also possible in cases where disc I/O performance is of central importance. Example:"
+msgstr ""
+
+msgid ""
+"\n"
+"disk_config sda ; sdb sdc\n"
+"primary   /var          2048       ; raid0 md0\n"
+"primary   swap          4096       ; raid0 md1\n"
+"primary /scratch        1000-      ; raid0 md2"
+msgstr ""
+
+msgid "You can add a parameter <parameter>sched_config</parameter> and set it to the desired I/O Scheduler. The possible values are: noop, anticipatory, deadline and cfq. To set the scheduler to deadline add this line:"
+msgstr ""
+
+msgid "\n"
+"sched_config deadline"
+msgstr ""
+
+msgid "Diskgroups"
+msgstr ""
+
+msgid "Similar to Softgroups you can divide your cluster into groups with different hard disk setups. The file <filename>/etc/qlustar/common/disk-configs/diskgroups</filename> defines the groups and should be created by the ql-cluster-portal. It may look like this:"
+msgstr ""
+
+msgid "\n"
+"moreswap: beo-01 beo-02 beo-03 beo-04"
+msgstr ""
+
+msgid "Now the file <filename>/etc/qlustar/common/disk-configs/initdisc.cf.moreswap</filename> could have this content:"
+msgstr ""
+
+msgid ""
+"\n"
+"disk_config sda\n"
+"primary   /var           1024       ;\n"
+"primary   swap           16384      ;\n"
+"primary   /scratch       1000-      ;\n"
+"	     "
+msgstr ""
+
+msgid "and hosts <systemitem class=\"systemname\">beo-01</systemitem> - <systemitem class=\"systemname\">beo-04</systemitem> will have more swap space available."
+msgstr ""
+
+msgid "Mail Transport Agent"
+msgstr ""
+
+msgid "<primary>Node Customization</primary> <secondary>Mail Transport Agent</secondary>"
+msgstr ""
+
+msgid "By default the compute-nodes do not send mail. You can however activate the simple MTA ssmtp. In the file <filename>/etc/qlustar/common/beobox.conf</filename> you can specify to use it:"
+msgstr ""
+
+msgid "\n"
+"BEOBOX_MAILER=ssmtp"
+msgstr ""
+
+msgid "The configuration can be found in the directory <filename>/etc/qlustar/common/ssmtp/</filename> and consists of two files, <filename>ssmtp.conf</filename> and <filename>revaliases</filename>. In <filename>ssmtp.conf</filename> you should set these parameters:"
+msgstr ""
+
+msgid "Root"
+msgstr ""
+
+msgid "The address to send mail to for users with id less than 1000."
+msgstr ""
+
+msgid "Mailhub"
+msgstr ""
+
+msgid "The host to send all mail to."
+msgstr ""
+
+msgid "RewriteDomain"
+msgstr ""
+
+msgid "Make all mail look like originating from this domain."
+msgstr ""
+
+msgid "FromLineOverride"
+msgstr ""
+
+msgid "Allow users to override the domain, must be “yes” or “no”."
+msgstr ""
+
+msgid "Hostname"
+msgstr ""
+
+msgid "The fully qualified name of this host"
+msgstr ""
+
+msgid "An example configuration file would be:"
+msgstr ""
+
+msgid ""
+"\n"
+"Root=user@domain.com\n"
+"Mailhub=relayhost\n"
+"RewriteDomain=domain.com\n"
+"FromLineOverride=Yes\n"
+"Hostname=thishost.domain.com"
+msgstr ""
+
+msgid "In the file <filename>revaliases</filename> you can specify how mails to local accounts should be forwarded to outgoing addresses and which mail server to use. Example:"
+msgstr ""
+
+msgid "\n"
+"user:user@mailprovider.com:mailserver.mailprovider.com"
+msgstr ""
+
+msgid "Infiniband"
+msgstr ""
+
+msgid "<primary>Node Customization</primary> <secondary>Infiniband</secondary>"
+msgstr ""
+
+msgid "If the dynamically created file <filename>/etc/qlustar/options.d/ib</filename> exists (see <xref linkend=\"admin-man-sect-node-options\" /> for details on the mechanism), the Infiniband stack will be initialized according to the settings in there as follows:"
+msgstr ""
+
+msgid "The required kernel modules will be loaded"
+msgstr ""
+
+msgid "The IPoIB (IP over IB) adapter <filename>ib0</filename> will receive an IP address."
+msgstr ""
+
+msgid "and the subnet manager OpenSM will be started, if so configured with QluMan."
+msgstr ""
+
+msgid "The configurable options in this file are:"
+msgstr ""
+
+msgid "IB_IP"
+msgstr ""
+
+msgid "the network part of the current address"
+msgstr ""
+
+msgid "IB_MASK"
+msgstr ""
+
+msgid "The network mask of the IB network"
+msgstr ""
+
+msgid "OPENSM_START"
+msgstr ""
+
+msgid "Should OpenSM be started (true/false)"
+msgstr ""
+
+msgid "OPENSM_OPTS"
+msgstr ""
+
+msgid "Command line options for OpenSM"
+msgstr ""
+
+msgid "An example <filename>/etc/qlustar/options.d/ib</filename> options file:"
+msgstr ""
+
+msgid ""
+"\n"
+"IB_IP=172.16.0.200\n"
+"IB_MASK=255.255.255.0\n"
+"OPENSM_START=true\n"
+"OPENSM_OPTS=\"-R updn\""
+msgstr ""
+

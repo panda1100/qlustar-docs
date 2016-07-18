@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-18 19:11+0200\n"
+"PO-Revision-Date: 2016-07-18 19:11+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Node Remote Control"
+msgstr ""
+
+msgid "<primary>Remote Control</primary>"
+msgstr ""
+
+msgid "This section describes the tools and configuration options for the remote control of Qlustar cluster nodes."
+msgstr ""
+
+msgid "Serial Console Parameter"
+msgstr ""
+
+msgid "<primary>Remote Control</primary> <secondary>Serial Console Parameter</secondary>"
+msgstr ""
+
+msgid "The default configuration <filename>/etc/qlustar/pxelinux.cfg/default</filename> contains the kernel commandline that is passed to the nodes. If you need to modify the console parameter you can change it there."
+msgstr ""
+
+msgid "Access to the Serial Console"
+msgstr ""
+
+msgid "To access the serial console use the command <command>console-login</command>. It allows to select the node whose console you wish to open. Depending on the type of console you need different keystrokes to exit. If you are using"
+msgstr ""
+
+msgid "ipmiconsole"
+msgstr ""
+
+msgid "then you need to type <keycombo><keycap>&amp;</keycap><keycap>.</keycap></keycombo>"
+msgstr ""
+
+msgid "ipmitool"
+msgstr ""
+
+msgid "then type <keycombo><keycap>~</keycap><keycap>.</keycap></keycombo>"
+msgstr ""
+
+msgid "minicom"
+msgstr ""
+
+msgid "then use <keycombo><keycap>Ctrl-a</keycap><keycap>x</keycap></keycombo>"
+msgstr ""
+
+msgid "IPMI Configuration"
+msgstr ""
+
+msgid "Many computers nowadays are equipped with an Intelligent Platform Management Interface (IPMI). Q-Leap Qlustar allows to automatically configure the ip address of these interfaces. The required configuration files are located in the directory <filename>/etc/qlustar/common/ipmi</filename>. The file <filename>overwrite-settings</filename> determines which hosts should configure the <interfacename>ipmi</interfacename> interface. It contains the name overwrite followed by a regular expression that should match the hostnames. To configure the IPMI interface of all hosts the file should look like this:"
+msgstr ""
+
+msgid ""
+"\n"
+"overwrite: .*\n"
+"    "
+msgstr ""
+
+msgid "The configuration file <filename>ipmi.conf</filename> contains the default settings that can be overwritten by group specific files. The settings are:"
+msgstr ""
+
+msgid "ge_net"
+msgstr ""
+
+msgid "the network of an already configured network interface"
+msgstr ""
+
+msgid "ipmi_net"
+msgstr ""
+
+msgid "the network used for the IPMI network, substitutes ge_net and the result will be the new address"
+msgstr ""
+
+msgid "netmask"
+msgstr ""
+
+msgid "the netmask"
+msgstr ""
+
+msgid "gateway"
+msgstr ""
+
+msgid "the default gateway to use"
+msgstr ""
+
+msgid "lan_channel"
+msgstr ""
+
+msgid "the IPMI channel for the lan interface"
+msgstr ""
+
+msgid "Example:"
+msgstr ""
+
+msgid ""
+"\n"
+"ge_net=192.168.52\n"
+"ipmi_net=10.0.0\n"
+"netmask=255.255.255.0\n"
+"gateway=10.0.0.254\n"
+"lan_channel=1\n"
+"    "
+msgstr ""
+
+msgid "In this example a host with address 192.168.52.1 will configure the IPMI interface with address 10.0.0.1. Groups are defined in the file <filename>ipmigroups</filename>. This file contains group names followed by regular expressions that should match the members of this group."
+msgstr ""
+
+msgid ""
+"\n"
+"grp1:grp2:beo-1[0-9]\n"
+"beo-2[0-9]\n"
+"    "
+msgstr ""
+
+msgid "Members of the group grp1 will use an additional file <filename>ipmi.conf.grp1</filename> and members of the group grp2 the file <filename>ipmi.conf.grp2</filename>. In these files you can overwrite the above default values."
+msgstr ""
+

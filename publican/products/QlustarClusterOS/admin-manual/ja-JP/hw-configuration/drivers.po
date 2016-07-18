@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-18 19:11+0200\n"
+"PO-Revision-Date: 2016-07-18 19:11+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Driver Initialization"
+msgstr ""
+
+msgid "<primary>Driver Initialization</primary>"
+msgstr ""
+
+msgid "This section explains actions necessary to activate and properly configure specific drivers."
+msgstr ""
+
+msgid "Qlogic drivers"
+msgstr ""
+
+msgid "<primary>Qlogic drivers</primary>"
+msgstr ""
+
+msgid "Most Qlogic HCAs need specific firmware that is not part of the Linux kernel. Qlustar's image modules already include the firmware images. However, if any of your head-nodes has a Qlogic adapter, you will have to install the Qlogic firmware package on all these nodes manually as follows:"
+msgstr ""
+
+msgid "<command><prompt>$</prompt> apt-get install firmware-qlogic</command>\n"
+"    "
+msgstr ""
+

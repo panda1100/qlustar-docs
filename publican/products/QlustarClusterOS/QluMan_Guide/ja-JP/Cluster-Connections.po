@@ -1,0 +1,130 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-18 19:09+0200\n"
+"PO-Revision-Date: 2016-07-18 19:09+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Cluster Connections"
+msgstr ""
+
+msgid "Connecting to a Cluster"
+msgstr ""
+
+msgid "Enter Password"
+msgstr ""
+
+msgid "Remember Password"
+msgstr ""
+
+msgid "When starting <application>qluman-qt</application>, it requests the password for your <firstterm>certificate safe</firstterm>. This safe holds the login information for your clusters together with the private keys for the corresponding QluMan user account. The password for the certificate safe is required on every start and whenever changes to the safe need to be written. You can have the client remember the password for the duration it is running by checking the <classname>Remember password</classname> check-box. Without enabling this, you will have to input the password again, whenever changes to the safe need to be written. If you are starting <application>qluman-qt</application> for the first time and therefore have no certificate safe yet, this dialog is skipped and an empty <classname>Connect Cluster</classname> dialog opens directly. See <xref linkend=\"sec-add-cluster\" /> below about how to add a new cluster."
+msgstr ""
+
+msgid "Connect Cluster Dialog"
+msgstr ""
+
+msgid "Select a Cluster Connection"
+msgstr ""
+
+msgid "Having entered the correct password for the certificate safe the <classname>Connect Cluster</classname> dialog opens. The last cluster used will be pre-selected but a different cluster can be selected from the drop-down menu. Click the <guibutton>Connect</guibutton> button to connect to the selected cluster. If this is the first time you connect to this cluster, the client generates a random public/private key pair. These keys will eventually be used for permanent authentification of the chosen user with this cluster. Following this, a connection to the server is made with an attempt to authenticate the client using the one-time token. On success, the server stores the public key of the client for future logins and the client stores both the private and public keys in the certificate safe. This finalizes the initial handshake."
+msgstr ""
+
+msgid "The GUI client asks for the password of the certificate safe to store the generated public/private key pair. It will only do so, when you initially connect with a one-time token. For future connections, it will use the stored key pair to connect and authenticate. The safe contents will then not be changed again."
+msgstr ""
+
+msgid "Managing Clusters"
+msgstr ""
+
+msgid "Starting the connection editor"
+msgstr ""
+
+msgid "The connection editor"
+msgstr ""
+
+msgid "The <classname>Manage Clusters</classname> dialog manages all your accounts on different clusters or as different users on the same cluster. It allows adding new cluster connections, editing existing and removing obsolete ones as well as changing the password for the certificate safe. It can be opened by clicking <guibutton>Edit</guibutton> in the <classname>Connect Cluster</classname> dialog."
+msgstr ""
+
+msgid "Adding a new Cluster"
+msgstr ""
+
+msgid "Adding a new cluster connection"
+msgstr ""
+
+msgid "To add a new cluster click the <guibutton>New</guibutton> button and select <guibutton>New Cluster (paste)</guibutton> or <guibutton>New Cluster (file)</guibutton> from the menu depending on whether you want to paste the one-time token or load it from a file. If you don't have a one-time token for the cluster see <xref linkend=\"sec-User-Auth-Token\" />."
+msgstr ""
+
+msgid "Paste the one-time token data into the dialog and click <guibutton>Decrypt</guibutton> or select the file containing the token. When asked for the password, enter the pin"
+msgstr ""
+
+msgid "Pasting the one-time token"
+msgstr ""
+
+msgid "Using a token from a file"
+msgstr ""
+
+msgid "that was used when creating the token (in case you didn't generate the token yourself, you should have been told the pin by your main cluster administrator). The dialog should then show the cluster/head-node infos that where packed into the one-time token. If you started <application>qluman-qt</application> on your workstation, then you might have to change the <parameter>Local Hostname</parameter> to use the external hostname of the head-node. Similarly, if you changed the port for qlumand or if you're"
+msgstr ""
+
+msgid "Entering the pin"
+msgstr ""
+
+msgid "Customizing the connection"
+msgstr ""
+
+msgid "connecting via port forwarding, you have to adjust that too. The <parameter>Alias</parameter> is the name this cluster will be shown as, when using the drop-down menu in the <classname>Connect Cluster</classname> dialog. Click <guibutton>Ok</guibutton> to add the cluster connection."
+msgstr ""
+
+msgid "Saving the cluster connection"
+msgstr ""
+
+msgid "Certificate password"
+msgstr ""
+
+msgid "Confirm password"
+msgstr ""
+
+msgid "After adding the new cluster select <guibutton>Save</guibutton> to save the changes. If this is your first cluster then it will create the certificate safe and ask you to enter and confirm a password. Otherwise it will ask for the existing password unless the <guibutton>Remember password</guibutton> check-box was enabled."
+msgstr ""
+
+msgid "Sorting multiple clusters"
+msgstr ""
+
+msgid "Adding a connection group"
+msgstr ""
+
+msgid "Naming a connection group"
+msgstr ""
+
+msgid "If multiple cluster connections are registered, the corresponding entries can be reordered using drag&amp;drop. This allows to move them to the desired location in the list. Clusters can also be grouped in sub-menus by first creating a new group (sub_menu) and then dragging cluster entries into it. The tree structure of the <classname>Manage Clusters</classname> dialog will be reflected in the drop-down menu"
+msgstr ""
+
+msgid "Moving a connection to a group"
+msgstr ""
+
+msgid "Selecting a cluster in a group"
+msgstr ""
+
+msgid "of the <classname>Connect Cluster</classname> dialog. This allows a nicely structured layout when dealing with a larger number of clusters as e.g. in the case of service providers. Standard cluster admins will most likely not need this feature."
+msgstr ""
+
+msgid "Changing the certificate safe password"
+msgstr ""
+
+msgid "Select changing the password"
+msgstr ""
+
+msgid "Change password dialog"
+msgstr ""
+
+msgid "OK button disabled if mismatch"
+msgstr ""
+
+msgid "The <classname>Manage Clusters</classname> dialog allows changing the password for the certificate safe. This requires entering the old password for the safe as well as the new password and a confirmation of the new password. The <guibutton>Ok</guibutton> button will only be selectable if the new password and confirmation matches."
+msgstr ""
+

@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-18 19:09+0200\n"
+"PO-Revision-Date: 2016-07-18 19:09+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "GPU Wizard"
+msgstr ""
+
+msgid "Purpose"
+msgstr ""
+
+msgid "When setting up slurm, the general configuration for the hardware is taken from the hosts Hardware Properties. But configuring the GPUs is more complex and has is done through the Slurm Gres Groups as part of the slurm config glass. They are used to specify the type and number of GPUs, to determine what slurm jobs they should run. All the necessary steps for the desired configuration of the nodes can be done manually and also be changed later through the slurm config dialog from the main window."
+msgstr ""
+
+msgid "As a convenient alternative, the <classname>GPU Wizard</classname> guides you through the necessary configuration steps. It uses the auto-detected GPUs of hosts to suggest their optimal configuration options. Furthermore, it tries to keep a balance between the available configuration strategies: Using templates, config sets or individual config classes."
+msgstr ""
+
+msgid "Note: For GPUs to be detected on a host the host must first boot a Qlustar image that includes the nvidia module. Otherwise GPUs will be missed. Only nodes where GPUs have been detected can be configured through the GPU Wizard."
+msgstr ""
+
+msgid "Selecting Hosts"
+msgstr ""
+
+msgid "The first step is to select the hosts that should be configured. Initially, the lists of hosts is empty. One or more of the four buttons at the bottom have to be pressed to pre-select hosts that should be considered. The <guibutton>Unconfigured</guibutton> button adds all hosts that do not have any GPU configured at all. The <guibutton>Partially Configured</guibutton> button adds hosts that already have some GPUs configured correctly but not all of them. The <guibutton>Wrongly Configured</guibutton> button adds hosts, where the configured GPUs do not match the GPUs detected at boot, e.g. when the GPU cards have been swapped for a newer model on the hosts. Finally, the <guibutton>Selected</guibutton> button adds hosts, that have been selected in the enclosure view, including hosts that are configured correctly already."
+msgstr ""
+
+msgid "Note: Only hosts with auto-detected GPUs will be shown even if others are selected."
+msgstr ""
+
+msgid "Once one or more of the buttons are pressed, the affected hosts will show up in the table. To keep things compact, hosts with identically detected GPUs are grouped together and shown in <emphasis>hostlist syntax</emphasis>. Select one of the shown groups and click <guibutton>Next</guibutton> to start the configuration."
+msgstr ""
+

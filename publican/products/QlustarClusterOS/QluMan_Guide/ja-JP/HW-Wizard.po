@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-18 19:09+0200\n"
+"PO-Revision-Date: 2016-07-18 19:09+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Hardware Wizard"
+msgstr ""
+
+msgid "Purpose"
+msgstr ""
+
+msgid "When setting up new hosts, there are a number of configuration or other settings to be made. They are used to specify their hardware configuration, to determine what OS they should boot and to fine-tune the behavior of applications running on them. All the necessary steps for the desired configuration of the nodes can be done manually and also be changed later through the various dialogs from the main window."
+msgstr ""
+
+msgid "As a convenient alternative, the <classname>Hardware Wizard</classname> guides you through the necessary configuration steps with a special emphasis on the hardware configuration. It uses the auto-detected hardware properties of hosts to suggest their optimal configuration options. Furthermore, it tries to keep a balance between the available configuration strategies: Using templates, property/config sets or individual properties/config classes."
+msgstr ""
+
+msgid "Selecting Hosts"
+msgstr ""
+
+msgid "Selecting hosts for configuration"
+msgstr ""
+
+msgid "The first step is to select the hosts that should be configured. Initially, the lists of hosts is empty. One or more of the four buttons at the bottom have to be pressed to pre-select hosts that should be considered. The <guibutton>Unconfigured</guibutton> button adds all hosts that do not have any hardware configured at all. A freshly added host without an assigned <classname>Host Template</classname> will fall into this category. The <guibutton>Partially Configured</guibutton> button adds hosts that already have some hardware configured correctly but not all of it. The <guibutton>Wrongly Configured</guibutton> button adds hosts, where the configured hardware properties do not match the hardware detected at boot, e.g. when nodes have been updated with more ram. Finally, the <guibutton>Selected</guibutton> button adds hosts, that have been selected in the enclosure view, including hosts that are configured correctly already."
+msgstr ""
+
+msgid "Once one or more of the buttons are pressed, the affected hosts will show up in the table. To keep things compact, hosts with identically detected hardware are grouped together and shown in <emphasis>hostlist syntax</emphasis>. By default, all shown groups are selected and will be configured using a single <classname>Host Template</classname> and therefore single <classname>Hardware Property</classname>, <classname>Generic Property</classname> and <classname>Config Set</classname>. The possible differences in hardware configurations within the list of selected hosts will be handled by the wizard with the <emphasis>per host</emphasis> settings. In case all the groups shouldn't use the same <classname>Host Template</classname>, groups may be selected or deselected individually and the remaining ones can be configured by running the wizard again later. Groups of hosts with identical hardware can't be split up though. If this is required, select the hosts individually in the <classname>Enclosure View</classname> and use only the <guibutton>Selected</guibutton> button. Once the desired groups of hosts have been selected click <guibutton>Next</guibutton> to continue configuring them."
+msgstr ""
+
+msgid "Configuring the Host Template"
+msgstr ""
+
+msgid "A well matching Hardware Property set"
+msgstr ""
+
+msgid "As explained in <xref linkend=\"sec-Configuring-Hosts\" /> the major part of a hosts configuration is derived from a <classname>Host Template</classname>. One of the wizard's goals is, to find an existing <classname>Host Template</classname> with a <classname>Hardware Property set</classname> that optimally matches the detected hardware for at least some of the selected hosts. If such a <classname>Host Template</classname> is found, it will be pre-selected and the <guibutton>Use existing Host Template</guibutton> choice will be active."
+msgstr ""
+
+msgid "The settings inherited from this template, are shown underneath in tree format and below the property tree, a list of hosts, that currently use the selected template, is shown for informational purpose."
+msgstr ""
+
+msgid "Tooltip explaining the coloring"
+msgstr ""
+
+msgid "The individual properties belonging to the <classname>Hardware Property Set</classname> of the selected <classname>Host Template</classname> are color-coded, to show how well they fit the detected values of the host groups being configured. Hovering over a hardware property brings up a helpful tool-tip explaining the coloring. A green bulb indicates, that the property matches the detected value for all hosts. A yellow one, that it matches some but not all hosts. This happens, when some of the selected hosts have different hardware and means that the selected template is still a good fit. A red bulb indicates that the value matches none of the hosts and is a bad fit. Such a property value may be changed later in the follow-up pages or a different <classname>Host Template</classname> can be selected right-away."
+msgstr ""
+
+msgid "Choosing alternative Host Templates"
+msgstr ""
+
+msgid "In case the pre-selected <classname>Host Template</classname> is not the desired choice, a different one can be selected from the drop-down menu. The choices are again color-coded to indicate how well they match the detected properties of the selected hosts. Here a green bulb means that the <classname>Host Template</classname> matches the detected hardware of at least one host perfectly. A yellow one means that not all hardware properties for the hosts are part of the template, but at least nothing is configured wrongly."
+msgstr ""
+
+msgid "Finally, a red bulb indicates, that the <classname>Host Template</classname> includes a hardware property, that matches none of the hosts and would be a bad fit. Nonetheless such a template might still be the right choice, since it can be modified for an optimal fit in the follow-up page. Alternatively, the correct hardware properties can be set on a per host basis by the wizard at a later stage ."
+msgstr ""
+
+msgid "Cloning a Host Template"
+msgstr ""
+
+msgid "Generating a new Host Template"
+msgstr ""
+
+msgid "If none of the existing <classname>Host Templates</classname> are suitable, a new one can be created in one of two ways: Either an existing template can be cloned or a completely new one can be created. In both cases, a name for the new template must be given."
+msgstr ""
+
+msgid "Selecting a Hardware Property Set"
+msgstr ""
+
+msgid "Using an existing HW Property Set"
+msgstr ""
+
+msgid "Choose an alternative HW Property Set"
+msgstr ""
+
+msgid "This page selects the <classname>HW Property Set</classname> to be used in the selected <classname>Host Template</classname>. It is the main source for the node's hardware configuration. Like in the previous page an existing <classname>HW Property Set</classname> can be used/cloned or a new one may be created. Most likely an existing set will be suggested by the wizard. Alternatives are selectable from the drop-down menu. The available choices are again color-coded indicating how well they match the detected host properties."
+msgstr ""
+
+msgid "Confirm HW Property Set modification"
+msgstr ""
+
+msgid "Changing the <classname>HW Property Set</classname> at this stage, will affect the selected <classname>Host Template</classname>. If an existing <classname>Host Template</classname> was chosen in the previous page, changing it might affect hosts other than the ones being configured in the wizard. In such a case, the wizard will ask for confirmation that such a change is desired."
+msgstr ""
+
+msgid "Select alternative values for HW properties"
+msgstr ""
+
+msgid "HW Property Set in edit-mode"
+msgstr ""
+
+msgid "A selected existing <classname>HW Property Set</classname> may be modified for a better fit by using the auto-detected <classname>HW Properties</classname> displayed at the bottom right. If multiple groups of hosts are being configured at the same time, the properties, where hosts differ, will have a drop-down menu to select the most suitable value. Once the desired selection is made, the properties can be copied over the existing <classname>HW Property Set</classname> by clicking the <guibutton>&lt;&lt;</guibutton> button. The wizard will ask for confirmation, in case this would impact hosts not currently being configured. Finally, it will set the <classname>HW Property Set</classname> displayed at the bottom left into edit-mode."
+msgstr ""
+
+msgid "Cloning a HW Property Set"
+msgstr ""
+
+msgid "Creating an empty new HW Property Set"
+msgstr ""
+
+msgid "The described behavior is analogous when cloning or creating a new set. The difference between the two cases lies merely in the <classname>HW Properties</classname> that will be pre-selected: While cloning will start with the properties of the cloned set, creating a new one initially will have none."
+msgstr ""
+
+msgid "Adding a new HW Property"
+msgstr ""
+
+msgid "Removing a HW Property"
+msgstr ""
+
+msgid "In all three cases, the <classname>HW Property Set</classname> can be further edited by selecting different values for properties, adding new ones or by removing some of them (both from the context-menu). Once the desired <classname>HW Properties</classname> are selected, click <guibutton>Next</guibutton> to continue."
+msgstr ""
+
+msgid "Resolving Hardware Conflicts"
+msgstr ""
+
+msgid "Resolving conflicts by direct property assignment"
+msgstr ""
+
+msgid "If more than one group of hosts is being configured at the same time or if the selected <classname>HW Property Set</classname> doesn't match all properties of the hosts to be configured, then the <classname>Resolve Hardware Conflict</classname> page will appear next. At the bottom of it, the conflicting or missing <classname>HW Properties</classname> are listed showing the detected value for each group of hosts. If only a single property is missing, the wizard will suggest to add this property individually per host."
+msgstr ""
+
+msgid "Resolving conflicts by direct property set assignment"
+msgstr ""
+
+msgid "On the other hand, if multiple properties are missing, adding a directly assigned <classname>HW Property Set</classname> per host might be preferable and will be the pre-selected choice. There is not really a wrong choice here. To some extent, the chosen option is a matter of taste."
+msgstr ""
+
+msgid "One can also choose <guibutton>configure manually later</guibutton> to tell the wizard to ignore the conflict. Be aware, that this will result in hosts that are only partially or wrongly configured and hence will need to be corrected later."
+msgstr ""
+
+msgid "Resolving by per-host Hardware Property Sets"
+msgstr ""
+
+msgid "Selecting or creating a HW Property Set"
+msgstr ""
+
+msgid "If per-host <classname>HW Property Sets</classname> was chosen in the previous page, the set to be used for each group must be picked here. The Wizard will try to find an existing <classname>HW Property Set</classname> that already contains the correct <classname>Hardware Properties</classname> for each group. If such a set is found, it will be pre-selected. Otherwise, the only option is to generate a new set, for which a name must be entered, before it's possible to continue."
+msgstr ""
+
+msgid "Selecting a Generic Property Set / Config Set"
+msgstr ""
+
+msgid "Selecting a Generic Property Set"
+msgstr ""
+
+msgid "Selecting a Config Set"
+msgstr ""
+
+msgid "To complete the setup of the <classname>Host Template</classname>, a <classname>Generic Property Set</classname> and a <classname>Config Set</classname> must be selected. The two wizard pages handling this are very much alike, and similar to the one for selecting the <classname>HW Property Set</classname>. Again, there are three main options: Using/cloning an existing set, or creating a new empty one. Since there is no auto-detection for the values in these two types of sets, there is no color-coding of the choices in this case."
+msgstr ""
+
+msgid "Selecting Generic Properties"
+msgstr ""
+
+msgid "Selecting values for Config Classes"
+msgstr ""
+
+msgid "An existing set can not be modified in the current <classname>QluMan</classname> version, but if <guibutton>clone existing set</guibutton> or <guibutton>new empty set</guibutton> is chosen, the properties and configs can be added to or removed from the new set. If the hosts have IPMI, the IPMI properties might need to be set in the <classname>Select Generic Property Set</classname> page. On the other hand, in the <classname>Select Config Set</classname> page, the Boot, Disk, and Slurm configs, are the most likely candidates for settings that need to be selected and fine-tuned."
+msgstr ""
+
+msgid "Summary Page"
+msgstr ""
+
+msgid "The wizard's summary page"
+msgstr ""
+
+msgid "This is the concluding page of the wizard. It asks for the final confirmation of all the choices made, before the corresponding settings will actually be stored in the database. At the top of the page, the configurations derived from the <classname>Host Template</classname> (hence common to all hosts) are shown in tree-form. At the bottom, the additional <classname>Hardware Properties</classname> and/or <classname>Hardware Property Sets</classname>, that will be set for each group of hosts on a per-host basis, are listed. In case of conflicts, they potentially override the values of the <classname>Host Template</classname>. Host groups with no per-host overrides are not shown here."
+msgstr ""
+
+msgid "If an existing <classname>Host Template</classname> or <classname>Hardware Property Set</classname> was modified during the wizard procedure, then this is the last chance to drop out. By clicking <guibutton>Finish</guibutton>, all the modifications are made permanent, and the configuration settings will be assigned to the selected hosts. The latter should then be fully configured, and after writing the changes (see <xref linkend=\"sec-Writing-Config-Files\" />), will be ready to (re)boot."
+msgstr ""
+

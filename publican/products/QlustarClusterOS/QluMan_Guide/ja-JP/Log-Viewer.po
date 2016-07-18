@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-18 19:09+0200\n"
+"PO-Revision-Date: 2016-07-18 19:09+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Log Viewer"
+msgstr ""
+
+msgid "Purpose"
+msgstr ""
+
+msgid "Often things happen when one is not looking. For that reason Qluman keeps a log of messages showing what happened, when, where and how important the event was."
+msgstr ""
+
+msgid "Messages indicator button"
+msgstr ""
+
+msgid "At the right bottom of the main window qluman-qt displays a <guibutton>Messages</guibutton>. The button shows the highest priority of pending messages as well as the number of messages pending. Clicking the button opens the <emphasis>Messages</emphasis> window. The <emphasis>Messages</emphasis> window can also be opened through the Manage Cluster -&gt; Messages menu item."
+msgstr ""
+
+msgid "Log Viewer window"
+msgstr ""
+
+msgid "Opening the Messages window shows a list of messages sorted by time with the oldest message at the top. The messages can be sorted ascending and descending by clicking on any of the column headers. Only the short text of each message is shown to keep the window compact. Hovering over a row will show the long text for that row as tool-tip. The long text can also be seen in a separate window by clicking the <guibutton>Details</guibutton> button. The extra window makes it easier to read multi-line messages and allows copy+paste."
+msgstr ""
+
+msgid "Message Filter"
+msgstr ""
+
+msgid "Not every message is of interest to a user, especially messages that have already been seen. Each user can create their own filter for messages by clicking on the <guibutton>Edit Filter</guibutton>. Filter consist of a number of matches shown as rows with an action as well as a default action. The filtering process goes through the rows one by one and if all fields in a row that are set match a message then the action set for the row is executed, the message is hidden from view or included in the messages window. If none of the rows match a message the default action is taken."
+msgstr ""
+
+msgid "The most common filter is to hide message with the <emphasis>seen</emphasis> flag. Without this entry the seen flag has no effect. The filter can be freely edited and can be saved to act as the new default filter or reset to the filter that was saved last."
+msgstr ""
+
