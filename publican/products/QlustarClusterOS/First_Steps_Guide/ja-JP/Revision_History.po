@@ -12,14 +12,14 @@ msgstr ""
 "X-Generator: Publican v4.3.0\n"
 
 msgid "Revision History"
-msgstr ""
+msgstr "改訂履歴"
 
 msgid "Qlustar"
-msgstr ""
+msgstr "Qlustar"
 
 msgid "Doc Team"
-msgstr ""
+msgstr "ドキュメンテーションチーム"
 
 msgid "Initial version"
-msgstr ""
+msgstr "Initial version"
 

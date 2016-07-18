@@ -12,5 +12,5 @@ msgstr ""
 "X-Generator: Publican v4.3.0\n"
 
 msgid "Preface"
-msgstr ""
+msgstr "はじめに"
 

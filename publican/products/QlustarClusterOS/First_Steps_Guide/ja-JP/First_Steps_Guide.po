@@ -12,31 +12,36 @@ msgstr ""
 "X-Generator: Publican v4.3.0\n"
 
 msgid "First Boot"
-msgstr ""
+msgstr "初回起動時の操作"
 
 msgid "Running qlustar-initial-config"
-msgstr ""
+msgstr "qlustar-initial-configの実行"
 
 msgid "After the server has booted the newly installed Qlustar OS, log in as root and start the post-install configuration process by running the command"
-msgstr ""
+msgstr "新たにインストールしたQlustar OSでサーバを起動した後、rootでログインして以下のコマンドを実行し、インストール後設定のプロセスを開始して下さい。"
 
 msgid ""
 "\n"
 "/usr/sbin/qlustar-initial-config\n"
 "	"
 msgstr ""
+"/usr/sbin/qlustar-initial-config\n"
+"       "
 
 msgid "This will first thoroughly check your network connectivity and then complete the installation by executing the remaining configuration steps as detailed below. During the package update process you might be asked whether to keep locally modified configuration files. In this case always choose the option"
-msgstr ""
+msgstr "このプロセスは、始めにネットワークの接続状態を確認し、そして以下に詳細を示す残りの設定手順をを実行してインストールを完了します。パッケージアップデートの途中で、ローカルで変更を加えた設定ファイルを保持するかを聞かれるかもしれません。その場合は常に以下の選択肢を選択して下さい。"
 
 msgid ""
 "\n"
 "keep the local version currently installed.\n"
 "      "
 msgstr ""
+"\n"
+"現在インストールされているローカルの設定ファイルを保持する\n"
+"      "
 
 msgid "Remaining configuration steps run-through"
-msgstr ""
+msgstr "残りの設定手順"
 
 msgid "If your chosen hostname can't be resolved via <firstterm>DNS</firstterm>, you will see a non-fatal error message reminding you that the hostname should be registered in some (external) name service (typically DNS)."
 msgstr ""
