@@ -44,82 +44,82 @@ msgid "Remaining configuration steps run-through"
 msgstr "残りの設定手順"
 
 msgid "If your chosen hostname can't be resolved via <firstterm>DNS</firstterm>, you will see a non-fatal error message reminding you that the hostname should be registered in some (external) name service (typically DNS)."
-msgstr ""
+msgstr "DNSにより名前解決ができないホスト名を選択した場合、なんらかの(外部の)ネームサービス(通常DNS)に登録されたホストネームの使用を促す致命的でないエラーのメッセージが表示されます。"
 
 msgid "Cluster name"
-msgstr ""
+msgstr "クラスタ名"
 
 msgid "Name the cluster"
-msgstr ""
+msgstr "クラスタの名前"
 
 msgid "First, you will be asked for the name of the new Qlustar cluster. This can be any string and is used in some places like the <firstterm>slurm</firstterm> or <firstterm>ganglia</firstterm> configuration."
-msgstr ""
+msgstr "はじめに、新しいQlustarクラスタの名前を入力します。この名前はどのような文字列でも構いません。この名前はslurmやgangliaなどの設定に使用されます。"
 
 msgid "NIS Setup"
-msgstr ""
+msgstr "NISセットアップ"
 
 msgid "Setting up NIS"
-msgstr ""
+msgstr "NISの設定"
 
 msgid "Next is the setup of the <firstterm>NIS</firstterm> database. Just confirm the suggested NIS server by pressing <keycombo><keycap>Ctrl-D</keycap><keycap>Enter</keycap></keycombo> to proceed."
-msgstr ""
+msgstr "次はNISデータベースの設定です。表示されたNISサーバ名を確認し、Ctrl-D Enterを押して処理を進めて下さい。"
 
 msgid "Configuring ssh"
-msgstr ""
+msgstr "sshの設定"
 
 msgid "Creating an SSH key"
-msgstr ""
+msgstr "SSH keyの生成"
 
 msgid "An <firstterm>ssh key</firstterm> for the root user is generated next. You can enter an optional <firstterm>pass-phrase</firstterm> for it. Note however, that a non-empty pass-phrase will have the effect that you will have to specify it any time, you try to ssh to another host in the cluster. If you don't want that, work without a pass-phrase. This key, will be used to enable login by root to any node of the cluster without specifying a password."
-msgstr ""
+msgstr "次にrootユーザのssh keyを生成します。パスフレーズを設定することもできます。しかしながら空ではないパスフレーズを設定した場合、クラスタ内のホスト間でsshする際にいつもそのパスフレーズを入力しなくてはなりません。sshの度にパスフレーズを入力することを望まない場合は、パスフレーズに何も入力せずに手順を進めて下さい。このssh keyはクラスタ内のどのノード間でもパスワードの入力無しにrootユーザがsshログインすることを可能にします。"
 
 msgid "Configuring Nagios"
-msgstr ""
+msgstr "Nagiosの設定"
 
 msgid "Setting the Nagios password"
-msgstr ""
+msgstr "Nagiosパスワードの設定"
 
 msgid "The configuration of <firstterm>Nagios</firstterm> requires you to choose a password for the Nagios admin account. Please type in the password twice."
-msgstr ""
+msgstr "Nagiosの設定では、Nagiosの管理アカウントのパスワードを決める必要があります。パスワードは2回入力して下さい。"
 
 msgid "Configuring QluMan"
-msgstr ""
+msgstr "QluManの設定"
 
 msgid "Bootstrapping QluMan"
-msgstr ""
+msgstr "QluManのブートストラップ"
 
 msgid "<application>QluMan</application>, the Qlustar management framework (see the QluMan Guide), requires a <firstterm>mysql</firstterm> (mariaDB) database. You will be asked for the password of the QluMan DB user next. After entering it, the QluMan database and configuration settings will be initialized. This can take a while, since a number of OS images and chroots (see <xref linkend=\"sec-Adding-Software\" />) will be generated during this step."
-msgstr ""
+msgstr "Qlustarの管理フレームワーク（詳細はQluManガイド参照）QluManは、mysql(mariaDB)データベースを使用します。次にQluManデータベースユーザのパスワードを聞かれます。パスワードを入力した後、QluManデータベースと設定が初期化されます。初期化のステップでは、いくつかのOSイメージとchroots（詳細はソフトウェア追加の節を参照）を生成するため、しばらく時間を要します。"
 
 msgid "Configuring Slurm"
-msgstr ""
+msgstr "Slurmの設定"
 
 msgid "Setting the Slurm DB password"
-msgstr ""
+msgstr "Slurmデータベースパスワードの設定"
 
 msgid "If slurm was selected as the cluster resource manager, its configuration requires the generation of a <firstterm>munge key</firstterm> and the specification of a password for the slurm mysql account. Enter the chosen password twice when asked for it. Note that the slurm database daemon is also being configured by this process. Hence, you will be ready to take full advantage of the accounting features of slurm."
-msgstr ""
+msgstr "slurmをクラスタのリソース管理に選択した場合、muge keyの生成とslurmのmysqlアカウントのパスワードの設定を行います。パスワードを聞かれたら、２回パスワードを入力して下さい。slurmデータベースのデーモンは、この設定プロセスで同じく設定されます。従って、slurmのアカウンティング機能の利点を全て利用できる準備が整うのです。"
 
 msgid "Configuring the virtual Demo Cluster"
-msgstr ""
+msgstr "仮想デモクラスタの設定"
 
 msgid "Setting up the virtual demo cluster"
-msgstr ""
+msgstr "仮想デモを設定する"
 
 msgid "If you have chosen to setup some virtual demo nodes during installation, you will be asked for the user name of a test account that can be used to explore the cluster. The account will be generated with the default password for the cluster (see the information on the screen)."
-msgstr ""
+msgstr "インストールの過程でいくつかの仮想デモノードのセットアップを選択した場合、クラスタのテスト利用に使用するテストアカウントのユーザ名を聞かれます。このアカウントは自動生成されるデフォルトパスワードと共に発行されます（詳細はスクリーンに表示されます）。"
 
 msgid "Setting the MariaDB root password"
-msgstr ""
+msgstr "MariaDBのrootパスワードの設定"
 
 msgid "To conclude the configuration procedure, you will be asked to set the password for the MariaDB/MySQL root account. Setting a password here is important. It prevents unauthorized access to the Qlustar or other databases on your head-node."
-msgstr ""
+msgstr "設定手順の締めくくりでは、MariaDB/MySQLのrootカウントのパスワードを聞かれます。ここで設定するパスワードは重要です。Qlustarや管理ノード上の他のデーターベースに許可なくアクセスすることを防ぎます。"
 
 msgid "Final Reboot"
-msgstr ""
+msgstr "さいごに再起動"
 
 msgid "Please reboot again once all the previous steps are complete (e.g. by typing the command <command>shutdown -r</command> now ). After the head-node is up and running again, test its network connectivity by pinging its public IP address (hostname). Do the same for the virtual front-end node, if you have chosen to configure one. It should have booted as well after the head-node is up and running. You can try to login to it using ssh. A test mail should have been sent to the e-mail address(es) you specified during the installation. If you didn't receive one, review your settings in <filename>/etc/aliases</filename> and/or <filename>/etc/postfix/main.cf</filename>. In case some of them are wrong, you can execute"
-msgstr ""
+msgstr "これまでのステップを全て完了したら再び再起動して下さい（例：shutdown -r nowコマンドを実行する）。管理ノードが起動し終えたら、まずpublic IPアドレス（ホストネーム）にpingを打ってネットワークの接続状態を確認して下さい。仮想フロントエンドノードの設定をインストールの過程で選択した場合、仮想フロントエンドに向けて同じくpingを打って下さい。仮想フロントエンドノードは、管理ノードが起動した後に自動で起動しているはずです。仮想フロントエンドノードにsshでログインできるか試して下さい。インストールプロセスで有効なメールリレーサーバの設定を行った場合は、eメールが届きます。もし、有効な設定をしたにも係わらずメールが届かない場合は、/etc/aliases又は/etc/postfix/main.cfに書かれた設定を確認して下さい。もしそれらの設定に誤りがあった場合は、以下のコマンドを実行して"
 
 msgid ""
 "\n"
@@ -127,15 +127,20 @@ msgid ""
 "<command>dpkg-reconfigure postfix</command>\n"
 "	"
 msgstr ""
+"\n"
+"<prompt>0 root@cl-head ~ #</prompt>\n"
+"<command>dpkg-reconfigure postfix</command>\n"
+"       "
+
 
 msgid "to modify them."
-msgstr ""
+msgstr "それらの設定を編集して下さい。"
 
 msgid "Starting the virtual Demo Cluster"
-msgstr ""
+msgstr "仮想デモクラスタの起動"
 
 msgid "If you have chosen to configure a virtual demo-cluster, you can start it by executing the command:"
-msgstr ""
+msgstr "仮想デモクラスタの設定をインストールの過程で選択した場合、以下のコマンドを実行することで仮想デモクラスタを起動できます："
 
 msgid ""
 "\n"
@@ -143,9 +148,13 @@ msgid ""
 "<command>demo-system-start</command>\n"
 "	"
 msgstr ""
+"\n"
+"<prompt>0 root@cl-head ~ #</prompt>\n"
+"<command>demo-system-start</command>\n"
+"       "
 
 msgid "and to stop it"
-msgstr ""
+msgstr "停止するときは"
 
 msgid ""
 "\n"
@@ -153,9 +162,13 @@ msgid ""
 "<command>demo-system-stop</command>\n"
 "	"
 msgstr ""
+"\n"
+"<prompt>0 root@cl-head ~ #</prompt>\n"
+"<command>demo-system-stop</command>\n"
+"       "
 
 msgid "These commands use the configuration file <filename>/etc/qlustar/vm-configs/demo-system.conf</filename>. If you find that the (automatically calculated) amount of RAM per VM is not right, you can change the variable <varname>CN_MEM</varname> to some other value in that file. The consoles of the virtual nodes (and also of the virtual front-end node if you chose to set one up) are accessible in a screen session. Type"
-msgstr ""
+msgstr "これらのコマンドは、設定ファイル/etc/qlustar/vm-configs/demo-system.confを使用しています。もし、（自動で計算された）仮想マシン当たりのメモリ量が適切でない場合は、設定ファイルの中にあるCN_MEM変数の値を変えることができます。仮想ノード（及び仮想フロントエンドノードのセットアップを選択した場合は仮想フロントエンドノード）のコンソールには、screenセッションからアクセス可能です。以下をタイプして"
 
 msgid ""
 "\n"
@@ -163,9 +176,14 @@ msgid ""
 "<command>console-fe-vm</command>\n"
 "	"
 msgstr ""
+"\n"
+"<prompt>0 root@cl-head ~ #</prompt>\n"
+"<command>console-fe-vm</command>\n"
+"       "
+
 
 msgid "to attach to the console session of the virtual FE node and"
-msgstr ""
+msgstr "仮想フロントエンドノードのコンソールセッションにアタッチします。そして、"
 
 msgid ""
 "\n"
@@ -173,9 +191,13 @@ msgid ""
 "<command>console-demo-vms</command>\n"
 "	"
 msgstr ""
+"\n"
+"<prompt>0 root@cl-head ~ #</prompt>\n"
+"<command>console-demo-vms</command>\n"
+"       "
 
 msgid "to attach to the console sessions of the virtual demo cluster nodes. Note that the screen command character is <keycap>Ctrl-t</keycap>. To detach from the screen session, type <keycombo><keycap>Ctrl-t</keycap><keycap>d</keycap></keycombo>, to switch to the next/previous screen type <keycombo><keycap>Ctrl-t</keycap><keycap>n</keycap></keycombo> / <keycombo><keycap>Ctrl-t</keycap><keycap>p</keycap></keycombo>. More details on the usage of screen (or byobu, the Debian customized version we use) are available in the corresponding <literal>man pages</literal>. To check whether all nodes are up and running, type"
-msgstr ""
+msgstr "上記コマンドで仮想デモクラスタノードのコンソールセッションにアタッチします。補足として、screenのコマンドキャラクタはCtrl-tです。screenセッションからデタッチするには、Ctrl-t dと入力して下さい、次/前のscreenにスイッチするにはCtrl-t n/Ctrl-t pと入力して下さい。より詳細なscreen(又はbyobu, Qlustarで使用しているscreenのDebianのカスタマイズバージョン)の使用方法は、該当するmanページに記載されています。全てのノードが起動し利用できる状態か確認するには、以下をタイプします。"
 
 msgid ""
 "\n"
@@ -183,12 +205,16 @@ msgid ""
 "<command>dsh -a uptime</command>\n"
 "	"
 msgstr ""
+"\n"
+"<prompt>0 root@cl-head ~ #</prompt>\n"
+"<command>dsh -a uptime</command>\n"
+"       "
 
 msgid "<command>dsh</command> or <command>pdsh</command> can be used to execute arbitrary commands on groups of nodes. Check their <literal>man pages</literal> and the corresponding section in the QluMan guide for further information."
-msgstr ""
+msgstr "dshまたはpdshはノードのグループに対して任意のコマンドを実行できます。より詳細な情報については、それぞれのmanページ又はQluMan guideの該当する節をご確認下さい。"
 
 msgid "Installed Services"
-msgstr ""
+msgstr "インストールされているサービス"
 
 msgid "At this stage, the following services are configured and running on your head-node:"
 msgstr ""
