@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">Release Notes</title><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v4.3.0" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Qlustar_Cluster_OS-Release_Notes-9.1-en-US-0.0-0" /><meta name="description" content="Qlustar 9.1 is a major feature release of the 9.x series. It ships QluMan 2.1 packed with new features and improvements. The highlights among the numerous component updates and bug fixes are: Slurm 15.8.5, OpenMPI 1.8.8, ZFS 0.6.5, OFED 3.18-1, Lustre 2.8 and CUDA 7.5." /><link rel="stylesheet" type="text/css" href="../../../../../chrome.css" /><link rel="stylesheet" type="text/css" href="../../../../../db4.css" /><link rel="stylesheet" type="text/css" href="../../../../../qlustar/en-US/css/brand.css" /><link rel="stylesheet" type="text/css" href="../../../../../print.css" media="print" /><script type="text/javascript" src="../../../../../jquery-1.7.1.min.js"></script><script type="text/javascript" src="../../../../labels.js"></script><script type="text/javascript" src="../../../../../toc.js"></script><script type="text/javascript">
+		current_book = 'Release_Notes';
+		current_version = '9.1';
+		current_product = 'Qlustar_Cluster_OS';
+	   
+                toc_path = '../../../..';
+		loadMenu();
+          </script></head><body class="toc_embeded "><div id="navigation"></div><div id="floatingtoc" class="hidden"></div><p id="title"><a class="left" href="https://qlustar.com"><img alt="Product Site" src="../../../../../qlustar/en-US/images//image_left.png" /></a><a class="right" href="http://qlustar.com/book/docs/main"><img alt="Documentation Site" src="../../../../../qlustar/en-US/images//image_right.png" /></a></p><ul class="docnav"><li class="home">Release Notes</li></ul><div xml:lang="en-US" class="article" lang="en-US"><div class="titlepage"><div><div class="producttitle"><span xmlns:d="http://docbook.org/ns/docbook" class="productname">Qlustar Cluster OS</span> <span xmlns:d="http://docbook.org/ns/docbook" class="productnumber">9.1</span></div><div><h2 class="title"><a id="idm140299636709152">
+      ⁠</a>Release Notes</h2></div><div><h3 class="subtitle"><em></em></h3></div><div><h3 class="corpauthor">
+		<span class="inlinemediaobject"><img src="../../../../../qlustar/en-US/images/qlustar-logo.png" /></span>
+
+	</h3></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p>
+		<div class="para">
+			Qlustar 9.1 is a major feature release of the 9.x series. It ships QluMan 2.1 packed with new features and improvements. The highlights among the numerous component updates and bug fixes are: Slurm 15.8.5, OpenMPI 1.8.8, ZFS 0.6.5, OFED 3.18-1, Lustre 2.8 and CUDA 7.5.
+		</div>
+
+	</div></div></div></div>
+	
+	 <div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="idm140299636706480">
+      ⁠</a>1. Basic Info</h2></div></div></div>
+		
+		 <div class="para">
+			The Qlustar 9.1 <code class="classname">core platform</code> is based on Ubuntu 14.04.3 and the additional Debian <code class="classname">edge platform</code> on Debian 7.9. They include all security fixes and other package updates published before December 30th 2015. Available security updates relevant to Qlustar 9.1, that have appeared after this date, will be announced on the Qlustar website and in the Qlustar security news-letter.
+		</div>
+
+	</div>
+	 <div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="idm140299636698656">
+      ⁠</a>2. New features</h2></div></div></div>
+		
+		 <div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idm140299636698016">
+      ⁠</a>2.1. QluMan 2.1</h3></div></div></div>
+			
+			 <div class="para">
+				<div class="variablelist"><dl class="variablelist"><dt><span class="term">Certificate based authentification</span></dt><dd>
+							<div class="para">
+								The authentification of a QluMan user is now established using certificates. The elimination of passwords combined with the new initial user registration based on one-time tokens provides an exceptionally high level of security needed for confidential connections over public networks. <a href="../QluMan_Guide/index.html#sec-add-cluster___blank___"> More details …</a>
+							</div>
+						</dd><dt><span class="term">Certificate safe</span></dt><dd>
+							<div class="para">
+								The certificates used to authenticate a QluMan user are stored in an encrypted password protected certificate safe. This safe may contain an unlimited number of connection certificates for different clusters and can easily be managed using the new <code class="classname">Connection Manager</code>. <a href="../QluMan_Guide/index.html#sec-connecting-to-cluster___blank___"> More details …</a>
+							</div>
+						</dd><dt><span class="term">Hardware Wizard</span></dt><dd>
+							<div class="para">
+								The powerful new <code class="classname">HW-Wizard</code> auto-detects partially, wrongly or un-configured hosts and guides through the config steps to set them up in a correct and optimal way. A new type of icon in the <code class="classname">Enclosure View</code> marks hosts that need reconfiguration. <a href="../QluMan_Guide/index.html#chap-HWwizard___blank___"> More details …</a>
+							</div>
+						</dd><dt><span class="term">New node property display</span></dt><dd>
+							<div class="para">
+								Assigned host properties and settings are now shown in a transparent tree structure within the <code class="classname">Enclosure View</code>. This helps to clearly identify what settings are active for a given host and where in the config hierarchy they come from.
+							</div>
+						</dd><dt><span class="term">Direct node property assignment</span></dt><dd>
+							<div class="para">
+								Any property, setting or set thereof can now be directly assigned to nodes. This hugely increases flexibility in node setups.
+							</div>
+						</dd><dt><span class="term">Copy&amp;Paste host configs</span></dt><dd>
+							<div class="para">
+								All assignments of a particular host can now be used to setup a group of other nodes. This is the most simple and fastest way to get new nodes up and running.
+							</div>
+						</dd><dt><span class="term">Improved use of filters in RXEngine</span></dt><dd>
+							<div class="para">
+								The RXEngine now allows the use of host filters for all command types. This allows for extremely speedy selection of the nodes a command should be executed on.
+							</div>
+						</dd></dl></div>
+
+			</div>
+
+		</div>
+
+	</div>
+	 <div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="idm140299636706112">
+      ⁠</a>3. Major component updates</h2></div></div></div>
+		
+		 <div class="para">
+			<div class="variablelist"><dl class="variablelist"><dt><span class="term">Slurm</span></dt><dd>
+						<div class="para">
+							Qlustar 9.1 introduces the Slurm 15.8 series with the current version being 15.8.5.
+						</div>
+
+					</dd><dt><span class="term">OFED Infiniband stack</span></dt><dd>
+						<div class="para">
+							Qlustar 9.1 ships the recently released OFED 3.18-1 Infiniband stack including all necessary components.
+						</div>
+
+					</dd><dt><span class="term">OpenMPI</span></dt><dd>
+						<div class="para">
+							Qlustar 9.1 updates the OpenMPI 1.8 series to the most recent version 1.8.8.
+						</div>
+						 <div class="para">
+							Package versions (<code class="classname">openmpi-icc</code>) compiled with the most recent Intel compiler suite were also added (this requires a manual installation of the Intel compilers using the base install path <code class="filename">/apps/prod/intel/ps_xe_2016</code>).
+						</div>
+
+					</dd><dt><span class="term">Lustre</span></dt><dd>
+						<div class="para">
+							Qlustar 9.1 adds the brand-new Lustre 2.8 release with ZFS as the back-end filesystem.
+						</div>
+
+					</dd><dt><span class="term">ZFS Filesystem</span></dt><dd>
+						<div class="para">
+							Qlustar 9.1 updates ZFS to version 0.6.5.x bringing many improvements and bug-fixes.
+						</div>
+
+					</dd><dt><span class="term">Nvidia CUDA</span></dt><dd>
+						<div class="para">
+							Qlustar 9.1 provides optimal support for Nvidia GPU hardware by supplying pre-compiled and up-to-date kernel drivers as well as CUDA 7.5.
+						</div>
+
+					</dd><dt><span class="term">HA stack</span></dt><dd>
+						<div class="para">
+							Qlustar 9.1 ships corosync 2.3.4, pacemaker 1.1.12 and crmsh 2.1.1 for reliable High-Availability configurations.
+						</div>
+						 <div class="para">
+							Improved Qlustar resource scripts dramatically reduce failover and startup times of HA resources by more than 80%.
+						</div>
+
+					</dd></dl></div>
+
+		</div>
+
+	</div>
+	 <div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="idm140299636666432">
+      ⁠</a>4. Other package version updates</h2></div></div></div>
+		
+		 <div class="para">
+			<div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+					<div class="para">
+						<code class="classname">openblas</code>: 0.2.15
+					</div>
+
+				</li><li class="listitem">
+					<div class="para">
+						<code class="classname">openafs</code>: 1.6.11.1
+					</div>
+
+				</li></ul></div>
+
+		</div>
+
+	</div>
+	 <div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="idm140299636662592">
+      ⁠</a>5. General changes/improvements</h2></div></div></div>
+		
+		 <div class="para">
+			<div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+					<div class="para">
+						<code class="classname">Slurm</code>: The slurmd cgroup RAM limit on compute nodes was increased from 64MB to 128MB. Previously, slurmd sometimes required more than 64MB and consequently crashed.
+					</div>
+
+				</li><li class="listitem">
+					<div class="para">
+						<code class="classname">Disk auto-setup</code>: Add config option to limit ZFS arc cache.
+					</div>
+
+				</li><li class="listitem">
+					<div class="para">
+						<code class="classname">Root shell</code>: New fancy prompt.
+					</div>
+
+				</li><li class="listitem">
+					<div class="para">
+						<code class="classname">Netboot nodes</code>: Set timezone from head-node's config.
+					</div>
+
+				</li></ul></div>
+
+		</div>
+
+	</div>
+	 <div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="idm140299636656272">
+      ⁠</a>6. Important bug fixes</h2></div></div></div>
+		
+		 <div class="para">
+			The boot loader grub used to throw the error message <span class="emphasis"><em>Error: diskfilter writes are not supported</em></span> and hang for a couple of seconds. This is fixed with the upgrade to <code class="classname">grub</code> version <span class="emphasis"><em>2.02~beta2-9ubuntu1.7</em></span>.
+		</div>
+
+	</div>
+	 <div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="idm140299636653968">
+      ⁠</a>7. Changelogs</h2></div></div></div>
+		
+		 <div class="para">
+			A detailed log of changes in the image modules can be found in the directories <code class="filename">/usr/share/doc/qlustar-module-&lt;module-name&gt;-*-amd64-9.1.0</code>. As an example, in the directory <code class="filename">/usr/share/doc/qlustar-module-core-precise-amd64-9.1.0</code> you will find a summary changelog in <code class="filename">core.changelog</code>, a complete list of packages with version numbers entering the current core module in <code class="filename">core.packages.version.gz</code>, a complete changelog of the core modules package versions in <code class="filename">core.packages.version.gz</code> and finally a complete log of changed files in <code class="filename">core.contents.changelog.gz</code>.
+		</div>
+		 <div class="para">
+			As usual, individual changelogs of packages can be found on an installed head-node in the directories <code class="filename">/usr/share/doc/&lt;package name&gt;</code>.
+		</div>
+
+	</div>
+	 <div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="idm140299636649568">
+      ⁠</a>8. Update instructions</h2></div></div></div>
+		
+		 <div class="task"><p class="title"><strong></strong></p><div xmlns:d="http://docbook.org/ns/docbook" class="procedure"><ol class="1"><li class="step">
+				<p class="title"><strong>Preparations</strong></p>
+				 <div class="para">
+					Upgrading to Qlustar 9.1 is only supported from a 9.0.x or a 8.1.x release.
+				</div>
+				 <div class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition">
+					<div class="para">
+						When updating from Qlustar 8.1 you'll have to do some further preparation: 
+						<div class="variablelist"><dl class="variablelist"><dt><span class="term"> Backup Slurm Config </span></dt><dd>
+									<div class="para">
+										Backup your Slurm config file (<code class="filename">/etc/qlustar/common/slurm-llnl/slurm.conf</code>) to a safe place before starting. In Qlustar 9.x, the Slurm config is managed by QluMan and needs to be setup from scratch (see <a href="../QluMan_Guide/index.html#sec-Slurm-Config___blank___"> the corresponding section in the QluMan guide</a>). Use the settings in your backed up config file to accomplish this.
+									</div>
+
+								</dd><dt><span class="term"> Remove conflicting packages </span></dt><dd>
+									<div class="para">
+										Execute the following command as root on the head-node: 
+<pre class="screen">
+<code class="prompt">0 root@cl-head ~ #</code>
+<code class="command">dpkg -l | grep -q kvm-ipxe &amp;&amp; dpkg --purge kvm-ipxe</code>
+</pre>
+
+									</div>
+
+								</dd><dt><span class="term"> Fix munge startup </span></dt><dd>
+									<div class="para">
+										Execute the following commands as root on the head-node: 
+<pre class="screen">
+<code class="prompt">0 root@cl-head ~ #</code>
+<code class="command">cfg=/etc/default/munge</code>
+<code class="prompt">0 root@cl-head ~ #</code>
+<code class="command">[ -w $cfg ] &amp;&amp; echo "OPTIONS=--force" &gt;&gt; $cfg</code>
+</pre>
+
+									</div>
+
+								</dd></dl></div>
+
+					</div>
+
+				</div></div>
+				 <div class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition">
+					<div class="para">
+						Make sure that you have no unwritten changes in the QluMan database. If you do, write them to disk as described in the <a href="../QluMan_Guide/index.html#sec-Writing-Config-Files___blank___"> QluMan Guide</a> before proceeding with the update.
+					</div>
+				</div></div>
+
+			</li><li class="step">
+				<p class="title"><strong>Update to 9.1 package sources list</strong></p>
+				 <div class="para">
+					The Qlustar apt sources list needs to be changed as follows both on the head-node(s) and in all chroot(s) that should be updated. 
+<pre class="screen">
+<code class="prompt">0 root@cl-head ~ #</code>
+<code class="command">apt-get update</code>
+<code class="prompt">0 root@cl-head ~ #</code>
+<code class="command">apt-get install qlustar-sources-list-9.1</code>
+</pre>
+
+				</div>
+
+			</li><li class="step">
+				<p class="title"><strong>Update packages</strong></p>
+				 <div class="para">
+					Now proceed as explained in the <a href="../Administration_Manual/index.html#chap-Updating-Qlustar___blank___"> Qlustar Administration Manual</a>.
+				</div>
+
+			</li><li class="step">
+				<p class="title"><strong>Reboot head-node(s)</strong></p>
+				 <div class="para">
+					Initially only reboot the head-node(s).
+				</div>
+
+			</li><li class="step">
+				<p class="title"><strong>Generate a one-time token</strong></p>
+				 <div class="para">
+					After having updated and rebooted the head-node, you'll have to generate a one-time token with which you'll be able to establish authentification with QluMan. 
+<pre class="screen">
+<code class="prompt">0 root@cl-head ~ #</code>
+<code class="command">qluman-cli --gencert</code>
+</pre>
+					 You'll be prompted for a pin when generating the token. This step is explained <a href="../First_Steps_Guide/index.html#sec-QluMan-Token___blank___"> elsewhere in more detail</a>.
+				</div>
+				 <div class="para">
+					With this one-time token, you can proceed to register yourself using the QluMan GUI as explained in the <a href="../QluMan_Guide/index.html#sec-manage-cluster___blank___"> QluMan Guide</a>.
+				</div>
+
+			</li><li class="step">
+				<p class="title"><strong>Write config file changes</strong></p>
+				 <div class="para">
+					The update might have introduced changes in the QluMan database. These need to be written to disk. Check the QluMan Guide about <a href="../QluMan_Guide/index.html#sec-Writing-Config-Files___blank___"> how to write such changes</a>.
+				</div>
+
+			</li><li class="step">
+				<p class="title"><strong>Regenerating Qlustar images</strong></p>
+				 <div class="para">
+					Most likely you will also have to regenerate your Qlustar images with the 9.1 image modules. To accomplish this, you'll have to select <span class="emphasis"><em>Version 9.1</em></span> in the QluMan <a href="../QluMan_Guide/index.html#sec-Qlustar-OS-Images___blank___"> Qlustar Images dialog</a>.
+				</div>
+
+			</li><li class="step">
+				<p class="title"><strong>Reboot all netboot node(s)</strong></p>
+				 <div class="para">
+					After the regeneration of the images is complete, you can reboot all other nodes in the cluster, including virtual FE nodes. This completes the update procedure.
+				</div>
+
+			</li></ol></div></div>
+	</div>
+</div><div id="site_footer"></div><script type="text/javascript">
+			$("#site_footer").load("../../../../../footer.html");
+		</script></body></html>

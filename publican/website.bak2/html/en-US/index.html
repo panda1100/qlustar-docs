@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Qlustar Docs</title>
+<link rel="stylesheet" href="%%%http-site%%%/chrome.css" type="text/css" />
+<link rel="stylesheet" href="%%%http-site%%%/splash.css" type="text/css" />
+
+<meta name="generator" content="publican " />
+<script type="text/javascript">
+    var current_product = "Products";
+    var current_version = "Versions";
+    var current_book = "Books";
+</script>
+<script type="text/javascript" src="%%%http-site%%%/en-US/labels.js"></script>
+<script type="text/javascript" src="%%%http-site%%%/toc.js"></script>
+<script type="text/javascript" src="%%%http-site%%%/jquery-1.7.1.min.js"></script>
+</head>
+<body class="menu" >
+<div id="wrapper">
+	<div id="menu">
+		<div id="lang_menu" class="breadcrumb">
+			<a href="%%%http-site%%%/en-US/index.html">Qlustar Docs</a>
+		</div>
+		<div id="product_menu" class="breadcrumb">
+			Products<i class="fa fa-caret-down"></i>
+		</div>
+		<div id="lang_menu_2">
+			<div>English <i class="fa fa-caret-down"></i></div>
+			<ul id="lang_menu_list">
+	 			<li><a href="%%%http-site%%%/en-US/index.html">English</a></li>
+			</ul>
+		</div>
+		<div id="search_box">
+				<form target="_top" method="get" action="http://www.google.com/search">
+		<div class="search">
+			<input class="searchtxt" type="text" name="q" value="" />
+			<input class="searchsub" type="submit" value="Search" />
+			<input class="searchchk" type="hidden"  name="sitesearch" value="%%%http-site%%%" />
+		</div>
+	</form>
+
+		</div>
+		<script type="text/javascript">
+			$("#product_menu").load("%%%http-site%%%/en-US/products_menu.html");
+		</script>
+	</div><!-- end menu -->
+
+
+<script type="text/javascript" src="%%%http-site%%%/jquery.jcarousel.min.js"></script>
+<script type="text/javascript">
+
+function mycarousel_initCallback(carousel) {
+	$(".jcarousel-container").hover(function() {
+		carousel.stopAuto();
+	}, function() {
+		carousel.startAuto();
+	});
+};
+
+
+function copyClass($section, cls) {
+	var id = $section.attr('id');
+	if (!id) {
+		return;
+	}
+	var has_class = $section.hasClass(cls);
+	$('a[href="#' + id + '"]').toggleClass(cls, has_class);
+	$('.' + id).toggleClass(cls, has_class);
+}
+
+function ensureConsistency() {
+
+	// We specify which classes are okay to clone 
+	// (classes that will never be used as an ID)
+	var classes = ['disabled', 'disabling', 'active', 'alert', 'online'];
+	var copyAllClasses = function() {
+		var $section = $(this);
+		jQuery.each(classes, function(ix, cls) {
+			copyClass($section, cls);
+		});
+	};
+
+	// We set which elements to listen to the ID/Status of
+	$('.section').each(copyAllClasses);
+	// how can we do this without specifying all elements?
+	$('div').each(copyAllClasses);
+	$('a').each(copyAllClasses);
+	$('span').each(copyAllClasses);
+	$('td').each(copyAllClasses);
+	$('table').each(copyAllClasses); 
+}
+
+ensureConsistency(); // now we pull the trigger
+
+function activateFirstSections($root) {
+	var $sections = $root.children('.section');
+	if ($sections.length === 0) {
+		return;
+	}
+	if ($sections.filter('.active').length > 0) {// BUGBUG need to click here when returning to change URL to match non default tabs
+		return;
+	}
+	var $first_section = $sections.first().addClass('active');
+	activateFirstSections($first_section);
+}
+
+function activateTab(id) {
+// This appears to be bogus
+	var $current_section = $('#content');
+	if (id) {
+		var $elem = $('#' + id);
+		activateElement($elem);
+		activateElement($elem.parents('.section'));
+
+		if ($elem[0].tagName === 'SECTION' && $current_section.has($elem).length > 0) {
+			$current_section = $elem;
+		}
+// but this works
+		activateFirstSections($elem.children('.article:first'));
+	}
+
+	if ($current_section.find('.section.active').length === 0) {
+//		activateFirstSections($current_section.children('.article:first'));
+	}
+
+	$('.section.active').removeClass('hidden');
+	$('.section').not('.active').addClass('hidden');
+	ensureConsistency();
+}
+
+$(window).bind('hashchange', function() {
+	if (window.location.hash === "") {
+		// activate the default section
+		activateTab();
+	} else {
+		//Grab what is after the # from the url bar and remove the #
+		var anchorid = window.location.hash.replace("#", "");
+		activateTab(anchorid);
+	}
+});
+
+$(document).ready(function() {
+	/*Add hidden class display:none*/
+	$(".bottom_products").addClass("hidden");
+	$(".bottom_versions").addClass("hidden");
+	$('#slider').load("%%%http-site%%%/en-US/carousel.html", function(){
+		$('#slider').jcarousel({scroll:1,auto:"8",visible:"1",wrap:"both",  initCallback: mycarousel_initCallback});
+	});	
+	$(window).trigger('hashchange');
+});
+
+</script>
+
+<div class="lang_top_box">
+	<div class="langauge_banner">
+		<ul id="slider">
+		</ul>
+	</div>
+</div>
+<div class="main_content">
+	<div class="side_products">
+		<div class="link">
+			<a href="#Qlustar_Cluster_OS">Qlustar Cluster OS</a>
+		</div>
+		<div class="link">
+			<a href="#Qlustar_DataStack">Qlustar DataStack</a>
+		</div>
+		<div class="link">
+			<a href="#Qlustar_HPC_Stack">Qlustar HPC Stack</a>
+		</div>
+	</div>
+	<div class="lang_bottom_box">
+
+		<div class="article">
+			<div id="splash" class="splash section active">
+<div class="article" lang="en-US" xml:lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="idm140465916884272"> &#x2060;</a>Qlustar Documentation Site</h2></div></div></div><div class="para"> The Qlustar documentation is broken down into different products (categories). These products reflect the different use scenarios for Qlustar. The following categories already exist or will appear in the future: <div class="variablelist"><dl class="variablelist"><dt><span class="term"><a href="Qlustar_Cluster_OS/index.html"> Qlustar Cluster OS</a></span></dt><dd><div class="para"> Covers topics relevant to any Qlustar based cluster. </div></dd><dt><span class="term"><a href="Qlustar_HPC_Stack/index.html"> Qlustar HPC stack</a></span></dt><dd><div class="para"> Covers topics specific to Qlustar HPC clusters. </div></dd><dt><span class="term"><a href="Qlustar_DataStack/index.html"> Qlustar DataStack</a></span></dt><dd><div class="para"> Covers topics specific to Qlustar storage (Lustre, BeeGFS, Ceph, etc.) clusters. </div></dd><dt><span class="term">Qlustar VStack</span></dt><dd><div class="para"> Covers topics specific to Qlustar virtualization (OpenStack) clusters. </div></dd><dt><span class="term">Qlustar BioStack</span></dt><dd><div class="para"> Covers topics specific to Qlustar BioInformatics clusters. </div></dd></dl></div></div></div>
+			</div>
+			<div class="bottom_products section" id="Qlustar_Cluster_OS">
+				<div class="title hidden">
+					<span><a href="%%%http-site%%%/en-US/Qlustar_Cluster_OS/index.html">Qlustar Cluster OS</a></span>
+				</div>
+				<div id="Qlustar_Cluster_OS-splash" class="splash hidden"></div>
+				<!--script type="text/javascript">
+					$("#Qlustar_Cluster_OS-splash").load("%%%http-site%%%/en-US/Qlustar_Cluster_OS/splash.html .para:eq(0)");
+				</script-->
+				<div class="version_tabs">
+					<span class="link active" id="9-1-selector" onclick="activateElement1('Qlustar_Cluster_OS-9-1');activateElement2('9-1-selector');activateElement1('9-1-categories');return false;">9.1</span>
+
+
+
+
+
+
+        <a class="rss link" href="%%%http-site%%%/en-US/opds-Qlustar_Cluster_OS.xml" title="Subcribe to the RSS feed for this product"> <i class="fa fa-rss"></i></a>
+
+
+				</div>
+				<div class="bottom_versions_list version_tabs">					<div class="groups active" id="9-1-categories">
+						<span class="link active" onclick="resetCategories('9-1-categories', 'Qlustar_Cluster_OS-9-1', this);return false;">All</span>
+					</div>				</div>
+				<div class="article">					<div class="bottom_versions section" id="Qlustar_Cluster_OS-9-1">
+					  <div class="grouper">
+								
+						<div class="bottom_books">
+							<div class="titles">
+    
+
+
+
+
+
+		
+	
+
+
+
+        <a href="%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Administration_Manual/index.html" title="Qlustar Docs">Administration Manual <span class='subtitle'>Manual for the configuration, customization and operation of Qlustar clusters.</span></a>
+
+
+							</div>				 			<div class="formats">
+
+
+        <a class="html-single" href="%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Administration_Manual/index.html" title="html-single"> <i class="fa fa-file-o"></i></a>
+
+
+							</div>
+						</div>
+								
+						<div class="bottom_books">
+							<div class="titles">
+    
+
+
+
+
+
+		
+	
+
+
+
+        <a href="%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/First_Steps_Guide/index.html" title="Qlustar Docs">First Steps Guide <span class='subtitle'>This document describes the first steps to perform after a fresh install of a Qlustar head-node.</span></a>
+
+
+							</div>				 			<div class="formats">
+
+
+        <a class="html-single" href="%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/First_Steps_Guide/index.html" title="html-single"> <i class="fa fa-file-o"></i></a>
+
+
+							</div>
+						</div>
+								
+						<div class="bottom_books">
+							<div class="titles">
+    
+
+
+
+
+
+		
+	
+
+
+
+        <a href="%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Installation_Guide/index.html" title="Qlustar Docs">Installation Guide <span class='subtitle'>This document describes the necessary steps to install the Qlustar Cluster Operating System.</span></a>
+
+
+							</div>				 			<div class="formats">
+
+
+        <a class="html-single" href="%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Installation_Guide/index.html" title="html-single"> <i class="fa fa-file-o"></i></a>
+
+
+							</div>
+						</div>
+								
+						<div class="bottom_books">
+							<div class="titles">
+    
+
+
+
+
+
+		
+	
+
+
+
+        <a href="%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/QluMan_Guide/index.html" title="Qlustar Docs">QluMan Guide <span class='subtitle'>This is the operation manual for QluMan, the Qlustar cluster management framework.</span></a>
+
+
+							</div>				 			<div class="formats">
+
+
+        <a class="html-single" href="%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/QluMan_Guide/index.html" title="html-single"> <i class="fa fa-file-o"></i></a>
+
+
+							</div>
+						</div>
+								
+						<div class="bottom_books">
+							<div class="titles">
+    
+
+
+
+
+
+
+
+        <a href="%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Release_Notes/index.html" title="Qlustar Docs">Release Notes</a>
+
+
+							</div>				 			<div class="formats">
+
+
+        <a class="html-single" href="%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Release_Notes/index.html" title="html-single"> <i class="fa fa-file-o"></i></a>
+
+
+							</div>
+						</div>
+					  </div> <!-- end grouper-->
+					</div>
+				</div>
+			</div>
+			<div class="bottom_products section" id="Qlustar_DataStack">
+				<div class="title hidden">
+					<span><a href="%%%http-site%%%/en-US/Qlustar_DataStack/index.html">Qlustar DataStack</a></span>
+				</div>
+				<div id="Qlustar_DataStack-splash" class="splash hidden"></div>
+				<!--script type="text/javascript">
+					$("#Qlustar_DataStack-splash").load("%%%http-site%%%/en-US/Qlustar_DataStack/splash.html .para:eq(0)");
+				</script-->
+				<div class="version_tabs">
+					<span class="link active" id="9-1-selector" onclick="activateElement1('Qlustar_DataStack-9-1');activateElement2('9-1-selector');activateElement1('9-1-categories');return false;">9.1</span>
+
+
+
+
+
+
+        <a class="rss link" href="%%%http-site%%%/en-US/opds-Qlustar_DataStack.xml" title="Subcribe to the RSS feed for this product"> <i class="fa fa-rss"></i></a>
+
+
+				</div>
+				<div class="bottom_versions_list version_tabs">					<div class="groups active" id="9-1-categories">
+						<span class="link active" onclick="resetCategories('9-1-categories', 'Qlustar_DataStack-9-1', this);return false;">All</span>
+					</div>				</div>
+				<div class="article">					<div class="bottom_versions section" id="Qlustar_DataStack-9-1">
+					  <div class="grouper">
+								
+						<div class="bottom_books">
+							<div class="titles">
+    
+
+
+
+
+
+		
+	
+
+
+
+        <a href="%%%http-site%%%/en-US/Qlustar_DataStack/9.1/html-single/Quick_Start_Guides/index.html" title="Qlustar Docs">Quick Start Guides <span class='subtitle'>A collection of quick start guides for the components of the Qlustar DataStack.</span></a>
+
+
+							</div>				 			<div class="formats">
+
+
+        <a class="html-single" href="%%%http-site%%%/en-US/Qlustar_DataStack/9.1/html-single/Quick_Start_Guides/index.html" title="html-single"> <i class="fa fa-file-o"></i></a>
+
+
+							</div>
+						</div>
+					  </div> <!-- end grouper-->
+					</div>
+				</div>
+			</div>
+			<div class="bottom_products section" id="Qlustar_HPC_Stack">
+				<div class="title hidden">
+					<span><a href="%%%http-site%%%/en-US/Qlustar_HPC_Stack/index.html">Qlustar HPC Stack</a></span>
+				</div>
+				<div id="Qlustar_HPC_Stack-splash" class="splash hidden"></div>
+				<!--script type="text/javascript">
+					$("#Qlustar_HPC_Stack-splash").load("%%%http-site%%%/en-US/Qlustar_HPC_Stack/splash.html .para:eq(0)");
+				</script-->
+				<div class="version_tabs">
+					<span class="link active" id="9-1-selector" onclick="activateElement1('Qlustar_HPC_Stack-9-1');activateElement2('9-1-selector');activateElement1('9-1-categories');return false;">9.1</span>
+
+
+
+
+
+
+        <a class="rss link" href="%%%http-site%%%/en-US/opds-Qlustar_HPC_Stack.xml" title="Subcribe to the RSS feed for this product"> <i class="fa fa-rss"></i></a>
+
+
+				</div>
+				<div class="bottom_versions_list version_tabs">					<div class="groups active" id="9-1-categories">
+						<span class="link active" onclick="resetCategories('9-1-categories', 'Qlustar_HPC_Stack-9-1', this);return false;">All</span>
+					</div>				</div>
+				<div class="article">					<div class="bottom_versions section" id="Qlustar_HPC_Stack-9-1">
+					  <div class="grouper">
+								
+						<div class="bottom_books">
+							<div class="titles">
+    
+
+
+
+
+
+		
+	
+
+
+
+        <a href="%%%http-site%%%/en-US/Qlustar_HPC_Stack/9.1/html-single/HPC_User_Manual/index.html" title="Qlustar Docs">HPC User Manual <span class='subtitle'>User Manual for Qlustar HPC Clusters</span></a>
+
+
+							</div>				 			<div class="formats">
+
+
+        <a class="html-single" href="%%%http-site%%%/en-US/Qlustar_HPC_Stack/9.1/html-single/HPC_User_Manual/index.html" title="html-single"> <i class="fa fa-file-o"></i></a>
+
+
+							</div>
+						</div>
+					  </div> <!-- end grouper-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div><!--close wrappers-->
+
+</body>
+</html>
+
+

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/splash.html</loc>
+	<lastmod>Fri Jul 22 09:27:40 2016</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/index.html</loc>
+	<lastmod>Fri Jul 22 09:28:51 2016</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Administration_Manual/index.html</loc>
+	<lastmod>2016-07-22 07:28:39</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/First_Steps_Guide/index.html</loc>
+	<lastmod>2016-07-22 07:28:01</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Installation_Guide/index.html</loc>
+	<lastmod>2016-07-22 07:28:10</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/QluMan_Guide/index.html</loc>
+	<lastmod>2016-07-22 07:28:20</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Release_Notes/index.html</loc>
+	<lastmod>2016-07-22 07:28:28</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_DataStack/splash.html</loc>
+	<lastmod>Fri Jul 22 09:27:49 2016</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_DataStack/9.1/index.html</loc>
+	<lastmod>Fri Jul 22 09:28:51 2016</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_DataStack/9.1/html-single/Quick_Start_Guides/index.html</loc>
+	<lastmod>2016-07-22 07:28:49</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_HPC_Stack/9.1/html-single/HPC_User_Manual/index.html</loc>
+	<lastmod>2016-07-22 07:28:58</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/splash.html</loc>
+	<lastmod>Fri Jul 22 09:27:40 2016</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/index.html</loc>
+	<lastmod>Fri Jul 22 09:28:51 2016</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Administration_Manual/index.html</loc>
+	<lastmod>2016-07-22 07:28:39</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/First_Steps_Guide/index.html</loc>
+	<lastmod>2016-07-22 07:28:01</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Installation_Guide/index.html</loc>
+	<lastmod>2016-07-22 07:28:10</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/QluMan_Guide/index.html</loc>
+	<lastmod>2016-07-22 07:28:20</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_Cluster_OS/9.1/html-single/Release_Notes/index.html</loc>
+	<lastmod>2016-07-22 07:28:28</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_DataStack/splash.html</loc>
+	<lastmod>Fri Jul 22 09:27:49 2016</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_DataStack/9.1/index.html</loc>
+	<lastmod>Fri Jul 22 09:28:51 2016</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_DataStack/9.1/html-single/Quick_Start_Guides/index.html</loc>
+	<lastmod>2016-07-22 07:28:49</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>%%%http-site%%%/en-US/Qlustar_HPC_Stack/9.1/html-single/HPC_User_Manual/index.html</loc>
+	<lastmod>2016-07-22 07:28:58</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+</urlset>

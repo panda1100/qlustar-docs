@@ -34,7 +34,7 @@ set -e
 
 VERSION=%version%
 VERSION=0.9
-VERBOSITY=0
+VERBOSITY=2
 SCRIPTNAME="${0##*/}"
 
 # default values

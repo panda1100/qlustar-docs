@@ -44,7 +44,7 @@ msgid "Remaining configuration steps run-through"
 msgstr "残りの設定手順"
 
 msgid "If your chosen hostname can't be resolved via <firstterm>DNS</firstterm>, you will see a non-fatal error message reminding you that the hostname should be registered in some (external) name service (typically DNS)."
-msgstr "DNSにより名前解決ができないホスト名を選択した場合、なんらかの(外部の)ネームサービス(通常DNS)に登録されたホストネームの使用を促す致命的でないエラーのメッセージが表示されます。"
+msgstr "<firstterm>DNS</firstterm>により名前解決ができないホスト名を選択した場合、なんらかの(外部の)ネームサービス(通常DNS)に登録されたホストネームの使用を促す致命的でないエラーのメッセージが表示されます。"
 
 msgid "Cluster name"
 msgstr "クラスタ名"
@@ -53,7 +53,7 @@ msgid "Name the cluster"
 msgstr "クラスタの名前"
 
 msgid "First, you will be asked for the name of the new Qlustar cluster. This can be any string and is used in some places like the <firstterm>slurm</firstterm> or <firstterm>ganglia</firstterm> configuration."
-msgstr "はじめに、新しいQlustarクラスタの名前を入力します。この名前はどのような文字列でも構いません。この名前はslurmやgangliaなどの設定に使用されます。"
+msgstr "はじめに、新しいQlustarクラスタの名前を入力します。この名前はどのような文字列でも構いません。この名前は<firstterm>slurm</firstterm>や<firstterm>ganglia</firstterm>などの設定に使用されます。"
 
 msgid "NIS Setup"
 msgstr "NISセットアップ"
@@ -62,7 +62,7 @@ msgid "Setting up NIS"
 msgstr "NISの設定"
 
 msgid "Next is the setup of the <firstterm>NIS</firstterm> database. Just confirm the suggested NIS server by pressing <keycombo><keycap>Ctrl-D</keycap><keycap>Enter</keycap></keycombo> to proceed."
-msgstr "次はNISデータベースの設定です。表示されたNISサーバ名を確認し、Ctrl-D Enterを押して処理を進めて下さい。"
+msgstr "次は<firstterm>NIS</firstterm>データベースの設定です。表示されたNISサーバ名を確認し、<keycombo><keycap>Ctrl-D</keycap><keycap>Enter</keycap></keycombo>を押して処理を進めて下さい。"
 
 msgid "Configuring ssh"
 msgstr "sshの設定"
@@ -71,7 +71,7 @@ msgid "Creating an SSH key"
 msgstr "SSH keyの生成"
 
 msgid "An <firstterm>ssh key</firstterm> for the root user is generated next. You can enter an optional <firstterm>pass-phrase</firstterm> for it. Note however, that a non-empty pass-phrase will have the effect that you will have to specify it any time, you try to ssh to another host in the cluster. If you don't want that, work without a pass-phrase. This key, will be used to enable login by root to any node of the cluster without specifying a password."
-msgstr "次にrootユーザのssh keyを生成します。パスフレーズを設定することもできます。しかしながら空ではないパスフレーズを設定した場合、クラスタ内のホスト間でsshする際にいつもそのパスフレーズを入力しなくてはなりません。sshの度にパスフレーズを入力することを望まない場合は、パスフレーズに何も入力せずに手順を進めて下さい。このssh keyはクラスタ内のどのノード間でもパスワードの入力無しにrootユーザがsshログインすることを可能にします。"
+msgstr "次にrootユーザの<firstterm>ssh key</firstterm>を生成します。パスフレーズを設定することもできます。しかしながら空ではないパスフレーズを設定した場合、クラスタ内のホスト間でsshする際にいつもそのパスフレーズを入力しなくてはなりません。sshの度にパスフレーズを入力することを望まない場合は、パスフレーズに何も入力せずに手順を進めて下さい。このssh keyはクラスタ内のどのノード間でもパスワードの入力無しにrootユーザがsshログインすることを可能にします。"
 
 msgid "Configuring Nagios"
 msgstr "Nagiosの設定"
@@ -250,13 +250,13 @@ msgid "<application>QluMan</application> server (Qlustar Management)"
 msgstr "QluManサーバ (クラスタ管理)"
 
 msgid "Please note, that you shouldn't install the default Ubuntu MySQL server packages on the head-node, since QluMan requires <link xlink:href=\"https://mariadb.org/___blank___\">MariaDB</link> and packages of the latter conflict with the MySQL packages. MariaDB is a complete and compatible substitute for MySQL."
-msgstr "QluManはMariaDBとMySQLパッケージと共存できないパッケージを必要としているため、管理ノードにUbuntu標準のMySQLサーバをインストールしないで下さい。MariaDBはMySQL互換の完全な代替ソフトウェアです。"
+msgstr "QluManは<link xlink:href=\"https://mariadb.org/___blank___\">MariaDB</link>とMySQLパッケージと共存できないパッケージを必要としているため、管理ノードにUbuntu標準のMySQLサーバをインストールしないで下さい。MariaDBはMySQL互換の完全な代替ソフトウェアです。"
 
 msgid "Adding Software"
 msgstr "ソフトウェアの追加"
 
 msgid "As explained <link xlink:href=\"../QluMan_Guide/index.html#sec-UnionFS-Chroots___blank___\"> elsewhere</link>, the RAM-based root file-system of a Qlustar compute/storage node can be supplemented by a global NFS-exported chroot to allow access to software not already contained in the boot images themselves. During installation, one chroot per selected <link xlink:href=\"../Installation_Guide/index.html#Edge-Platform-Selection___blank___\">edge platform</link> was automatically created. The chroots are located at <filename>/srv/apps/chroots/<replaceable>chroot name</replaceable></filename>, where <replaceable>chroot name</replaceable> would be trusty or wheezy. Each of them contains a full-featured installation of the corresponding Qlustar edge platform. To change into a chroot, convenience bash shell aliases of the form chroot-<replaceable>chroot name</replaceable> are defined for the root user on the head-node. You may use them as follows (e.g. for Debian/Wheezy, if it was selected at install):"
-msgstr "<link xlink:href=\"../QluMan_Guide/index.html#sec-UnionFS-Chroots___blank___\"> QluMan Guide</link>に記載のように、Qlustar 計算ノード/ストレージノードの起動イメージに含まれていないソフトウェアへのアクセスを可能にするため、Qlustar 計算ノード/ストレージノードのRAMベースルートファイルシステムはNFSで共有されたchrootを追加で重ねています。インストール中、選択した<link xlink:href=\"../Installation_Guide/index.html#Edge-Platform-Selection___blank___\">edge platform</link>ごとに1つのchrootが自動で作成されます。chrootは<filename>/srv/apps/chroots/<replaceable>chroot name</replaceable></filename>に配置しています。<replaceable>chroot name</replaceable>は、trustyまたはwheezyです。それぞれのchrootは、該当するQlustar edge platformの全ての機能が利用できるようインストールしています。chroot環境に移行するには、chroot-<replaceable>chroot name</replaceable>という形式の便利なbashシェルエイリアスが管理ノードのrootユーザに設定済みです。例えば以下のようにして使用します。（例　Debian/Wheezyをインストール中に選択した場合）："
+msgstr "他のドキュメント<link xlink:href=\"../QluMan_Guide/index.html#sec-UnionFS-Chroots___blank___\"> QluMan Guide</link>に記載のように、Qlustar 計算ノード/ストレージノードの起動イメージに含まれていないソフトウェアへのアクセスを可能にするため、Qlustar 計算ノード/ストレージノードのRAMベースルートファイルシステムはNFSで共有されたchrootを追加で重ねています。インストール中、選択した<link xlink:href=\"../Installation_Guide/index.html#Edge-Platform-Selection___blank___\">edge platform</link>ごとに1つのchrootが自動で作成されます。chrootは<filename>/srv/apps/chroots/<replaceable>chroot name</replaceable></filename>に配置しています。<replaceable>chroot name</replaceable>は、trustyまたはwheezyです。それぞれのchrootは、該当するQlustar edge platformの全ての機能が利用できるようインストールしています。chroot環境に移行するには、chroot-<replaceable>chroot name</replaceable>という形式の便利なbashシェルエイリアスが管理ノードのrootユーザに設定済みです。例えば以下のようにして使用します。（例　Debian/Wheezyをインストール中に選択した場合）："
 
 msgid ""
 "\n"
@@ -411,7 +411,7 @@ msgstr ""
 "         "
 
 msgid "This should bring up the <firstterm>Management Console</firstterm>. Using the one-time token generated as explained above you will now be able to add the cluster to the list of available connections. (Details about this are explained in the <link xlink:href=\"../QluMan_Guide/index.html#sec-add-cluster___blank___\">QluMan Guide</link>)."
-msgstr "これにより管理コンソールが表示されます。上で生成したワンタイムトークンを使用して、利用可能なコネクションのリストにクラスタを追加することができます。（詳細は、link xlink:href=\"../QluMan_Guide/index.html#sec-add-cluster___blank___\">QluMan Guide</link>に記載しています。）"
+msgstr "これにより管理コンソールが表示されます。上で生成したワンタイムトークンを使用して、利用可能なコネクションのリストにクラスタを追加することができます。（詳細は、<link xlink:href=\"../QluMan_Guide/index.html#sec-add-cluster___blank___\">QluMan Guide</link>に記載しています。）"
 
 msgid "Installing the QluMan GUI on a workstation"
 msgstr "ワークステーションにQluMan GUIをインストール"

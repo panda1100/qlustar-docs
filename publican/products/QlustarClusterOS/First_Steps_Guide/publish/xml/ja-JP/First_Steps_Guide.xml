@@ -1,0 +1,568 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE book [
+<!ENTITY % BOOK_ENTITIES SYSTEM "First_Steps_Guide.ent">
+%BOOK_ENTITIES;
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/share/xml/docbook/schema/dtd/4.5/dbcentx.mod">
+%DOCBOOK_ENTS;
+]>
+<book version="5.0" xml:lang="ja-JP" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<xi:include href="Book_Info.xml" />
+	 <xi:include href="Preface.xml" />
+	 <chapter xml:id="First-boot">
+		<title>初回起動時の操作</title>
+		 <section xml:id="sec-Qlustar-Initial-Config">
+			<title>qlustar-initial-configの実行</title>
+			 <para>
+				新たにインストールしたQlustar OSでサーバを起動した後、rootでログインして以下のコマンドを実行し、インストール後設定のプロセスを開始して下さい。
+<screen>/usr/sbin/qlustar-initial-config
+</screen>
+
+			</para>
+			 <para>
+				このプロセスは、始めにネットワークの接続状態を確認し、そして以下に詳細を示す残りの設定手順をを実行してインストールを完了します。パッケージアップデートの途中で、ローカルで変更を加えた設定ファイルを保持するかを聞かれるかもしれません。その場合は常に以下の選択肢を選択して下さい。
+<screen>
+現在インストールされているローカルの設定ファイルを保持する
+</screen>
+
+			</para>
+			 <task xml:id="task-Remaining-Config-Steps"> <title>残りの設定手順</title>
+			 <procedure>
+				<para>
+					<firstterm>DNS</firstterm>により名前解決ができないホスト名を選択した場合、なんらかの(外部の)ネームサービス(通常DNS)に登録されたホストネームの使用を促す致命的でないエラーのメッセージが表示されます。
+				</para>
+				 <step>
+					<title>クラスタ名</title>
+					 <para>
+						<mediaobject>
+							<imageobject>
+								<imagedata fileref="images/initial-config-1.png" format="PNG" width="85%" />
+							</imageobject>
+							 <textobject>
+								<phrase> Name the cluster </phrase>
+							</textobject>
+							 <caption>
+							<para>
+								クラスタの名前
+							</para>
+							</caption>
+						</mediaobject>
+						はじめに、新しいQlustarクラスタの名前を入力します。この名前はどのような文字列でも構いません。この名前は<firstterm>slurm</firstterm>や<firstterm>ganglia</firstterm>などの設定に使用されます。
+					</para>
+
+				</step>
+				 <step>
+					<title>NISセットアップ</title>
+					 <para>
+						<mediaobject>
+							<imageobject>
+								<imagedata fileref="images/initial-config-3.png" format="PNG" width="85%" />
+							</imageobject>
+							 <textobject>
+								<phrase> Setting up NIS </phrase>
+							</textobject>
+							 <caption>
+							<para>
+								NISの設定
+							</para>
+							</caption>
+						</mediaobject>
+						次は<firstterm>NIS</firstterm>データベースの設定です。表示されたNISサーバ名を確認し、<keycombo><keycap>Ctrl-D</keycap><keycap>Enter</keycap></keycombo>を押して処理を進めて下さい。
+					</para>
+
+				</step>
+				 <step>
+					<title>sshの設定</title>
+					 <para>
+						<mediaobject>
+							<imageobject>
+								<imagedata fileref="images/initial-config-4.png" format="PNG" width="85%" />
+							</imageobject>
+							 <textobject>
+								<phrase> Creating an SSH key </phrase>
+							</textobject>
+							 <caption>
+							<para>
+								SSH keyの生成
+							</para>
+							</caption>
+						</mediaobject>
+						次にrootユーザの<firstterm>ssh key</firstterm>を生成します。パスフレーズを設定することもできます。しかしながら空ではないパスフレーズを設定した場合、クラスタ内のホスト間でsshする際にいつもそのパスフレーズを入力しなくてはなりません。sshの度にパスフレーズを入力することを望まない場合は、パスフレーズに何も入力せずに手順を進めて下さい。このssh keyはクラスタ内のどのノード間でもパスワードの入力無しにrootユーザがsshログインすることを可能にします。
+					</para>
+
+				</step>
+				 <step>
+					<title>Nagiosの設定</title>
+					 <para>
+						<mediaobject>
+							<imageobject>
+								<imagedata fileref="images/initial-config-5.png" format="PNG" width="85%" />
+							</imageobject>
+							 <textobject>
+								<phrase> Setting the Nagios password </phrase>
+							</textobject>
+							 <caption>
+							<para>
+								Nagiosパスワードの設定
+							</para>
+							</caption>
+						</mediaobject>
+						Nagiosの設定では、Nagiosの管理アカウントのパスワードを決める必要があります。パスワードは2回入力して下さい。
+					</para>
+
+				</step>
+				 <step>
+					<title>QluManの設定</title>
+					 <para>
+						<mediaobject>
+							<imageobject>
+								<imagedata fileref="images/initial-config-7.png" format="PNG" width="85%" />
+							</imageobject>
+							 <textobject>
+								<phrase> Bootstrapping QluMan </phrase>
+							</textobject>
+							 <caption>
+							<para>
+								QluManのブートストラップ
+							</para>
+							</caption>
+						</mediaobject>
+						Qlustarの管理フレームワーク（詳細はQluManガイド参照）QluManは、mysql(mariaDB)データベースを使用します。次にQluManデータベースユーザのパスワードを聞かれます。パスワードを入力した後、QluManデータベースと設定が初期化されます。初期化のステップでは、いくつかのOSイメージとchroots（詳細はソフトウェア追加の節を参照）を生成するため、しばらく時間を要します。
+					</para>
+
+				</step>
+				 <step>
+					<title>Slurmの設定</title>
+					 <para>
+						<mediaobject>
+							<imageobject>
+								<imagedata fileref="images/initial-config-9.png" format="PNG" width="85%" />
+							</imageobject>
+							 <textobject>
+								<phrase> Setting the Slurm DB password </phrase>
+							</textobject>
+							 <caption>
+							<para>
+								Slurmデータベースパスワードの設定
+							</para>
+							</caption>
+						</mediaobject>
+						slurmをクラスタのリソース管理に選択した場合、muge keyの生成とslurmのmysqlアカウントのパスワードの設定を行います。パスワードを聞かれたら、２回パスワードを入力して下さい。slurmデータベースのデーモンは、この設定プロセスで同じく設定されます。従って、slurmのアカウンティング機能の利点を全て利用できる準備が整うのです。
+					</para>
+
+				</step>
+				 <step>
+					<title>仮想デモクラスタの設定</title>
+					 <para>
+						<mediaobject>
+							<imageobject>
+								<imagedata fileref="images/initial-config-10.png" format="PNG" width="85%" />
+							</imageobject>
+							 <textobject>
+								<phrase> Setting up the virtual demo cluster </phrase>
+							</textobject>
+							 <caption>
+							<para>
+								仮想デモを設定する
+							</para>
+							</caption>
+						</mediaobject>
+						インストールの過程でいくつかの仮想デモノードのセットアップを選択した場合、クラスタのテスト利用に使用するテストアカウントのユーザ名を聞かれます。このアカウントは自動生成されるデフォルトパスワードと共に発行されます（詳細はスクリーンに表示されます）。
+					</para>
+
+				</step>
+				 <step>
+					<title>MariaDBのrootパスワードの設定</title>
+					 <para>
+						設定手順の締めくくりでは、MariaDB/MySQLのrootカウントのパスワードを聞かれます。ここで設定するパスワードは重要です。Qlustarや管理ノード上の他のデーターベースに許可なくアクセスすることを防ぎます。
+					</para>
+
+				</step>
+
+			</procedure>
+			 </task>
+		</section>
+		 <section xml:id="sec-Final-Reboot">
+			<title>さいごに再起動</title>
+			 <para>
+				これまでのステップを全て完了したら再び再起動して下さい（例：shutdown -r nowコマンドを実行する）。管理ノードが起動し終えたら、まずpublic IPアドレス（ホストネーム）にpingを打ってネットワークの接続状態を確認して下さい。仮想フロントエンドノードの設定をインストールの過程で選択した場合、仮想フロントエンドに向けて同じくpingを打って下さい。仮想フロントエンドノードは、管理ノードが起動した後に自動で起動しているはずです。仮想フロントエンドノードにsshでログインできるか試して下さい。インストールプロセスで有効なメールリレーサーバの設定を行った場合は、eメールが届きます。もし、有効な設定をしたにも係わらずメールが届かない場合は、/etc/aliases又は/etc/postfix/main.cfに書かれた設定を確認して下さい。もしそれらの設定に誤りがあった場合は、以下のコマンドを実行して
+<screen>
+<prompt>0 root@cl-head ~ #</prompt>
+<command>dpkg-reconfigure postfix</command>
+</screen>
+				それらの設定を編集して下さい。
+			</para>
+
+		</section>
+		 <section xml:id="sec-Starting-Virtual-Demo-Cluster">
+			<title>仮想デモクラスタの起動</title>
+			 <para>
+				仮想デモクラスタの設定をインストールの過程で選択した場合、以下のコマンドを実行することで仮想デモクラスタを起動できます：
+<screen>
+<prompt>0 root@cl-head ~ #</prompt>
+<command>demo-system-start</command>
+</screen>
+				停止するときは
+<screen>
+<prompt>0 root@cl-head ~ #</prompt>
+<command>demo-system-stop</command>
+</screen>
+				これらのコマンドは、設定ファイル/etc/qlustar/vm-configs/demo-system.confを使用しています。もし、（自動で計算された）仮想マシン当たりのメモリ量が適切でない場合は、設定ファイルの中にあるCN_MEM変数の値を変えることができます。仮想ノード（及び仮想フロントエンドノードのセットアップを選択した場合は仮想フロントエンドノード）のコンソールには、screenセッションからアクセス可能です。以下をタイプして
+<screen>
+<prompt>0 root@cl-head ~ #</prompt>
+<command>console-fe-vm</command>
+</screen>
+				仮想フロントエンドノードのコンソールセッションにアタッチします。そして、
+<screen>
+<prompt>0 root@cl-head ~ #</prompt>
+<command>console-demo-vms</command>
+</screen>
+				上記コマンドで仮想デモクラスタノードのコンソールセッションにアタッチします。補足として、screenのコマンドキャラクタはCtrl-tです。screenセッションからデタッチするには、Ctrl-t dと入力して下さい、次/前のscreenにスイッチするにはCtrl-t n/Ctrl-t pと入力して下さい。より詳細なscreen(又はbyobu, Qlustarで使用しているscreenのDebianのカスタマイズバージョン)の使用方法は、該当するmanページに記載されています。全てのノードが起動し利用できる状態か確認するには、以下をタイプします。
+<screen>
+<prompt>0 root@cl-head ~ #</prompt>
+<command>dsh -a uptime</command>
+</screen>
+				dshまたはpdshはノードのグループに対して任意のコマンドを実行できます。より詳細な情報については、それぞれのmanページ又はQluMan guideの該当する節をご確認下さい。
+			</para>
+
+		</section>
+		 <section xml:id="sec-Installed-Services">
+			<title>インストールされているサービス</title>
+			 <para>
+				この段階では、以下のサービスが設定され管理ノード上で動作しています。
+				<itemizedlist>
+					<listitem>
+						<para>
+							Nagios3（モニタリング/アラート）　WEBインターフェスのURLはhttp://headnode/nagios3/。nagiosadminユーザでこれまでに設定したパスワードでログインします。
+						</para>
+
+					</listitem>
+					 <listitem>
+						<para>
+							Ganglia（モニタリング）　URLはhttp://headnode/ganglia/
+						</para>
+
+					</listitem>
+					 <listitem>
+						<para>
+							DHPC/ATFTP起動サービス
+						</para>
+
+					</listitem>
+					 <listitem>
+						<para>
+							NTPタイムサーバのクライアントとサーバ
+						</para>
+
+					</listitem>
+					 <listitem>
+						<para>
+							NFSサーバ。/etc/exportsで設定したディレクトリを共有
+						</para>
+
+					</listitem>
+					 <listitem>
+						<para>
+							選択したソフトウェアパッケージにより:Slurm (DB + control daemon)、Torqueサーバ、Corosync (HA)、Munge (slurm/torque用の認証サービス)。slurmとmungeのみがインストール中に自動で設定されます。TorqueとCorosyncはマニュアルの設定が必要です。
+						</para>
+
+					</listitem>
+					 <listitem>
+						<para>
+							NISサーバ
+						</para>
+
+					</listitem>
+					 <listitem>
+						<para>
+							メールサービスPostfix
+						</para>
+
+					</listitem>
+					 <listitem>
+						<para>
+							MariaDBサーバ (mysql派生)
+						</para>
+
+					</listitem>
+					 <listitem>
+						<para>
+							QluManサーバ (クラスタ管理)
+						</para>
+
+					</listitem>
+
+				</itemizedlist>
+				 <note>
+					<para>
+						QluManは<link xlink:href="https://mariadb.org/___blank___">MariaDB</link>とMySQLパッケージと共存できないパッケージを必要としているため、管理ノードにUbuntu標準のMySQLサーバをインストールしないで下さい。MariaDBはMySQL互換の完全な代替ソフトウェアです。
+					</para>
+
+				</note>
+
+			</para>
+
+		</section>
+		 <section xml:id="sec-Adding-Software">
+			<title>ソフトウェアの追加</title>
+			 <para>
+				他のドキュメント<link xlink:href="../QluMan_Guide/index.html#sec-UnionFS-Chroots___blank___"> QluMan Guide</link>に記載のように、Qlustar 計算ノード/ストレージノードの起動イメージに含まれていないソフトウェアへのアクセスを可能にするため、Qlustar 計算ノード/ストレージノードのRAMベースルートファイルシステムはNFSで共有されたchrootを追加で重ねています。インストール中、選択した<link xlink:href="../Installation_Guide/index.html#Edge-Platform-Selection___blank___">edge platform</link>ごとに1つのchrootが自動で作成されます。chrootは<filename>/srv/apps/chroots/<replaceable>chroot name</replaceable></filename>に配置しています。<replaceable>chroot name</replaceable>は、trustyまたはwheezyです。それぞれのchrootは、該当するQlustar edge platformの全ての機能が利用できるようインストールしています。chroot環境に移行するには、chroot-<replaceable>chroot name</replaceable>という形式の便利なbashシェルエイリアスが管理ノードのrootユーザに設定済みです。例えば以下のようにして使用します。（例　Debian/Wheezyをインストール中に選択した場合）：
+<screen>
+<prompt>0 root@cl-head ~ #</prompt>
+<command>chroot-wheezy</command>
+</screen>
+				一度chroot環境に入ったら、Debian/Ubuntuの通常のソフトウェアパッケージ管理ツールを使用することができます。例）
+<screen>
+<prompt>(trusty) 0 root@cl-head ~ #</prompt>
+<command>apt-get update</command>
+<prompt>(trusty) 0 root@cl-head ~ #</prompt>
+<command>apt-get dist-upgrade</command>
+<prompt>(trusty) 0 root@cl-head ~ #</prompt>
+<command>apt-get install <replaceable>package</replaceable></command>
+<prompt>(trusty) 0 root@cl-head ~ #</prompt>
+<command>exit</command>
+</screen>
+				本メカニズムの利点は、あるchrootにインストールしたソフトウェアはそのchrootを使用するよう設定された計算/ストレージノードに自動的に反映される点です。重要：　通常管理ノードには追加のソフトウェアをインストールする必要はありません。（通常はchrootのみにインストールします。）管理ノードに直接インストールしたパッケージはクラスタ全体からは利用できません。
+			</para>
+
+		</section>
+		 <section xml:id="sec-Running-QluMan">
+			<title>QluManクラスタ管理の実行</title>
+			 <section xml:id="sec-QluMan-Token">
+				<title>adminの初回ログインのためのトークンの発行</title>
+				 <para>
+					Qlustar管理GUI <application>qluman-qt</application>はpublic/privateキーを暗号化と認証の双方に使用します。そのため、まずサーバ・クライアント間のpublicキーの交換が必要になります。通常、GUIを通してadminロールが与えられたユーザが行います。しかしadminログインの初回のみ、管理ノードのrootユーザとしてこれを実行する必要があります。
+<screen>
+<prompt>(trusty) 0 root@cl-head ~ #</prompt>
+<command>qluman-cli --gencert</command>
+Generating one-time login token for user 'admin':
+Cluster  = QL
+Hostname = beosrv-c
+Port     = 6001
+Pubkey   = b'T)5o]@hsjB2qyY&gt;eb:7)8@BA?idMf&gt;kh%^cRhV/#'
+Enter new pin for one-time token: 
+Server infos and one-time login token for user 'admin':
+---[ CUT FROM HERE ]---
+00000191c2MAAcMuyCNQR0DPILx-y-BLCHpITepvG7R3I6452Cdqiu98u4PsM1VWFGqEAG
+V8YN9K5kyJKHtQHGTB1JqZIwt4q0PLArnyNmhCkGLS6VxWWBDtBB9_dGPqLH4OeQ7sZ725
+6XDGgrKo4Dldc_wuCALegczjYV8oc_yZ07X0oIYlzhDlDpk-hTm5bfW8_x904YF0wcv-G-
+nK1ztRg854O7pC_p1YpEJuzWFqWv0e7ffi-ZgkxwfdGGKF3imp4d9yGY4h6Ixdn8TLG2gk
+Z4XQ4dymvSO9hp8mUabfq7prVUOTYeChB2pOrom8XSQxjOoe4Yll5yv6da_CdGq50KrO8Q
+C12Z4Pz2eSbvqXbo7c7DdLRjMc0v0Km3WyljgdsDYbKC5iT75Bgryc
+---[ TO HERE ]---
+</screen>
+					トークンは<parameter>-o &lt;filename&gt;</parameter>オプションを使用することで直接指定したファイル名のファイルに保存することも可能です、そして<parameter>-u &lt;username&gt;</parameter>オプションでトークンを割り当てるユーザを指定することが可能です。
+<screen>
+<prompt>(trusty) 0 root@cl-head ~ #</prompt>
+<command>qluman-cli --gencert -u admin -o token</command>
+Generating one-time login token for user 'admin':
+Cluster  = QL
+Hostname = beosrv-c
+Port     = 6001
+Pubkey   = b'T)5o]@hsjB2qyY&gt;eb:7)8@BA?idMf&gt;kh%^cRhV/#'
+Enter new pin for one-time token: 
+Server infos and one-time login token for user 'admin' saved as 'token'
+</screen>
+					サーバ情報とワンタイムトークンは入力したpinコードで保護されています。これは（emailやチャットプログラム等）暗号化されていないチャンネルでデータを送る際や、NFSのような共有ファイルシステムに保存する場合に重要です。pinは強いパスワードである必要はありません。傍受したトークンを使用する際に簡単には使用できないようにするために使用します。トークンは一度だけ利用できます。そのため一度トークンを使用したら、その後は使用できなくなります。一方で、傍受されたトークンが何者かに使用されてしまった場合、トークンが利用できなくなるため、何かが起きたことに気づくことができます。
+				</para>
+
+			</section>
+			 <section xml:id="sec-Enclosure-View">
+				<title>QluMan GUIの開始</title>
+				 <para>
+					インストール中、Qlustar管理GUI　<firstterm>qluman-qt</firstterm>は仮想フロントエンドノードにインストールされます（仮想フロントエンドノードのセットアップを選択した場合）。仮想フロントエンドノードのセットアップを選択しなかった場合は、管理ノードにセットアップされます。どのようなケースの場合でも管理ノードに<firstterm>qluman-qt</firstterm>をインストールしておきたい場合、他のパッケージと同様以下のようにしてインストールして下さい。
+<screen>
+<prompt>0 root@cl-head ~ #</prompt>
+<command>apt-get install qluman-qt</command>
+</screen>
+					qluman-qtをインストールするには、qluman-qtが依存する沢山のパッケージをインストールする必要があり、管理ノードのアップデートが遅くなるため、管理ノードへのインストールは標準では行われません。可能であれば、<link linkend="sec-QluMan-Workstation">ワークステーションにqluman-qtをインストール</link>し、そこで利用して下さい。もし可能でない場合は、以下のようにqluman-qtがインストールされたノード（フロントエンド又は管理ノード）のqluman-qtをssh（<parameter>-X</parameter>オプションでX11転送を有効にすること）によりリモート実行することも可能です。
+<screen>
+<prompt>0 user@workstation ~ $</prompt>
+<command>ssh -X root@servername qluman-qt</command>
+</screen>
+					これにより管理コンソールが表示されます。上で生成したワンタイムトークンを使用して、利用可能なコネクションのリストにクラスタを追加することができます。（詳細は、<link xlink:href="../QluMan_Guide/index.html#sec-add-cluster___blank___">QluMan Guide</link>に記載しています。）
+				</para>
+
+			</section>
+			 <section xml:id="sec-QluMan-Workstation">
+				<title>ワークステーションにQluMan GUIをインストール</title>
+				 <para>
+					もしワークステーションが現在Qlustarがサポートしているedge platformの中の1つで稼働している場合、QluMan GUIをワークステーションに直接インストールすることが可能です。sshを使用したX11転送の方法と比べ、ローカルでGUIを起動する場合はGUIの応答性が優れるため、こちらの方法を推奨しています。ワークステーションにqluman-qtパッケージをインストールするには、Qlustarリポジトリを<literal>apt sources list</literal>に追加する必要があります。これはワークステーションのrootユーザで以下のコマンドを実行することにより可能です。
+<screen>
+<prompt>0 root@workstation ~ #</prompt>
+<command>dpkg -l software-properties-common &gt; /dev/null 2&gt;&amp;1 || apt-get install software-properties-common</command>
+<prompt>0 root@workstation ~ #</prompt>
+<command>gpg --no-default-keyring --primary-keyring /etc/apt/trusted.gpg --recv-keys E6BA110F3C0BC307</command>
+</screen>
+					Debian/Wheezyワークステーションの場合、1つめのコマンドで<application>software-properties-common</application>ではなく<application>python-software-properties</application>を使用して下さい。2つめのコマンドは、<firstterm>Qlustar PGP archive key</firstterm>をインポートし、以下のような行を表示するはずです。
+<screen>
+gpg: key 3C0BC307: public key "Q-Leap Networks (automatic archive key) &lt;info@q-leap.com&gt;" imported
+</screen>
+
+				</para>
+				 <note>
+					<para>
+						初めて<application>gpg</application>コマンドを実行した時は失敗する場合があります。これはrootユーザが<application>gpg</application>コマンドを1度も実行したことがない場合に起こります。2つめのコマンドの実行に失敗した場合、もう一度同じコマンドを実行して下さい。
+					</para>
+
+				</note>
+				 <para>
+					そして<literal>Ubuntu/Trusty</literal>ワークステーションの場合は以下を実行します。
+<screen>
+<prompt>0 root@workstation ~ #</prompt>
+<command>add-apt-repository 'deb http://repo.qlustar.com/repo/qluman 9.1-trusty main non-free'</command>
+<prompt>0 root@workstation ~ #</prompt>
+<command>add-apt-repository 'deb http://repo.qlustar.com/repo/qluman
+9.1-trusty-proposed-updates main non-free'</command>
+</screen>
+					次にDebian/Wheezyの場合は以下を実行します。
+<screen>
+<prompt>0 root@workstation ~ #</prompt>
+<command>add-apt-repository 'deb http://repo.qlustar.com/repo/qluman 9.1-wheezy main non-free'</command>
+<prompt>0 root@workstation ~ #</prompt>
+<command>add-apt-repository 'deb http://repo.qlustar.com/repo/qluman 9.1-wheezy-proposed-updates main non-free'</command>
+</screen>
+					これでqluman-qtをいつもの方法でインストールできます。
+<screen>
+<prompt>0 root@workstation ~ #</prompt>
+<command>apt-get update</command>
+<prompt>0 root@workstation ~ #</prompt>
+<command>apt-get install qluman-qt</command>
+</screen>
+
+				</para>
+				 <note>
+					<para>
+						Ubuntuで上のコマンドを成功するためには、<literal>universe repository</literal>が<literal>apt sources list</literal>で有効である必要があります。
+					</para>
+
+				</note>
+				 <para>
+					これでワークステーションの一般ユーザがQluMan GUIを起動できる状態になりました。
+<screen>
+<prompt>0 user@workstation ~ $</prompt>
+<command>qluman-qt &amp;</command>
+</screen>
+					 <important>
+						<para>
+							正常なオペレーションを確実とするため、ワークステーションとヘッドノードにインストールしたQluManパッケージは同じバージョンであることが望ましいです。バージョンが異なる組み合わせで動く場合もありますが、通常動作検証があまりなされていません。
+						</para>
+
+					</important>
+
+				</para>
+
+			</section>
+
+		</section>
+		 <section xml:id="sec-Creating-Users">
+			<title>ユーザ作成</title>
+			 <para>
+				クラスタ内のユーザ認証は様々な方法で可能です。従って、どのような方法を使用するかによって作成方法も異なります。一番基本的な方法はNISを使用する方法です。もし外部の<firstterm>LDAP</firstterm>サービス等とユーザ認証情報を同期する必要がない場合は、NISで十分です。NISデータベースは初期のインストールプロセスで作成され、それを用いてユーザが認証されます。他の認証方法のためのユーザ作成については、より複雑で本ガイドの範囲を超えます。いくつかのオプションついては管理マニュアルに記載しています。testユーザの作成は以下のコマンドで行います。
+<screen>
+<prompt>0 root@cl-head ~ #</prompt>
+<command>adduser.sh -u test -n "Test User"</command>
+</screen>
+				<application>adduser.sh</application>スクリプトの動作は、<filename>/etc/qlustar/common/adduser.cf</filename>ファイルの編集によりカスタマイズできます。このファイルは初期ユーザのパスワードも記載しています。
+			</para>
+
+		</section>
+		 <section xml:id="sec-Compiling-MPI">
+			<title>MPIプログラムのコンパイル</title>
+			 <para>
+				<link xlink:href="http://www.mcs.anl.gov/research/projects/mpi/___blank___">MPI (Message Passing Interface)</link>は、Linuxクラスタにおける分散並列プログラミングで業界標準のライブラリです。Qlustarの標準の<firstterm>MPI</firstterm>ライブラリは、<firstterm>OpenMpi</firstterm>です。インストール中にデフォルトのchrootに自動的にインストールされています。2つの小さな"hello world"テストプログラム（1つはCでもう1つはFORTRAN90プログラム）を用いて、MPIが正しくインストールされているかテストすることができます。先ほど作成したtestユーザでフロントエンドノードにログインし、以下を実行して下さい。
+<screen>
+<prompt>0 testuser@cl-front ~ $</prompt>
+<command>mpicc.openmpi-gcc -o hello-world-c hello-world.c</command>
+<prompt>0 testuser@cl-front ~ $</prompt>
+<command>mpif90.openmpi-gcc -o hello-world-f hello-world.f90</command>
+</screen>
+				実行後、2つの実行形式ファイルが生成されます。確認するには以下を実行して下さい。
+<screen>
+<prompt>0 testuser@cl-front ~ $</prompt>
+<command>ls -l hello-world-?</command>
+</screen>
+				これで生成された2つのプログラムでキューイングシステムをテストする準備が完了しました。
+			</para>
+
+		</section>
+		 <section xml:id="sec-Running-MPI">
+			<title>MPIジョブの実行</title>
+			 <para>
+				testユーザでフロントエンドノードにログイン中で、少なくとも2つのデモノードが走っていることを想定しています。以下のコマンドで先ほど作成した2つの"hello world"プログラムをサブミットします（以下はslurm向けのコマンドです）。
+<screen>
+<prompt>0 testuser@cl-front ~ $</prompt>
+<command>OMPI_MCA_btl="tcp,self" salloc -N 2 --ntasks-per-node=2 -p demo \nsrun hello-world-c</command>
+</screen>
+				これで2つのノード上で、1ノードにつき2プロセスのインタラクティブジョブ（合計4プロセス）が実行されます。以下のような出力が得られます。
+<screen>
+salloc: Granted job allocation 19
+cpu_bind=NULL - beo-201, task  0  0 [13959]: mask 0x1
+cpu_bind=NULL - beo-202, task  3  1 [13607]: mask 0x2
+cpu_bind=NULL - beo-202, task  2  0 [13606]: mask 0x1
+cpu_bind=NULL - beo-201, task  1  1 [13960]: mask 0x2
+Hello world from process 1 of 4
+Hello world from process 3 of 4
+Hello world from process 0 of 4
+Hello world from process 2 of 4
+salloc: Relinquishing job allocation 19
+salloc: Job allocation 19 has been revoked.
+</screen>
+				<parameter>cpu_bind=NULL</parameter>で始まる行は、Qlustar9で新しく導入されました。slurm環境で<parameter>cpusets</parameter>の設定の表示を有効したためです。この行は、独立したMPIタスクの計算ノードのCPU/コアに対するbinding（<emphasis role="bold">core affinity</emphasis>）を示しています。これはslurmの<emphasis role="bold">cgroup plugin</emphasis>により実現しています。これは現在標準で有効になっています。プロセスをコアにバインドすることはデータ（メモリ）の局所性を保証し、<firstterm>NUMA systems</firstterm>におけるパフォーマンスを向上させます。ローカルのメモリアクセスは、リモートのメモリにアクセスするよりも高速なためです。昨今のマルチソケットシステムは基本的にNUMAアーキテクチャを採用しています（<productname>Intel Xeon</productname>, <productname>AMD Opteron</productname>, ...）、そのためこの機能は計算機のパフォーマンス向上に関与する機能なのです。
+			</para>
+			 <para>
+				F90バージョンも同様に<filename>hello-world-f90-slurm.sh</filename>スクリプトを用いてバッチジョブとして投入可能です（出力を確認するには、<command>cat slurm-<replaceable>job#</replaceable>.out</command>をジョブ完了後に実行して下さい）。
+<screen>
+<prompt>0 testuser@cl-front ~ $</prompt>
+<command>sbatch -N 2 --ntasks-per-node=2 -p demo hello-world-f90-slurm.sh</command>
+</screen>
+				上の2つの例で使用した<envar>OMPI_MCA_btl="tcp,self"</envar>環境変数は、<firstterm>Infiniband network</firstterm>が見つからないというエラメッセージが出力されることを予防するために使用しています。これは、標準でOpenMPIをIB networkを使用するようコンパイルしているために起こります。もしIB networkが見つからない場合は、TCP networkがバックアップとして使用されます。設定ファイル（chrootの中で、通常以下のファイル名<filename>/srv/apps/chroots/trusty/etc/openmpi/x.y.z/openmpi-mca-params.conf</filename>）を編集することで<firstterm>TCP</firstterm>を標準として使用するよう設定可能です。TCPを標準とするには以下のエントリーを追加します。
+<screen>
+btl = tcp,self
+</screen>
+
+			</para>
+
+		</section>
+		 <section xml:id="sec-Running-Linpack">
+			<title>Linpackベンチマークの実行</title>
+			 <para>
+				<link xlink:href="http://www.top500.org/project/linpack/___blank___">Linpack benchmark</link>は、<link xlink:href="http://www.top500.org/___blank___">Top 500</link>リストの中のスーパーコンピュータを分類するために使用されていました。そのような理由でだいたいのクラスタは、機能性・安定性・パフォーマンスを確認するために最初のプログラムとしてLinpack benchmarkを実行します。Qlustarは最適化コンパイル済みの<firstterm>Linpack</firstterm>（現バージョンの<link xlink:href="http://www.openblas.net/___blank___">OpenBlas library</link>を使用）と、ノード数・ノートあたりのプロセス数・合計のメモリ量などを記載したLinpackの実行に必要なインプットファイルを自動生成するスクリプトを同梱しています。
+			</para>
+			 <para>
+				testユーザは、Linpackジョブの投入を簡潔にするためのエイリアスがいくつか設定済みです。aliasとタイプしてどのようなエイリアスが設定済みか確認してみて下さい。それらのエイリアスは、<filename>$HOME/.bash/alias</filename>に設定されています。投入の例（4つのデモノードが走っていることを想定しています）
+<screen>
+<prompt>0 testuser@cl-front ~ $</prompt>
+<command>linp-4-demo-nodes</command>
+</screen>
+				ジョブが開始したか確認して下さい（以下に似たものが出力されるはずです）
+<screen>
+<prompt>0 testuser@cl-front ~ $</prompt>
+<command>squeue</command>
+JOBID PARTITION     NAME     USER  ST  TIME  NODES  NODELIST(REASON)
+   27      demo linstres     test   R  2:46      4     beo-[201-204]
+</screen>
+				<literal>NODELIST</literal>の中の1つのノードにsshして、topコマンドでLinpackが実行中か確認して下さい。
+<screen>
+<prompt>0 testuser@cl-front ~ $</prompt>
+<command>top</command>
+  PID USER  PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                 
+18307 test  20   0  354m 280m 2764 R  100 28.0   6:42.92 xhpl-openblas           
+18306 test  20   0  354m 294m 2764 R   99 29.3   6:45.09 xhpl-openblas
+</screen>
+				各Linpack実行後の出力は、<filename>$HOME/bench/hpl/run/job-<replaceable>jobid</replaceable>-*/openblas/job-<replaceable>jobid</replaceable>-*-<replaceable>run#</replaceable>.out</filename>ファイルで確認できます。<replaceable>jobid</replaceable>はslurmの<literal>JOBID</literal>（上のsqueueコマンドを見て下さい）、<replaceable>run#</replaceable>は1から始まる整数です。スクリプトに記述している通り、ここで投入したジョブは無期限で実行しています。ループ数の期限つきでLinpackを再度実行する場合は、以下のコマンドを実行して実行中のジョブをキャンセルする必要があります。
+<screen>
+<prompt>0 testuser@cl-front ~ $</prompt>
+<command>scancel <replaceable>jobid</replaceable></command>
+</screen>
+
+			</para>
+
+		</section>
+
+	</chapter>
+	 <xi:include href="Revision_History.xml" />
+	 <index />
+</book>
+

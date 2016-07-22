@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:dc="http://purl.org/dc/terms/"
+      xmlns:opds="http://opds-spec.org/2010/catalog">
+  <id>urn:%%%http-site%%%/opds.xml</id>
+  <link rel="self"  href="%%%http-site%%%/opds.xml" type="application/atom+xml;type=feed;profile=opds-catalog"/>
+  <link rel="start" href="%%%http-site%%%/opds.xml" type="application/atom+xml;type=feed;profile=opds-catalog"/>
+  <link rel="http://opds-spec.org/crawlable" type="application/atom+xml" href="http://bookserver.archive.org/catalog/crawlable" title="Crawlable feed"/>
+  <title>Qlustar Docs</title>
+  <updated>2016-07-22T07:18:12</updated>
+
+  <entry>
+    <title>English</title>
+    <id>en-US/opds.xml</id>
+    <updated>2016-07-22T07:18:12</updated>
+    <dc:language>en-US</dc:language>
+    <content type="text"></content>
+    <link type="application/atom+xml" href="en-US/opds.xml"/>
+ </entry>
+</feed>

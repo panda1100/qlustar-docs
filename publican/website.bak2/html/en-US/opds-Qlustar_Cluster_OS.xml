@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:dc="http://purl.org/dc/terms/"
+      xmlns:opds="http://opds-spec.org/2010/catalog">
+  <link rel="self"  href="%%%http-site%%%/en-US/opds-Qlustar_Cluster_OS.xml" type="application/atom+xml;type=feed;profile=opds-catalog"/>
+  <id>%%%http-site%%%/en-US/opds-Qlustar_Cluster_OS.xml</id>
+  <title>Qlustar Cluster OS</title>
+  <subtitle>Qlustar Cluster OS</subtitle>
+  <updated>2016-07-22T07:28:59</updated>
+
+</feed>
