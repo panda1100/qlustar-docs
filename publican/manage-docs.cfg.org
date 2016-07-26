@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Available products
-products=("Qlustar Cluster OS")
+products=("Qlustar Cluster OS" "Qlustar HPC Stack" "Qlustar Data Stack" \
+  "Qlustar User Tools" "Qlustar V-Stack")
 
 # Global Qlustar publican defs
 QL_LANG=en-US

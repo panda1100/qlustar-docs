@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-25 02:36+0200\n"
+"PO-Revision-Date: 2016-07-25 02:36+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Installation Requirements"
+msgstr "インストール要件"
+
+msgid "To install the Qlustar OS you need:"
+msgstr "Qlustar OSをインストールするには以下が必要です："
+
+msgid "A DVD or a USB flash-drive (minimum size 2GB) loaded with the Qlustar installer"
+msgstr "Qlusutarのインストーラを含んだDVDメディア1枚またはUSBフラッシュドライブ（最小サイズ2GB）"
+
+msgid "A 64bit x86 server/PC (or virtual machine) with at least two network adapters"
+msgstr "少なくとも2つのネットワークアダプタを搭載した64bit x86サーバー/パソコン（または仮想マシン）"
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "This is indented Text."
+msgstr "これはインデントしたテキスト"
+
+msgid "<literal>beegfs-<replaceable>version</replaceable>-server</literal>"
+msgstr "<literal>beegfs-<replaceable>version</replaceable>-server</literal>"
+
+msgid "<firstterm>ZFS</firstterm>"
+msgstr "<firstterm>ZFS</firstterm>"
+
+msgid "<classname>Boot config</classname>"
+msgstr "<classname>Boot config</classname>"
+
+msgid "<parameter>StorNode</parameter>"
+msgstr "<parameter>StorNode</parameter>"
+
+msgid "<link xlink:href=\"http://example.com/example/___blank___\">Linkname</link>"
+msgstr "<link xlink:href=\"http://example.com/example/___blank___\">Linkname</link>"
+
+msgid "This the key-control file regarding the DNS configuration (see <xref endterm=\"Linkname\" linkend=\"admin-man-sect-dns\" />)."
+msgstr "これはDNS設定のためのkey-controlファイル（<xref endterm=\"Linkname\" linkend=\"admin-man-sect-dns\" />）"
+
+msgid "BeeGFS is a <emphasis>parallel cluster file system</emphasis>, developed and maintained by the Fraunhofer Center for High Performance Computing."
+msgstr "BeeGFSは<emphasis>並列クラスタファイルシステム</emphasis>、the Fraunhofer Center for High Performance Computingにより開発とメンテナンスが行われている。"
+
+msgid "It is usually a good idea to <emphasis role=\"bold\">separate user from system activities</emphasis> as much as possible." 
+msgstr " 一般的にできる限り<emphasis role=\"bold\">システムからユーザを分離する</emphasis>ことが望ましい。"
+
+msgid "Given that the downloaded installer image file is named <filename>qlustar-installer.iso.gz</filename> and that the device name of the drive is <filename>/dev/sdb</filename>."
+msgstr "ダウンロードしたインストーライメージファイルを<filename>qlustar-installer.iso.gz</filename>として、ドライバーのデバイスネームを <filename>/dev/sdb</filename>とする。"
+
+msgid "This text is the description of the image"
+msgstr "このテキストはイメージの説明"
+
+msgid "This is an example Task"
+msgstr "これはサンプルタスク"
+
+msgid "First you look at this cheat-sheet"
+msgstr "始めにこのチートシートを見て下さい。"
+
+msgid "Well done!"
+msgstr "良くできました！"
+
+msgid "Then you try to recognize it"
+msgstr "それでこれを認識してみて下さい"
+
+msgid "Do you recognize it?"
+msgstr "認識できましたか？"
+
+msgid "This is a substep"
+msgstr "これはサブスステップです"
+
+msgid "This is the text of the substep"
+msgstr "これはサブステップのテキストです"
+
+msgid "<systemitem class=\"systemname\">sn-2</systemitem> <systemitem class=\"systemname\">beosrv-c</systemitem>"
+msgstr "<systemitem class=\"systemname\">sn-2</systemitem> <systemitem class=\"systemname\">beosrv-c</systemitem>"
+
+msgid "<envar>${HOSTNAME##*-}</envar>"
+msgstr "<envar>${HOSTNAME##*-}</envar>"
+
+msgid "In that case the package <package>bind9</package> should be installed."
+msgstr "その場合は、<package>bind9</package>パッケージをインストールして下さい。"
+
+msgid "These errors are known as <errorname>silent data errors</errorname>, and there is really nothing you can do about it with the standard GNU/Linux"
+msgstr "それらのエラーは<errorname>silent data errors</errorname>として知られています。そして通常のGNU/Linuxではそのエラーについて本当に何もできることがありません。"
+

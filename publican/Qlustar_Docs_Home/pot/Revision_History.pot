@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-25 08:10+0200\n"
+"PO-Revision-Date: 2016-07-25 08:10+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Revision History"
+msgstr ""
+
+msgid "Enter your first name here."
+msgstr ""
+
+msgid "Enter your surname here."
+msgstr ""
+
+msgid "Initial creation by publican"
+msgstr ""
+

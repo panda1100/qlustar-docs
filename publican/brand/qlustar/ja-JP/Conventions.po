@@ -1,0 +1,185 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-25 02:36+0200\n"
+"PO-Revision-Date: 2016-07-25 02:36+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Qlustar Document Conventions"
+msgstr "Qlustarドキュメントの表記方法"
+
+msgid "Qlustar manuals use the following conventions to highlight certain words and phrases and draw attention to specific pieces of information."
+msgstr "Qlustarマニュアルは、特定の単語や語句の強調、特定の情報への注意を促すため、以下の表記方法を使用します。"
+
+msgid "Typographic Conventions"
+msgstr "タイポグラフィック規則"
+
+msgid "Four typographic conventions are used to call attention to specific words and phrases. These conventions, and the circumstances they apply to, are as follows."
+msgstr "特定の単語や語句に注意を促す目的で 4 種類の表記方法を使用しています。"
+
+msgid "<literal>Mono-spaced Bold</literal>"
+msgstr "<literal>等幅の太字</literal>"
+
+msgid "Used to highlight system input, including shell commands, file names and paths. Also used to highlight keys and key combinations. For example:"
+msgstr "シェルコマンド、ファイル名、パスなどシステムへの入力を強調するために使用します。また、キーやキーの組み合わせを強調するためにも使用しています。例："
+
+msgid "To see the contents of the file <filename>my_next_bestselling_novel</filename> in your current working directory, enter the <command>cat my_next_bestselling_novel</command> command at the shell prompt and press <keycap>Enter</keycap> to execute the command."
+msgstr "現在の作業ディレクトリにあるファイル<filename>my_next_bestselling_novel</filename>の内容を表示するには、シェルプロンプトで<command>cat my_next_bestselling_novel</command>コマンドを入力して、 次に<keycap>Enter</keycap>を押してコマンドを実行します。"
+
+msgid "The above includes a file name, a shell command and a key, all presented in mono-spaced bold and all distinguishable thanks to context."
+msgstr "上記ではファイル名、シェルコマンド、キーが含まれています。全て等幅の太字で表示されているので、文章中で全て区別することができるのです。"
+
+msgid "Key combinations can be distinguished from an individual key by the plus sign that connects each part of a key combination. For example:"
+msgstr "キーの組み合わせは、キー単体とは区別することができます。+マークでキーの組み合わせの各要素をつなげるのです。例："
+
+msgid "Press <keycap>Enter</keycap> to execute the command."
+msgstr "コマンドを実行するには<keycap>Enter</keycap>を押します"
+
+msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap><keycap>F2</keycap></keycombo> to switch to a virtual terminal."
+msgstr "仮想ターミナルにスイッチするには、<keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap><keycap>F2</keycap></keycombo>を押します"
+
+msgid "The first example highlights a particular key to press. The second example highlights a key combination: a set of three keys pressed simultaneously."
+msgstr "1つめの例は特定のキーを押すことを強調しています。2つめの例は3つのキーを同時に押すキーの組み合わせ強調しています。"
+
+msgid "If source code is discussed, class names, methods, functions, variable names and returned values mentioned within a paragraph will be presented as above, in <literal>mono-spaced bold</literal>. For example:"
+msgstr "ソースコードについて記載する場合、クラス名、メソッド、関数、変数名、戻り値をパラグラフ内で言及する場合、先ほどと同様に等幅の太字で記載します。例："
+
+msgid "File-related classes include <classname>filesystem</classname> for file systems, <classname>file</classname> for files, and <classname>dir</classname> for directories. Each class has its own associated set of permissions."
+msgstr "ファイルに関連したクラスは、ファイルシステムのために<classname>filesystem</classname>クラス、ファイルのために<classname>file</classname>クラス、ディレクトリのために<classname>dir</classname>クラスをインクルードします。各クラスはそれぞれ関連付けられた権限のセットを所持しています。"
+
+msgid "<application>Proportional Bold</application>"
+msgstr "プロポーショナルの太字"
+
+msgid "This denotes words or phrases encountered on a system, including application names; dialog-box text; labeled buttons; check-box and radio-button labels; menu titles and submenu titles. For example:"
+msgstr "この表記はアプリケーション名、ダイアログボックスのテキスト、ラベル付きボタン、チェックボックス、ラジオボタンのラベル、メニュータイトル、サブメニュータイトルなどシステムに関する表記で登場する単語や語句の表記に使用します。例："
+
+msgid "Choose <menuchoice><guimenu>System</guimenu><guisubmenu>Preferences</guisubmenu><guimenuitem>Mouse</guimenuitem></menuchoice> from the main menu bar to launch <application>Mouse Preferences</application>. In the <guilabel>Buttons</guilabel> tab, select the <guilabel>Left-handed mouse</guilabel> check box and click <guibutton>Close</guibutton> to switch the primary mouse button from the left to the right (making the mouse suitable for use in the left hand)."
+msgstr "<application>Mouse Preferences</application>を起動するために、メインのメニューバーから<menuchoice><guimenu>System</guimenu><guisubmenu>Preferences</guisubmenu><guimenuitem>Mouse</guimenuitem></menuchoice>を選択して下さい。<guilabel>Buttons</guilabel>タブの中から、<guilabel>Left-handed mouse</guilabel>チェックボックスを選択し、<guibutton>Close</guibutton>を押してマウスの主キーを左から右へ変更します（左手でマウスを使いやすいようにするため）。"
+
+msgid "To insert a special character into a <application>gedit</application> file, choose <menuchoice><guimenu>Applications</guimenu><guisubmenu>Accessories</guisubmenu><guimenuitem>Character Map</guimenuitem></menuchoice> from the main menu bar. Next, choose <menuchoice><guimenu>Search</guimenu><guimenuitem>Find…</guimenuitem></menuchoice> from the <application>Character Map</application> menu bar, type the name of the character in the <guilabel>Search</guilabel> field and click <guibutton>Next</guibutton>. The character you sought will be highlighted in the <guilabel>Character Table</guilabel>. Double-click this highlighted character to place it in the <guilabel>Text to copy</guilabel> field and then click the <guibutton>Copy</guibutton> button. Now switch back to your document and choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Paste</guimenuitem></menuchoice> from the <application>gedit</application> menu bar."
+msgstr "<application>gedit</application>ファイルに特殊文字を挿入するため、メインメニューバーから<menuchoice><guimenu>Applications</guimenu><guisubmenu>Accessories</guisubmenu><guimenuitem>Character Map</guimenuitem></menuchoice>を選択します。次に、<application>Character Map</application>メニューバーから<menuchoice><guimenu>Search</guimenu><guimenuitem>Find…</guimenuitem></menuchoice>を選択して、<guilabel>Search</guilabel>フィールドに特殊文字の名前を入力して、<guibutton>Next</guibutton>ボタンを押して下さい。<guilabel>Character Table</guilabel>中で当該文字が強調されます。強調された文字をダブルクリックして<guilabel>Text to copy</guilabel>に特殊文字をセットして、<guibutton>Copy</guibutton>ボタンを押します。ドキュメントに戻り、<application>gedit</application>メニューバーから<menuchoice><guimenu>Edit</guimenu><guimenuitem>Paste</guimenuitem></menuchoice>を選択します。"
+
+msgid "The above text includes application names; system-wide menu names and items; application-specific menu names; and buttons and text found within a GUI interface, all presented in proportional bold and all distinguishable by context."
+msgstr "上記ではアプリケーション名、システム全体のメニュー名・アイテム、アプリケーション固有のメニュー名、GUIインターフェースのボタン・テキスト、全てがプロポーショナルの太字で表記されているため、文章中で区別することができます。"
+
+msgid "<command><replaceable>Mono-spaced Bold Italic</replaceable></command> or <application><replaceable>Proportional Bold Italic</replaceable></application>"
+msgstr "<command><replaceable>等幅の太字でイタリック</replaceable></command>または<application><replaceable>プロポーショナルの太字でイタリック</replaceable></application>"
+
+msgid "Whether mono-spaced bold or proportional bold, the addition of italics indicates replaceable or variable text. Italics denotes text you do not input literally or displayed text that changes depending on circumstance. For example:"
+msgstr "等幅の太字またはプロポーショナルの太字はどちらもイタリックを追加した場合、置き換え可能または条件によって変化するテキストを示します。イタリックは記載通りに入力しないテキストまたは条件によって変化するテキストを表します。例："
+
+msgid "To connect to a remote machine using ssh, type <command>ssh <replaceable>username</replaceable>@<replaceable>domain.name</replaceable></command> at a shell prompt. If the remote machine is <filename>example.com</filename> and your username on that machine is john, type <command>ssh john@example.com</command>."
+msgstr "sshを使用してリモートマシンに接続するには、<command>ssh <replaceable>username</replaceable>@<replaceable>domain.name</replaceable></command>をシェルプロンプトで入力して下さい。リモートマシンが<filename>example.com</filename>でそのマシン上のあなたのユーザ名がjohnの場合、<command>ssh john@example.com</command>と入力して下さい。"
+
+msgid "The <command>mount -o remount <replaceable>file-system</replaceable></command> command remounts the named file system. For example, to remount the <filename>/home</filename> file system, the command is <command>mount -o remount /home</command>."
+msgstr "<command>mount -o remount <replaceable>file-system</replaceable></command>コマンドは指定したファイルシステムを再マウントします。例えば、<filename>/home</filename>ファイルシステムを再マウントする場合、コマンドは<command>mount -o remount /home</command>です。"
+
+msgid "To see the version of a currently installed package, use the <command>rpm -q <replaceable>package</replaceable></command> command. It will return a result as follows: <command><replaceable>package-version-release</replaceable></command>."
+msgstr "現在インストールされているパッケージのバージョンを確認するには、<command>rpm -q <replaceable>package</replaceable></command>コマンドを使用します。コマンドは<command><replaceable>package-version-release</replaceable></command>のような結果を返します。"
+
+msgid "Note the words in bold italics above: username, domain.name, file-system, package, version and release. Each word is a placeholder, either for text you enter when issuing a command or for text displayed by the system."
+msgstr "上記の太字でイタリックの単語は、ユーザ名、ドメイン名、ファイルシステム、パッケージ、バージョン、リリースであることに注目して下さい。それぞれの単語はコマンドを入力する際のテキストのプレースホルダーか、システムによって表示されるテキストのどちらかです。"
+
+msgid "Aside from standard usage for presenting the title of a work, italics denotes the first use of a new and important term. For example:"
+msgstr "タイトルの表示のような標準的な使用方法の他に、イタリックは初めて登場する重要な用語にも使用します。例："
+
+msgid "Publican is a <firstterm>DocBook</firstterm> publishing system."
+msgstr "Publicanは<firstterm>DocBook</firstterm>の発行ツールです。"
+
+msgid "Pull-quote Conventions"
+msgstr "引用の表記方法"
+
+msgid "Terminal output and source code listings are set off visually from the surrounding text."
+msgstr "ターミナル出力とソースコードのリストは他のテキストとは視覚的に異なるよう表示します。"
+
+msgid "Output sent to a terminal is set in <computeroutput>mono-spaced roman</computeroutput> and presented thus:"
+msgstr "ターミナルの出力は<computeroutput>等幅のRoman</computeroutput>がセットされ、以下のように表示されます："
+
+msgid ""
+"books        Desktop   documentation  drafts  mss    photos   stuff  svn\n"
+"books_tests  Desktop1  downloads      images  notes  scripts  svgs\n"
+"    "
+msgstr ""
+"books        Desktop   documentation  drafts  mss    photos   stuff  svn\n"
+"books_tests  Desktop1  downloads      images  notes  scripts  svgs\n"
+"    "
+
+msgid "Commands to be executed on certain nodes of a cluster or the admins workstation are indicated by using descriptive shell prompts including user and hostname. Note that by default, the shell prompt on Qlustar nodes always ends in the newline character, thus commands are typed on the line following the prompt. As mentioned above, the command itself is shown in <computeroutput>mono-spaced bold</computeroutput> and the output of a command in <computeroutput>mono-spaced roman</computeroutput>. Examples:"
+msgstr "クラスターの特定のノードや管理者のワークステーションで実行されるコマンドは、ユーザ名・ホスト名を含んだシェルプロンプトの形式で示します。デフォルトでは、Qlustarノードのシェルプロンプトは常に改行文字で終了します。上で触れたように、コマンドは<computeroutput>等幅の太字</computeroutput>で表示されます。そして、コマンドの出力は<computeroutput>等幅のRoman</computeroutput>で表示されます。例："
+
+msgid ""
+"\n"
+"<prompt>0 root@cl-head ~ #</prompt>\n"
+"<command>echo \"I'm executed by root on a head-node\"</command>\n"
+"I'm executed by root on a head-node\n"
+"    "
+msgstr ""
+"\n"
+"<prompt>0 root@cl-head ~ #</prompt>\n"
+"<command>echo \"I'm executed by root on a head-node\"</command>\n"
+"I'm executed by root on a head-node\n"
+"    "
+
+msgid ""
+"\n"
+"<prompt>0 root@beo-01 ~ #</prompt>\n"
+"<command>echo \"I'm executed by root on a compute node\"</command>\n"
+"I'm executed by root on a compute node\n"
+"    "
+msgstr ""
+"\n"
+"<prompt>0 root@beo-01 ~ #</prompt>\n"
+"<command>echo \"I'm executed by root on a compute node\"</command>\n"
+"I'm executed by root on a compute node\n"
+"    "
+
+msgid ""
+"\n"
+"<prompt>0 root@sn-1 ~ #</prompt>\n"
+"<command>echo \"I'm executed by root on a storage node\"</command>\n"
+"I'm executed by root on a storage node\n"
+"    "
+msgstr ""
+"\n"
+"<prompt>0 root@sn-1 ~ #</prompt>\n"
+"<command>echo \"I'm executed by root on a storage node\"</command>\n"
+"I'm executed by root on a storage node\n"
+"    "
+
+msgid ""
+"\n"
+"<prompt>0 user@workstation ~ $ </prompt>\n"
+"<command>echo \"I'm executed by user admin on the admins workstation\"</command>\n"
+"I'm executed by user admin on the admins workstation\n"
+"    "
+msgstr ""
+"\n"
+"<prompt>0 user@workstation ~ $ </prompt>\n"
+"<command>echo \"I'm executed by user admin on the admins workstation\"</command>\n"
+"I'm executed by user admin on the admins workstation\n"
+"    "
+
+msgid "Source-code listings are also set in <computeroutput>mono-spaced roman</computeroutput> but add syntax highlighting as follows:"
+msgstr "ソースコードのリストは、同様に<computeroutput>等幅のRoman</computeroutput>で表示しますが、以下のようにシンタックスハイライトを加えます："
+
+msgid "Notes and Warnings"
+msgstr "注意と警告"
+
+msgid "Finally, we use three visual styles to draw attention to information that might otherwise be overlooked."
+msgstr "最後に、本ドキュメントでは注意を促すため3つの視覚的スタイルを使用していますが、それでも見落とすかもしれません。"
+
+msgid "Notes are tips, shortcuts or alternative approaches to the task at hand. Ignoring a note should have no negative consequences, but you might miss out on a trick that makes your life easier."
+msgstr "注意は、ティップス、ショートカット、作業中のタスクの代わりとなるアプローチです。注意を無視することでマイナスの結果を得ることはありません。しかし、より簡単に作業するための方法を見過ごしてしまうかもしれません。"
+
+msgid "Important boxes detail things that are easily missed: configuration changes that only apply to the current session, or services that need restarting before an update will apply. Ignoring a box labeled “Important” will not cause data loss but may cause irritation and frustration."
+msgstr "重要と書かれた箱はよく間違えることについて書かれています。現在のセッションだけに設定変更を適用する、アップデートを適用する前にリスタートが必要であるなどです。重要と書かれた箱を無視した場合、データを失う原因にはなりませんが、苛立ちや気力を失う原因になるかもしれません。"
+
+msgid "Warnings should not be ignored. Ignoring warnings will most likely cause data loss."
+msgstr "警告は無視するべきではない情報が書かれています。警告を無視した場合、多くの場合データを失う原因になります。"
+

@@ -112,7 +112,7 @@ if [ -d "$QL_PRODUCT_DIR" ]; then
 fi
 
 # Remove commas at the end
-VAILABLE_PRODUCTS="${AVAILABLE_PRODUCTS%,}"
+AVAILABLE_PRODUCTS="${AVAILABLE_PRODUCTS%,}"
 AVAILABLE_PROD_ALIASES="${AVAILABLE_PROD_ALIASES%,}"
 AVAILABLE_PROD_ALIASES_USAGE="${AVAILABLE_PROD_ALIASES_USAGE%,}"
 AVAILABLE_DOCUMENTS="${AVAILABLE_DOCUMENTS%,}"
@@ -314,7 +314,7 @@ publish_brand() {
   tmp_brand_dir="$1" destdir="$2" old_pwd="$PWD"
   
   cd "$tmp_brand_dir"
-  exec_publican build --formats=xml --langs=all --publish
+  exec_publican build --formats=xml --langs=$QL_LANG --publish
   exec_publican install_brand --web --path="${destdir}"
   cd "$old_pwd"
   rm -rf "$tmp_brand_dir"
@@ -332,7 +332,6 @@ brand_website() {
   if [ -d "$publican_brand_path" ]; then
     cp "$publican_brand_path/publican.cfg" "$tmp_brand_dir"
     cp -r "$publican_brand_path/${QL_LANG}" "$tmp_brand_dir"
-    #cp -r "$publican_brand_path/ja-JP" "$tmp_brand_dir"
   else
     exit_with_msg $COLOR_OPT \
       -m "Publican brand not found at $publican_brand_path" -e $ERR_MISSING_FILE
@@ -423,9 +422,8 @@ build_and_publish_document() {
   
   cd "$book_dir"
   exec_publican build --publish --formats "$formats" \
-    --brand_dir="$QL_BRAND_DIR" --embedtoc --langs=all
-  exec_publican install_book --site_config ${WEB_CFG_PATH} --lang=$QL_LANG
-  exec_publican install_book --site_config ${WEB_CFG_PATH} --lang=ja-JP
+    --brand_dir="$QL_BRAND_DIR" --embedtoc --langs $QL_LANG
+  exec_publican install_book --site_config ${WEB_CFG_PATH} --lang $QL_LANG
   exec_publican update_site --site_config ${WEB_CFG_PATH}
   if $CLEANUP; then
     exec_publican clean > /dev/null
@@ -434,16 +432,12 @@ build_and_publish_document() {
     carousel="$book_dir/$QL_LANG/carousel.html"
     [ -e "$carousel" ] && cp -f "$carousel" "$WEB_TOC_PATH"/$QL_LANG
   fi
-  #if [ "$book_dir" = "$QL_PORTAL_DIR" ]; then
-  #  carousel="$book_dir/ja-JP/carousel.html"
-  #  [ -e "$carousel" ] && cp -f "$carousel" "$WEB_TOC_PATH"/ja-JP
-  #fi
 }
 
 create_portal() {
   local f cfg="${QL_PORTAL_DIR}/publican.cfg"
   local root_file="${QL_PORTAL_DIR}/${QL_LANG}/${QL_PORTAL_NAME}.xml"
-  local root_file2="${QL_PORTAL_DIR}/ja-JP/${QL_PORTAL_NAME}.xml"
+
   create_and_backup_dir $QL_PORTAL_DIR no-create
   exec_publican create --type Article --name "$QL_PORTAL_NAME" \
     --dtdver $QL_DTDVER --brand $QL_BRAND
@@ -456,17 +450,11 @@ EOF
 
   # Remove unnecessary includes from root xml file
   sed -i -e '/include href/d; /\<index /d' "$root_file"
-  sed -i -e '/include href/d; /\<index /d' "$root_file2"
-
   # Add title
   sed -i -e \
     's,\(.*<para>\),  <title role="producttitle">%%title%%</title>\n\1,g' \
     "$root_file"
-  sed -i -e \
-    's,\(.*<para>\),  <title role="producttitle">%%title%%</title>\n\1,g' \
-    "$root_file2"
   sed -i -e "s,%%title%%,$QL_WEBSITE_TITLE,g" "$root_file"
-  sed -i -e "s,%%title%%,$QL_WEBSITE_TITLE,g" "$root_file2"
   echo true > "$QL_PORTAL_DIR"/active
 
   build_and_publish_document "$QL_PORTAL_DIR" html-single
@@ -477,7 +465,6 @@ create_product() {
   local product_dir="${QL_PRODUCT_DIR}/${product// /}" name=$PRODUCT_HOME
   local cfg="${name}/publican.cfg"
   local root_file="${name}/${QL_LANG}/${name}.xml"
-  local root_file2="${name}/ja-JP/${name}.xml"
 
   [ -d "product_dir" ] || mkdir -p "$product_dir"
   cd "$product_dir"
@@ -492,17 +479,11 @@ EOF
 
   # Remove unnecessary includes from root xml file
   sed -i -e '/include href/d; /\<index /d' "$root_file"
-  sed -i -e '/include href/d; /\<index /d' "$root_file2"
-
   # Add title
   sed -i -e \
     's,\(.*<para>\),  <title role="producttitle">%%title%%</title>\n\1,g' \
     "$root_file"
-  sed -i -e \
-    's,\(.*<para>\),  <title role="producttitle">%%title%%</title>\n\1,g' \
-    "$root_file2"
   sed -i -e "s,%%title%%,$product,g" "$root_file"
-  sed -i -e "s,%%title%%,$product,g" "$root_file2"
   echo true > $name/active
 
   build_and_publish_document $name html-single
@@ -514,7 +495,6 @@ create_document() {
   local product_dir="${QL_PRODUCT_DIR}/${product// /}"
   local cfg="${name}/publican.cfg"
   local root_file="${name}/${QL_LANG}/${name}.xml"
-  local root_file2="${name}/ja-JP/${name}.xml"
 
   cd "$product_dir"
   create_and_backup_dir "$name" no-create
@@ -539,8 +519,6 @@ update_site() {
   local rel_dir product create_thumb img_list
   local site_css=$QL_BRAND_DIR/$QL_LANG/css/site_overrides.css
   local colorbox_js=$QL_BRAND_DIR/$QL_LANG/javascript/jquery.colorbox-min.js
-  local site_css2=$QL_BRAND_DIR/ja-JP/css/site_overrides.css
-  local colorbox_js2=$QL_BRAND_DIR/ja-JP/javascript/jquery.colorbox-min.js
 
   cd "$WEB_DIR_PATH"
   echo_bullet -i "--- Updating thumbnails ---"

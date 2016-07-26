@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-07-25 03:57+0200\n"
+"PO-Revision-Date: 2016-07-25 03:57+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Installation Requirements"
+msgstr ""
+
+msgid "To install the Qlustar OS you need:"
+msgstr ""
+
+msgid "A DVD or a USB flash-drive (minimum size 2GB) loaded with the Qlustar installer"
+msgstr ""
+
+msgid "A 64bit x86 server/PC (or virtual machine) with at least two network adapters"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "This is indented Text."
+msgstr ""
+
+msgid "<literal>beegfs-<replaceable>version</replaceable>-server</literal>"
+msgstr ""
+
+msgid "<firstterm>ZFS</firstterm>"
+msgstr ""
+
+msgid "<classname>Boot config</classname>"
+msgstr ""
+
+msgid "<parameter>StorNode</parameter>"
+msgstr ""
+
+msgid "<link xlink:href=\"http://example.com/example/___blank___\">Linkname</link>"
+msgstr ""
+
+msgid "This the key-control file regarding the DNS configuration (see <xref endterm=\"Linkname\" linkend=\"admin-man-sect-dns\" />)."
+msgstr ""
+
+msgid "BeeGFS is a <emphasis>parallel cluster file system</emphasis>, developed and maintained by the Fraunhofer Center for High Performance Computing."
+msgstr ""
+
+msgid "It is usually a good idea to <emphasis role=\"bold\">separate user from system activities</emphasis> as much as possible."
+msgstr ""
+
+msgid "Given that the downloaded installer image file is named <filename>qlustar-installer.iso.gz</filename> and that the device name of the drive is <filename>/dev/sdb</filename>."
+msgstr ""
+
+msgid "This text is the description of the image"
+msgstr ""
+
+msgid "This is an example Task"
+msgstr ""
+
+msgid "First you look at this cheat-sheet"
+msgstr ""
+
+msgid "Well done!"
+msgstr ""
+
+msgid "Then you try to recognize it"
+msgstr ""
+
+msgid "Do you recognize it?"
+msgstr ""
+
+msgid "This is a substep"
+msgstr ""
+
+msgid "This is the text of the substep"
+msgstr ""
+
+msgid "<systemitem class=\"systemname\">sn-2</systemitem> <systemitem class=\"systemname\">beosrv-c</systemitem>"
+msgstr ""
+
+msgid "<envar>${HOSTNAME##*-}</envar>"
+msgstr ""
+
+msgid "In that case the package <package>bind9</package> should be installed."
+msgstr ""
+
+msgid "These errors are known as <errorname>silent data errors</errorname>, and there is really nothing you can do about it with the standard GNU/Linux"
+msgstr ""
+
