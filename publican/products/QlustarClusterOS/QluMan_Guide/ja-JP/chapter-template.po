@@ -12,8 +12,8 @@ msgstr ""
 "X-Generator: Publican v4.3.0\n"
 
 msgid "Template Chapter"
-msgstr ""
+msgstr "章のテンプレート"
 
 msgid "Template Section"
-msgstr ""
+msgstr "節のテンプレート"
 

@@ -1,0 +1,15 @@
+<!DOCTYPE authorgroup [
+]>
+<authorgroup version="5.0" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<author>
+		<personname><firstname>Qlustar</firstname>
+		 <surname>Documentation Team</surname>
+		</personname> <affiliation>
+			<orgname>Q-Leap Networks GmbH</orgname>
+
+		</affiliation>
+		 <email>qlustar-docs@q-leap.com</email>
+
+	</author>
+</authorgroup>
+

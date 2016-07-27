@@ -17,27 +17,122 @@ msgstr ""
 msgid "Purpose"
 msgstr ""
 
-msgid "Often things happen when one is not looking. For that reason Qluman keeps a log of messages showing what happened, when, where and how important the event was."
+msgid "QluMan comes with a <classname>Log Viewer</classname> that allows to inspect important events in the cluster. Messages are categorized depending on the type of event, when it occurred, which component(s) it involved and how important it was."
 msgstr ""
 
 msgid "Messages indicator button"
 msgstr ""
 
-msgid "At the right bottom of the main window qluman-qt displays a <guibutton>Messages</guibutton>. The button shows the highest priority of pending messages as well as the number of messages pending. Clicking the button opens the <emphasis>Messages</emphasis> window. The <emphasis>Messages</emphasis> window can also be opened through the Manage Cluster -&gt; Messages menu item."
+#, fuzzy
+msgid "At the right bottom of the main window the QluMan GUI displays a <guibutton>Messages</guibutton> indicator. The button shows the highest priority of uninspected messages, as well as their number. Clicking the button opens the <emphasis>Messages</emphasis> window. The <emphasis>Messages</emphasis> window can also be opened through the <guimenuitem>Manage Cluster -&gt; Messages</guimenuitem> menu item."
 msgstr ""
 
-msgid "Log Viewer window"
+#, fuzzy
+msgid "The Log Viewer window"
 msgstr ""
 
-msgid "Opening the Messages window shows a list of messages sorted by time with the oldest message at the top. The messages can be sorted ascending and descending by clicking on any of the column headers. Only the short text of each message is shown to keep the window compact. Hovering over a row will show the long text for that row as tool-tip. The long text can also be seen in a separate window by clicking the <guibutton>Details</guibutton> button. The extra window makes it easier to read multi-line messages and allows copy+paste."
+#, fuzzy
+msgid "The Log Viewer window"
+msgstr ""
+
+#, fuzzy
+msgid "Opening the Messages window shows a list of messages sorted by time, the oldest message displayed at the top. The messages can be sorted ascending and descending by clicking on any of the column headers. Only the short text of each message is shown to keep the window compact. Hovering over a row will show the long text for that row as a tool-tip. The long text can also be seen in a separate window by clicking the <guibutton>Details</guibutton> button. The extra window makes it easier to read multi-line messages and allows copy+paste."
 msgstr ""
 
 msgid "Message Filter"
 msgstr ""
 
-msgid "Not every message is of interest to a user, especially messages that have already been seen. Each user can create their own filter for messages by clicking on the <guibutton>Edit Filter</guibutton>. Filter consist of a number of matches shown as rows with an action as well as a default action. The filtering process goes through the rows one by one and if all fields in a row that are set match a message then the action set for the row is executed, the message is hidden from view or included in the messages window. If none of the rows match a message the default action is taken."
+msgid "The message filter editor"
 msgstr ""
 
-msgid "The most common filter is to hide message with the <emphasis>seen</emphasis> flag. Without this entry the seen flag has no effect. The filter can be freely edited and can be saved to act as the new default filter or reset to the filter that was saved last."
+#, fuzzy
+msgid "Not every message is of interest to a user, especially messages that have already been seen. Therefore, each user can create his own filter for messages by clicking on the <guibutton>Edit Filter</guibutton> button. A filter consist of a number of matches shown as rows, with an action, as well as a default action. The filtering process goes through the rows one by one. If all fields set in a row match a message, then the action set for that row is executed: Either the message will be hidden or included in the messages window. If none of the rows match a message, the default action applies to it."
 msgstr ""
+
+msgid "There is one message filter per cluster connection tab. It can be freely edited. The message filter remains in effect till the tab for the cluster is closed. The filter can also be saved as a user-specific setting, so it is reloaded the next time a connection to the cluster is opened again. Alternatively, the filter can be reset to the last saved config or cleared so that the viewer starts without any filtering."
+msgstr ""
+
+msgid "Default Action"
+msgstr ""
+
+msgid "Setting the default action"
+msgstr ""
+
+msgid "A filter can be constructed as a positive or negative filter. This means it can <emphasis role=\"bold\">hide</emphasis> all messages that are not specifically matched or <emphasis role=\"bold\">show</emphasis> all messages that are not specifically chosen as hidden. The default action can be chosen at the bottom left corner of the message filter window."
+msgstr ""
+
+msgid "Adding a Filter"
+msgstr ""
+
+msgid "Adding a filter"
+msgstr ""
+
+msgid "A new filter row"
+msgstr ""
+
+msgid "A new filter row can be added by selecting <guimenuitem>Add filter</guimenuitem> from the context menu. The new filter has an action of hide and ignores all fields. It therefore hides all messages. To be useful, at least one column should be changed through the context menu, to match only some messages. The context menu in each column contains the possible values the filter can match against in that column. The <emphasis>Origin</emphasis> and <emphasis>Short</emphasis> columns can also be edited freely by double clicking them. The action for the row can be changed between <emphasis>Hide</emphasis> and <emphasis>Show</emphasis>."
+msgstr ""
+
+msgid "Filtering Seen Messages"
+msgstr ""
+
+msgid "Configuring the Seen flag"
+msgstr ""
+
+msgid "The most common filter is to hide messages with the <emphasis>Seen</emphasis> flag. It is recommended, to always start a new filter by adding a row with action <emphasis>Hide</emphasis> and the seen column set to <emphasis>Seen</emphasis>. If none of the filter rows match against the <emphasis>Seen</emphasis> flag, then it will have no effect in the <classname>Messages window</classname>. The <emphasis>Seen</emphasis> filter can also be toggled between <emphasis>Seen</emphasis> and <emphasis>Unseen</emphasis> by clicking the checkmark. The column can only be disabled by selecting <emphasis>Ignore</emphasis> from the context menu."
+msgstr ""
+
+msgid "Filtering by Priority"
+msgstr ""
+
+msgid "Setting the priority value"
+msgstr ""
+
+msgid "Messages can be purely informational, warnings or errors. Informational messages include information about nodes coming online or the server being restarted. There are usually a lot of informational messages and they can be safely ignored. On the other hand, warnings and errors should be inspected more carefully. In the Log Viewer, the priority of a message is <emphasis role=\"bold\">color-coded</emphasis> for quicker visual recognition. Informational messages are green, warnings yellow and errors red. The highest priority of any shown message is also shown in the <guibutton>Messages</guibutton> button in the lower right corner of the main window. This indicates at a single glance, if anything important happened recently."
+msgstr ""
+
+msgid "Filtering by Origin"
+msgstr ""
+
+msgid "Configuring the Origin filter"
+msgstr ""
+
+msgid "The origin of a message shows the node or service that generated the message. When configuring the filter, the origin can also be expressed as a hostlist to match multiple hosts."
+msgstr ""
+
+msgid "Filtering by Category"
+msgstr ""
+
+msgid "Configuring the Category filter"
+msgstr ""
+
+msgid "Messages fall into different categories, pooling similar messages for easier filtering. Generally information is categorized under <emphasis>Misc</emphasis>, while messages about nodes becoming online or going offline under category <emphasis>Online</emphasis>. The <emphasis>Licensing</emphasis> category includes all messages concerning changes in the license status. This could be something simple as a reminder that the license key expires soon. Or more important, a warning or error, that the cluster, as currently configured, exceeds the available license count. The last category is <emphasis>Exception</emphasis>. It usually signals a software error, that should be reported."
+msgstr ""
+
+msgid "Filtering by Short text"
+msgstr ""
+
+msgid "Configuring the Short filter"
+msgstr ""
+
+msgid "Messages may also be filtered by their short description. Like <emphasis>Origin</emphasis>, this column can be edited by double clicking. Short descriptions are matched using standard regular expressions. To match only part of a short description, prefix and/or suffix the text by \".*\" to match any remaining characters."
+msgstr ""
+
+msgid "A Filtering Example"
+msgstr ""
+
+msgid "A complex example filter"
+msgstr ""
+
+msgid "The example filter shows a more involved setup: It contains five rows showing how rows can be combined to achieve the desired filtering result. The default action for this filter is set to <emphasis>show messages</emphasis>. Hence, only messages that are explicitly filtered as <emphasis>not wanted</emphasis> will be hidden."
+msgstr ""
+
+msgid "Row 1 excludes messages with the <emphasis>seen</emphasis> flag set. Rows number 2 and 3 might look odd at first, because their action is the same as the default action: <emphasis>Show</emphasis>. But these two rows prevent any of the later rows from hiding messages with priority <emphasis>error</emphasis> or <emphasis>warning</emphasis>. In other words, warnings and errors will always be shown, no matter what additional filter rows follow. Row number 4 hides messages in the category <emphasis>online</emphasis> and row 5 hides messages that originate from hosts matching the hostlist \"vm-[0-9]\"."
+msgstr ""
+
+#~ msgid "The most common filter is to hide message with the <emphasis>seen</emphasis> flag. Without this entry the seen flag has no effect. The filter can be freely edited and can be saved to act as the new default filter or reset to the filter that was saved last."
+#~ msgstr ""
+
+#~ msgid "Often things happen when one is not looking. For that reason Qluman keeps a log of messages showing what happened, when, where and how important the event was."
+#~ msgstr ""
 

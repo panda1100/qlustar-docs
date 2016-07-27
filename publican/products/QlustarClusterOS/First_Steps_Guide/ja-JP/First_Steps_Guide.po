@@ -24,8 +24,7 @@ msgid ""
 "\n"
 "/usr/sbin/qlustar-initial-config\n"
 "	"
-msgstr ""
-"/usr/sbin/qlustar-initial-config\n"
+msgstr "/usr/sbin/qlustar-initial-config\n"
 "       "
 
 msgid "This will first thoroughly check your network connectivity and then complete the installation by executing the remaining configuration steps as detailed below. During the package update process you might be asked whether to keep locally modified configuration files. In this case always choose the option"
@@ -132,7 +131,6 @@ msgstr ""
 "<command>dpkg-reconfigure postfix</command>\n"
 "       "
 
-
 msgid "to modify them."
 msgstr "それらの設定を編集して下さい。"
 
@@ -180,7 +178,6 @@ msgstr ""
 "<prompt>0 root@cl-head ~ #</prompt>\n"
 "<command>console-fe-vm</command>\n"
 "       "
-
 
 msgid "to attach to the console session of the virtual FE node and"
 msgstr "仮想フロントエンドノードのコンソールセッションにアタッチします。そして、"

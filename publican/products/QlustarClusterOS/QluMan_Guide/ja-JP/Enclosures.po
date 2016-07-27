@@ -35,10 +35,12 @@ msgstr ""
 msgid "For nodes that are not part of a <literal>multi-host enclosure</literal> (like a Blade or Twin chassis) the enclosure type can be changed to one of the single-slot host enclosures (1U, 2U, etc.). A new enclosure of the chosen type will then be created if the node is not already part of one. If a node is included in a multi-host enclosure, this field will be ghosted."
 msgstr ""
 
-msgid "The template field allows to select a so-called <link linkend=\"Host-Templates\">Host Template</link> for the node. Usually, large groups of nodes have an identical hardware and software configuration and will use the same template. Deviations from the properties coming from the template can be set for individual hosts by direct assignment of either a property set or individual properties directly to the host through its context menu. In case of unique properties direct assignments override settings from the template (or property set), for non-unique properties this is additive."
+#, fuzzy
+msgid "The template field allows to select a so-called <link linkend=\"Host-Templates\">Host Template</link> for the node. Usually, large groups of nodes have an identical hardware and software configuration and will use the same template. Deviations from the properties coming from the template can be set for individual hosts by direct assignment of either a property/config set or individual properties/configs directly to the host through its context menu. In case of unique properties, direct assignments override settings from the template (or property set), for non-unique properties this is additive."
 msgstr ""
 
-msgid "Any changes made in the configuration only affects the active node (as indicated by the hostname in the info part of the enclosure view), and not all selected nodes. Configurations for all selected nodes can be made by using the context menu (right click) in the tree view."
+#, fuzzy
+msgid "Any changes made in the configuration only affect the active node (as indicated by the hostname in the info part of the enclosure view), and not all selected nodes. Configurations for all selected nodes can be made by using the context menu (right click) in the tree view."
 msgstr ""
 
 msgid "Managing Enclosures"
@@ -116,10 +118,13 @@ msgstr ""
 msgid "Host Selections"
 msgstr ""
 
+msgid "Alternative selection of hosts"
+msgstr ""
+
 msgid "There are situations, where one wants to change a property or config of a whole set of hosts. For example, you may want to change all nodes located in a particular blade to no longer format their disk on boot. This can be achieved by selecting a set of hosts in the enclosure view with the mouse. A range of hosts can be selected by clicking on the first host and then clicking on the last host, while pressing the shift key. Hosts can also be added or removed from the selection by clicking on a host while pressing the <keycap>CTRL</keycap> key. Once a set of hosts is selected, changes can be made to all selected hosts through the context menu. For instance, this allows changing the Host Template or add/alter a generic property of a set of hosts."
 msgstr ""
 
-msgid "Alternative selection of hosts"
+msgid "When a host is part of an enclosure, selecting the enclosure will also select the host(s) inside of the enclosure, provided it is <emphasis role=\"bold\">collapsed</emphasis>. However, hosts inside of expanded enclosures must be selected individually."
 msgstr ""
 
 msgid "An alternative and more powerful way to select a set of hosts is available via the <guibutton>Selection</guibutton> button at the bottom of the <classname>Enclosure View</classname>. When pressed, at the top of the appearing selection menu you'll find 3 items: To select all hosts, clear the selection or to invert the selection."
@@ -131,6 +136,7 @@ msgstr ""
 msgid "Different selection operators"
 msgstr ""
 
-msgid "Below these items is a list of filters by which subsets of hosts were defined according to specific criteria. For more details on how to construct such Host Filters see <xref linkend=\"chap-Host-Filters\" />. When pressing <guibutton>Select</guibutton>, the selection is set to the hosts defined by the corresponding filter, dropping any previously selected hosts. <guibutton>Add to</guibutton>&gt; adds, while <guibutton>Remove from</guibutton> removes the hosts defined by the filter from the current selection. <guibutton>Intersection</guibutton> sets the selection to only those hosts in the current selection, that are also part of the set defined by the filter."
+#, fuzzy
+msgid "Below these items is a list of filters by which subsets of hosts were defined according to specific criteria. For more details on how to construct such Host Filters see <xref linkend=\"chap-Host-Filters\" />. When pressing <guibutton>Select</guibutton>, the selection is set to the hosts defined by the corresponding filter, dropping any previously selected hosts. <guibutton>Add to</guibutton> adds, while <guibutton>Remove from</guibutton> removes the hosts defined by the filter from the current selection. <guibutton>Intersection</guibutton> sets the selection to only those hosts in the current selection, that are also part of the set defined by the filter."
 msgstr ""
 

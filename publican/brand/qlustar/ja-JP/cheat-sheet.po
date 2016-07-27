@@ -50,7 +50,8 @@ msgstr "これはDNS設定のためのkey-controlファイル（<xref endterm=\"
 msgid "BeeGFS is a <emphasis>parallel cluster file system</emphasis>, developed and maintained by the Fraunhofer Center for High Performance Computing."
 msgstr "BeeGFSは<emphasis>並列クラスタファイルシステム</emphasis>、the Fraunhofer Center for High Performance Computingにより開発とメンテナンスが行われている。"
 
-msgid "It is usually a good idea to <emphasis role=\"bold\">separate user from system activities</emphasis> as much as possible." 
+#, fuzzy
+msgid "It is usually a good idea to <emphasis role=\"bold\">separate user from system activities</emphasis> as much as possible."
 msgstr " 一般的にできる限り<emphasis role=\"bold\">システムからユーザを分離する</emphasis>ことが望ましい。"
 
 msgid "Given that the downloaded installer image file is named <filename>qlustar-installer.iso.gz</filename> and that the device name of the drive is <filename>/dev/sdb</filename>."

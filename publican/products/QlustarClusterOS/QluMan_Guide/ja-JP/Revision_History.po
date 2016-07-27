@@ -20,6 +20,10 @@ msgstr ""
 msgid "Doc Team"
 msgstr ""
 
-msgid "Initial version"
+msgid "Updates for QluMan 2.1.1 / Qlustar 9.1.1 /"
+msgstr ""
+
+#, fuzzy
+msgid "Initial version 2.1.0"
 msgstr ""
 

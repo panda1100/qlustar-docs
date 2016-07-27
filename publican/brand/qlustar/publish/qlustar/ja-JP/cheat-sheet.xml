@@ -1,0 +1,132 @@
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+]>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<chapter xml:id="Requirements">
+		<title>インストール要件</title>
+		 <para>
+			Qlustar OSをインストールするには以下が必要です：
+		</para>
+		 <para>
+			<itemizedlist>
+				<listitem>
+					<para>
+						Qlusutarのインストーラを含んだDVDメディア1枚またはUSBフラッシュドライブ（最小サイズ2GB）
+					</para>
+
+				</listitem>
+				 <listitem>
+					<para>
+						少なくとも2つのネットワークアダプタを搭載した64bit x86サーバー/パソコン（または仮想マシン）
+					</para>
+
+				</listitem>
+
+			</itemizedlist>
+
+		</para>
+		 <para>
+			<variablelist>
+				<varlistentry>
+					<term>タイトル</term>
+					 <listitem>
+						<para>
+							これはインデントしたテキスト
+						</para>
+
+					</listitem>
+
+				</varlistentry>
+
+			</variablelist>
+
+		</para>
+		 <para>
+			<literal>beegfs-<replaceable>version</replaceable>-server</literal>
+		</para>
+		 <para>
+			<firstterm>ZFS</firstterm>
+		</para>
+		 <para>
+			<classname>Boot config</classname>
+		</para>
+		 <para>
+			<parameter>StorNode</parameter>
+		</para>
+		 <para>
+			<link xlink:href="http://example.com/example/___blank___">Linkname</link>
+		</para>
+		 <para>
+			これはDNS設定のためのkey-controlファイル（<xref endterm="Linkname" linkend="admin-man-sect-dns" />）
+		</para>
+		 <para>
+			BeeGFSは<emphasis>並列クラスタファイルシステム</emphasis>、the Fraunhofer Center for High Performance Computingにより開発とメンテナンスが行われている。
+		</para>
+		 <para>
+			It is usually a good idea to <emphasis role="bold">separate user from system activities</emphasis> as much as possible.
+		</para>
+		 <para>
+			ダウンロードしたインストーライメージファイルを<filename>qlustar-installer.iso.gz</filename>として、ドライバーのデバイスネームを <filename>/dev/sdb</filename>とする。
+		</para>
+		 <para>
+			<mediaobject>
+				<imageobject>
+					<imagedata align="center" fileref="/path/file.png" format="PNG" width="300px" />
+				</imageobject>
+				 <textobject>
+					<phrase> This text is shown, if the picture get lost </phrase>
+				</textobject>
+				 <caption>
+				<para>
+					このテキストはイメージの説明
+				</para>
+				</caption>
+			</mediaobject>
+
+		</para>
+		 <para>
+			<task xml:id="example-task"> <title>これはサンプルタスク</title>
+			 <procedure>
+				<step>
+					<title>始めにこのチートシートを見て下さい。</title>
+					 <para>
+						良くできました！
+					</para>
+
+				</step>
+				 <step>
+					<title>それでこれを認識してみて下さい</title>
+					 <para>
+						認識できましたか？
+					</para>
+					 <substeps>
+						<step>
+							<title>これはサブスステップです</title>
+							 <para>
+								これはサブステップのテキストです
+							</para>
+
+						</step>
+
+					</substeps>
+
+				</step>
+
+			</procedure>
+			 </task>
+		</para>
+		 <para>
+			<systemitem class="systemname">sn-2</systemitem> <systemitem class="systemname">beosrv-c</systemitem>
+		</para>
+		 <para>
+			<envar>${HOSTNAME##*-}</envar>
+		</para>
+		 <para>
+			その場合は、<package>bind9</package>パッケージをインストールして下さい。
+		</para>
+		 <para>
+			それらのエラーは<errorname>silent data errors</errorname>として知られています。そして通常のGNU/Linuxではそのエラーについて本当に何もできることがありません。
+		</para>
+
+	</chapter>
+</book>
+

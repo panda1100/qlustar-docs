@@ -17,6 +17,9 @@ msgstr ""
 msgid "RXEngine Overview"
 msgstr ""
 
+msgid "The Qlustar Remote Execution Engine"
+msgstr ""
+
 msgid "<application>QluMan</application> provides a powerful remote command execution engine, that allows to run shell commands on any number of hosts in <emphasis role=\"bold\">parallel</emphasis> and analyze their output/status in <emphasis role=\"bold\">real-time</emphasis>. Commands fall into two categories: <literal>Pre-defined</literal> and <literal>custom</literal> commands. The RXengine has the following capabilities:"
 msgstr ""
 
@@ -35,7 +38,8 @@ msgstr ""
 msgid "The output is <emphasis role=\"bold\">analyzed</emphasis> and updated in short intervals during the execution phase."
 msgstr ""
 
-msgid "Hosts with equal output are <emphasis role=\"bold\">grouped</emphasis> together to reduce the noise."
+#, fuzzy
+msgid "Hosts with equal output are <emphasis role=\"bold\">grouped</emphasis> together to display a compact view of command's messages."
 msgstr ""
 
 msgid "The output can further be <emphasis role=\"bold\">filtered</emphasis> by the return code of the command and by (de)selecting <literal>stdout</literal> and/or <literal>stderr</literal>."
@@ -44,22 +48,49 @@ msgstr ""
 msgid "Executing a pre-defined command"
 msgstr ""
 
-msgid "Pre-Defined commands can be created using the <classname>Command Editor</classname> (see <xref linkend=\"sec-RXE-Command-Editor\" /> for details). To execute a pre-defined command, open the pull-down menu of the <guibutton>Execute button</guibutton> at the bottom of the <classname>Enclosure View</classname> and select an entry. This opens a new <classname>Command Execution</classname> window for pre-defined commands. At the very top of it, the selected pre-defined command is shown. It can be changed if required. Below that is a list of arguments, the selected command accepts. <guilabel>Execute on</guilabel> is always present showing where the command will be executed. If defined, additional arguments of the command are displayed underneath. Further below, the final command is shown, with its arguments inserted at the right places. The command will be executed upon clicking the <guibutton>Execute</guibutton> button."
+msgid "Preparing the execution of a pre-defined command"
+msgstr ""
+
+msgid "Output of a pre-defined command"
+msgstr ""
+
+#, fuzzy
+msgid "Pre-Defined commands can be created using the <classname>Command Editor</classname> (see <xref linkend=\"sec-RXE-Command-Editor\" /> for details). To execute a pre-defined command, open the pull-down menu of the <guibutton>Execute button</guibutton> at the bottom of the <classname>Enclosure View</classname> and select an entry. This opens a new <classname>Command Execution</classname> window for pre-defined commands. At the very top of it, the selected pre-defined command is shown. It can be changed if required. Below that is a list of the arguments, the selected command accepts. <guilabel>Execute on</guilabel> is always present showing where the command will be executed. If defined, additional arguments of the command are displayed underneath. Further below, the final command is shown, with its arguments inserted at the right places. The command will be executed upon clicking the <guibutton>Execute</guibutton> button."
+msgstr ""
+
+msgid "Selecting hosts for execution"
+msgstr ""
+
+msgid "Using a host-filter for selecting hosts"
 msgstr ""
 
 msgid "Arguments to a pre-defined command can be set fixed to a <link linkend=\"chap-Host-Filters\">Host Filter</link> , in which case the filter and its resulting hostlist are shown as plain text and can not be edited. Optionally, specification of arguments in Hostlist format may also be left up to the user. In that case, a combo-box is shown, followed by the evaluation of the specified input shown as plain text. When hosts were selected in the <classname>Enclosure View</classname>, the combo-box will contain the hostlist corresponding to the selection as default. The text can be edited directly or a filter can be chosen from the dropdown menu. Any argument starting with \"%\" is assumed to be a filter. If this is not intended, the \"%\" must be escaped by another \"%\", but only at the start of an argument. For more details about specifying arguments in pre-defined commands see <xref linkend=\"sec-RXE-Command-Editor\" />."
 msgstr ""
 
-msgid "Executing a custom command"
+#, fuzzy
+msgid "RXEngine - Executing a custom command"
+msgstr ""
+
+msgid "Preparing the execution of a custom command"
+msgstr ""
+
+msgid "The RXengine window for custom commands"
 msgstr ""
 
 msgid "To execute a custom command, open the pull-down menu of the <guimenu>Execute button</guimenu> at the bottom of the <classname>Enclosure View</classname> and select custom command from the menu. This opens a new blank <classname>Command Execution</classname> window."
 msgstr ""
 
-msgid "The initial hostlist is empty in the screenshot examples, since no hosts where selected in the <classname>Enclosure View</classname>"
+#, fuzzy
+msgid "The initial hostlist is empty in the screenshot examples, since no hosts where selected in the <classname>Enclosure View</classname>."
 msgstr ""
 
-msgid "."
+msgid "Selecting hosts for remote execution"
+msgstr ""
+
+msgid "Updating the selection of hosts for remote execution"
+msgstr ""
+
+msgid "Choosing commands previously executed"
 msgstr ""
 
 msgid "In case hosts were selected in the <classname>Enclosure View</classname> before clicking the <guibutton>Execute</guibutton> button, a hostlist representing these hosts will be present in the <classname>Command Execution</classname> window. This allows <emphasis role=\"bold\">easy selection of hosts</emphasis> to run a command on by <link linkend=\"sec-Host-Selections\">selecting them</link> in the <classname>Enclosure View</classname>. The hostlist can also be updated at a later time from the currently selected hosts in the Enclosure View by clicking the <guibutton>Update</guibutton> button. This makes it simple, to run the same command on different sets of hosts. When a command is executed, it is added to the <literal>history</literal> and can be accessed again later through the pull-down menu. This allows rerunning recently used commands without having to retype them every time."
@@ -68,7 +99,12 @@ msgstr ""
 msgid "Note, that the history is stored in the users home directory, hence every user has his own. The preferred way to manage frequently used commands is by pre-defining them (explained in <xref linkend=\"sec-RXE-Command-Editor\" />)."
 msgstr ""
 
-msgid "Passing input to a command"
+#, fuzzy
+msgid "RXEngine - Passing input to a command"
+msgstr ""
+
+#, fuzzy
+msgid "RXEngine - Passing input to a command"
 msgstr ""
 
 msgid "Sometimes it is necessary to pass some input to a command. This can be done by clicking the <guibutton>Input</guibutton> button near the top. Another text box will then be added to the window and will allow to specify, what should be passed to <literal>stdin</literal> of the command on each host."
@@ -77,28 +113,50 @@ msgstr ""
 msgid "Command Syntax"
 msgstr ""
 
-msgid "Commands will be interpreted/executed by the <literal>BASH</literal> shell on every host matching the hostlist. The full <literal>BASH</literal> syntax is supported. Redirection of output to files, as in the last example, and working with variables works as expected. Please refer to the <literal>BASH</literal> documentation (e.g. <code>man bash</code>) for more details."
+#, fuzzy
+msgid "Commands will be interpreted/executed by the <literal>BASH</literal> shell on every host matching the hostlist. The full bash syntax is supported. Redirection of output to files, as in the last example, and working with variables works as expected. Please refer to the bash documentation (e.g. <code>man bash</code>) for more details."
 msgstr ""
 
 msgid "Analysis of Command Status/Output"
 msgstr ""
 
-msgid "Once the hostlist is added, a command can simply be run by entering it in the command box and hitting the <guibutton>Execute</guibutton> button. It will then start to run in parallel on all listed hosts and the command output will be collected. Periodically, in short but increasing intervals, the <emphasis role=\"bold\">output will be sorted</emphasis>&gt; and displayed. Hence, for short running programs you will see it immediately. Due to the increasing display intervals, long running and noisy commands won't cause constant flickering of the output, allowing you to more easily follow it."
+#, fuzzy
+msgid "RXEngine - Executing a custom command"
+msgstr ""
+
+#, fuzzy
+msgid "Once the hostlist is added, a command can simply be run by entering it in the command box and hitting the <guibutton>Execute</guibutton> button. It will then start in parallel on all listed hosts and the command output will be collected. Periodically, in short but increasing intervals, the <emphasis role=\"bold\">output will be sorted</emphasis> and displayed. Hence, for short running programs you will see it immediately. Due to the increasing display intervals, long running and noisy commands won't cause constant flickering of the output, allowing you to more easily follow it."
 msgstr ""
 
 msgid "Command Status"
 msgstr ""
 
+msgid "RXEngine - Tracking the status of executed commands"
+msgstr ""
+
 msgid "After the <guibutton>Execute</guibutton> button has been pressed, all hosts will start in the <literal>Pending state</literal>. Once a host confirms that it has started its command, it will change to the <literal>Running state</literal>. When the command concludes, the state becomes one of <literal>Failed</literal>, <literal>Errors</literal> or <literal>Success</literal>. If the command exited with a return code other than 0, the host will enter the <literal>Failed</literal> state. If the command exited with a return code of 0, but produced output on <literal>stderr</literal>, it will enter the <literal>Errors</literal> state. Otherwise, it enters the <literal>Success</literal> state."
 msgstr ""
 
-msgid "In the screenshot example, the hosts <systemitem class=\"systemname\">sn-1</systemitem> and <systemitem class=\"systemname\">sn-2</systemitem> were down, so they remained in the <literal>Pending</literal> state. By clicking the <guibutton>Pending</guibutton> button, a hostlist of the pending hosts is displayed. The <application>QluMan server</application> will start the command on those hosts, when they become online again. If you do not want that to happen, or if the command does not terminate on its own, then the <guibutton>Kill</guibutton> button allows you to stop the command. A killed command counts as failed, so <systemitem class=\"systemname\">sn-1</systemitem> and <systemitem class=\"systemname\">sn-2</systemitem> now enter that state. The command output also reflects that the command was killed."
+msgid "RXEngine - Hosts in pending state"
+msgstr ""
+
+msgid "RXEngine - Killing a command"
+msgstr ""
+
+#, fuzzy
+msgid "In the screenshot example, the hosts <systemitem class=\"systemname\">sn-1</systemitem> and <systemitem class=\"systemname\">sn-2</systemitem> were down, so they remained in the <literal>Pending</literal> state. By clicking the <guibutton>Pending</guibutton> button, a hostlist of the pending hosts is displayed. The <application>QluMan server</application> will start the command on those hosts, when they become online again. If you do not want that to happen, or if the command does not terminate on its own, then the <guibutton>Kill</guibutton> button allows you to stop the command. A killed command counts as failed, so <systemitem class=\"systemname\">sn-1</systemitem> and <systemitem class=\"systemname\">sn-2</systemitem> now enter that state. The command output also reflects, that the command was killed."
 msgstr ""
 
 msgid "Host Grouping by Status and Output"
 msgstr ""
 
-msgid "Hosts executing a command are not only grouped by their execution state, the command output produced by the different hosts is also <emphasis role=\"bold\">analyzed and compared</emphasis> to each other. Hosts with identical output are put into a group. Their output is only displayed once, prefixed with the hostlist representing the hosts in each group. For a quick overview, the number of hosts and groups is also displayed below each state button. In the screenshot example, two hosts (<systemitem class=\"systemname\">sn-1</systemitem> and <systemitem class=\"systemname\">sn-2</systemitem>) have failed, because they where offline and the command was killed before starting. The output of both was identical, so they form one group. Similar, one host (<systemitem class=\"systemname\">ql-head-pr-t</systemitem>) completed the command successfully and builds its own group."
+msgid "RXEngine - Statistics about job status"
+msgstr ""
+
+msgid "Hosts executing a command are not only grouped by their execution state, the command output produced by the different hosts is also <emphasis role=\"bold\">analyzed and compared</emphasis> to each other. Hosts with identical output are put into a group. Their output is only displayed once, prefixed with the hostlist representing the hosts in each group. For a quick overview, the number of hosts and groups is also displayed below each state button."
+msgstr ""
+
+msgid "In the screenshot example, two hosts (<systemitem class=\"systemname\">sn-1</systemitem> and <systemitem class=\"systemname\">sn-2</systemitem>) have failed, because they where offline and the command was killed before starting. The output of both was identical, so they form one group. Similar, one host (<systemitem class=\"systemname\">ql-head-pr-t</systemitem>) completed the command successfully and builds its own group."
 msgstr ""
 
 msgid "The <guibutton>S</guibutton> buttons next to the numbers add or remove the hosts in each state to form a new hostlist. Press the button to include the corresponding hosts and press it once more to exclude them again. This is convenient, e.g. to quickly select only the hosts for which a command failed: Analyze the errors and later relaunch with an adjusted command. Another example: Select only the successful hosts to run a follow-up command etc."
@@ -107,13 +165,30 @@ msgstr ""
 msgid "Filtering by stdout and stderr"
 msgstr ""
 
+msgid "RXEngine - A command with stdout and stderr output"
+msgstr ""
+
 msgid "Commands usually output regular text to <literal>stdout</literal> and warnings as well as errors to <literal>stderr</literal>. In the latter case, the command ends up in the <literal>Errors</literal> state, because this is usually something that needs further inspection. The screenshot example prints two lines, one to <literal>stderr</literal> and one to <literal>stdout</literal>. Unfortunately Unix does not enforce any order between output to <literal>stdout</literal> and <literal>stderr</literal>. Therefore, as in this example, it can happen, that a small delay between the command output and reading from the file descriptors causes the order to slightly change."
+msgstr ""
+
+msgid "RXEngine - Filtering stdout"
+msgstr ""
+
+msgid "RXEngine - Filtering stderr"
 msgstr ""
 
 msgid "Some commands produce a lot of output. Error messages are then easily overseen in between the lines. Similarly a command might report a lot of harmless errors, that hide the interesting output going to <literal>stdout</literal>. To simplify an analysis of the command output for such cases, the two buttons <guibutton>stdout</guibutton> and <guibutton>stderr</guibutton> at the bottom of the window allow <emphasis role=\"bold\">toggling the visibility</emphasis> of <literal>stdout</literal> and <literal>stderr</literal> output selectively on and off."
 msgstr ""
 
-msgid "Command Editor"
+#, fuzzy
+msgid "The Command Editor"
+msgstr ""
+
+#, fuzzy
+msgid "The Command Editor"
+msgstr ""
+
+msgid "The definition of a command"
 msgstr ""
 
 msgid "The <classname>command editor</classname> shows all the pre-defined commands in a tree view on the left. A number of useful commands are already defined by default. Selecting a command shows its definition on the right-hand side, where it can also be edited. Every command has a unique name/alias under which it appears in the tree view on the left, the execute menu in the <classname>Enclosure View</classname> and in the drop down menu of the pre-defined commands execution window. In the future, it will also be possible to limit commands to specific user roles, but for now all commands are unrestricted. A user either has rights to execute any pre-defined commands or none. Below the role selector, the command itself is defined."
@@ -122,22 +197,62 @@ msgstr ""
 msgid "Sorting commands"
 msgstr ""
 
-msgid "Commands are kept in a tree structure, grouping similar commands together. They can be sorted freely using the context menu to make frequently used commands easier to select. The <guimenuitem>Move Up</guimenuitem> and <guimenuitem>Move Down</guimenuitem> menu items move a command or group up or down within the group respectively. The <guimenuitem>Move to group</guimenuitem> sub-menu allows moving a command up or down in the tree hierarchy. Groups can be created, renamed and deleted to give any desired hierarchy of commands."
+msgid "Creating a new command or group"
+msgstr ""
+
+msgid "Actions for menu folders"
+msgstr ""
+
+msgid "Actions for menu commands"
+msgstr ""
+
+#, fuzzy
+msgid "Commands are kept in a tree structure, grouping similar commands together. They can be sorted freely using the context menu to make frequently used commands easier to select. The <guimenuitem>Move Up</guimenuitem> and <guimenuitem>Move Down</guimenuitem> menu items move a command or group up or down within the group respectively. The <guimenuitem>Move to group</guimenuitem> sub-menu allows moving a command up or down in the tree hierarchy. Groups can be created, renamed and deleted to achieve any desired hierarchy of commands."
 msgstr ""
 
 msgid "Defining or editing a command"
 msgstr ""
 
-msgid "To define a new command, select <guimenuitem>New Command</guimenuitem> from the context menu. The new command will be created in the group, where the context menu was opened or in the root, if the mouse is outside of any group. Initially, the command will have no definitions."
+msgid "Creating a new command"
 msgstr ""
 
-msgid "To edit a command, it needs to be selected first. Then its definitions will be shown on the right-hand side. The name/alias of a command can be edited by clicking in the text box at the top and entering the new name. The check-box to the right of the name indicates, whether your name is valid. Press enter, to save the new name and the check-box will become fully checked again. To undo editing, simply reselect the command in the tree view."
+msgid "Setting the name of a new command"
+msgstr ""
+
+msgid "Renaming a command"
+msgstr ""
+
+#, fuzzy
+msgid "To define a new command, select <guimenuitem>New Command</guimenuitem> from the context menu and set its name. The new command will be created in the group, where the context menu was opened or in the root, if the mouse is outside of any group. Initially, the command will have no definitions."
+msgstr ""
+
+#, fuzzy
+msgid "To edit a command, it needs to be selected first. Then its definitions will be shown on the right-hand side. The name/alias of a command can be edited by clicking in the text box at the top and entering the new name. The check-box to the right of the name indicates, whether your name is valid. Press <keycap>return</keycap>, to save the new name and the check-box will become fully checked again. To undo editing, simply reselect the command in the tree view."
+msgstr ""
+
+msgid "Choosing the target hosts for commands"
+msgstr ""
+
+msgid "Displaying the result of a host filter"
 msgstr ""
 
 msgid "A command can be executed on any host or set of hosts in the cluster. The <guilabel>Execute on</guilabel> field governs how that host or set of hosts is constructed. The default is <parameter>User input</parameter>. This means, the user will have to choose the hostlist, where the command will run, at the time, when it will be executed. Alternatively, the hostlist of the command can be preset by selecting one of the filters from the dropdown menu. If a filter is selected, the hostlist, it currently evaluates to, is displayed below it."
 msgstr ""
 
-msgid "Editing the command itself may take a while. To avoid conflicts from concurrent editing attempts by different <application>QluMan</application> users, only one person can edit a command at a time. To start the editing process, click the <guibutton>Edit</guibutton> button at the bottom. After that, changes to the command can be entered. Commands will be interpreted/executed by the <literal>BASH</literal> shell on every host matching the hostlist. The full BASH syntax is supported. Redirection of output to files and working with variables works as expected. Please refer to the BASH documentation (e.g. <code>man bash</code>) for more details. There is one exception to this: A \"%\" character followed by a number specifies additional arguments for the command, as explained in more detail below."
+msgid "Activating the \"Edit\" state for a command"
+msgstr ""
+
+msgid "Editing the actual command(s)"
+msgstr ""
+
+#, fuzzy
+msgid "Editing the command itself may take a while. To avoid conflicts from concurrent editing attempts by different <application>QluMan</application> users, only one person can edit a command at a time. To start the editing process, click the <guibutton>Edit</guibutton> button at the bottom. After that, changes to the command can be entered. Commands will be interpreted/executed by the <literal>BASH</literal> shell on every host matching the hostlist. The full bash syntax is supported. Redirection of output to files and working with variables works as expected. Please refer to the bash documentation (e.g. <code>man bash</code>) for more details. There is one exception to this: A \"%\" character followed by a number specifies additional arguments for the command, as explained in more detail below."
+msgstr ""
+
+msgid "Specifying input for a command"
+msgstr ""
+
+msgid "Saving the command definitions"
 msgstr ""
 
 msgid "Sometimes it is necessary, to pass some input to a pre-defined command. This can be done by clicking the <guibutton>Input</guibutton> check-box. It will bring up an input text-box, where the desired input text can be entered."
@@ -146,9 +261,26 @@ msgstr ""
 msgid "To finish editing the command, click the <guibutton>Save</guibutton> button at the bottom. This actually saves the command text and input, if any, in the database and releases the lock on the command. This also scans the command text for argument placeholders and updates the entries in the <classname>Arguments</classname> box."
 msgstr ""
 
-msgid "The definition of command arguments use the same mechanism as detailed for the <literal>Execute on</literal> definition. They can either be left up to the user to fill in, when the command is executed or be specified by a filter selectable from the dropdown menu. When executed, the <replaceable>num</replaceable> placeholders in the command text are replaced by the user specified arguments or the resulting hostlist of the filter. There are always as many arguments as there are placeholders in the command. To add an argument, edit the command text and add a placeholder there. To remove an argument, edit the command text and remove the placeholder."
+msgid "Using command arguments"
 msgstr ""
 
-msgid "In the screenshot example, the test command is defined to execute on all head-nodes (<systemitem class=\"systemname\">qlu-dev</systemitem> is the only head node in the cluster). It has some input and two extra arguments. The first one is fixed to a Hostname filter, that evaluates to any host starting with <systemitem class=\"systemname\">beo</systemitem>. The second one is left for the user to be specified, hence, when executing the command, only the second argument is editable. In the screenshot, the <literal>ONLINE</literal> filter was chosen for this argument, but any other text would have been possible too. For easy verification, the command text, with all the arguments substituted, is shown together with the command input (if defined). Note that in the example, the specified input is simply output by the <command>cat</command> command, so in the output shown, it appears between the two <command>echo</command> commands."
+msgid "Determining the type of command arguments"
 msgstr ""
+
+#, fuzzy
+msgid "The definition of command arguments use the same mechanism as detailed for the <literal>Execute on</literal> definition. They can either be left up to the user, to be filled in when the command is executed or be specified by a filter selectable from the drop-down menu. When executed, the <replaceable>num</replaceable> placeholders in the command text are replaced by the user specified arguments or the resulting hostlist of the filter. There are always as many arguments as there are placeholders in the command. To add an argument, edit the command text and add a placeholder there. To remove an argument, edit the command text and remove the placeholder."
+msgstr ""
+
+msgid "The test command appearing in the RXEngine window"
+msgstr ""
+
+#, fuzzy
+msgid "In the screenshot example, the test command is defined to execute on all head-nodes (<systemitem class=\"systemname\">qlu-dev</systemitem> is the only head node in the cluster). It has some input and two extra arguments. The first one is fixed to a <classname>Hostname filter</classname> that evaluates to any host starting with <systemitem class=\"systemname\">beo</systemitem>. The second one is left for the user to be specified, hence, when executing the command, only the second argument is editable. In the screenshot, the <literal>ONLINE</literal> filter was chosen for this argument, but any other text would have been possible too. For easy verification, the command text, with all the arguments substituted, is shown together with the command input (if defined)."
+msgstr ""
+
+msgid "In the example, the specified input is simply output by the <command>cat</command> command, so in the output shown, it appears between the two <command>echo</command> commands."
+msgstr ""
+
+#~ msgid "Hosts executing a command are not only grouped by their execution state, the command output produced by the different hosts is also <emphasis role=\"bold\">analyzed and compared</emphasis> to each other. Hosts with identical output are put into a group. Their output is only displayed once, prefixed with the hostlist representing the hosts in each group. For a quick overview, the number of hosts and groups is also displayed below each state button. In the screenshot example, two hosts (<systemitem class=\"systemname\">sn-1</systemitem> and <systemitem class=\"systemname\">sn-2</systemitem>) have failed, because they where offline and the command was killed before starting. The output of both was identical, so they form one group. Similar, one host (<systemitem class=\"systemname\">ql-head-pr-t</systemitem>) completed the command successfully and builds its own group."
+#~ msgstr ""
 

@@ -314,6 +314,8 @@ publish_brand() {
   tmp_brand_dir="$1" destdir="$2" old_pwd="$PWD"
   
   cd "$tmp_brand_dir"
+  echo $tmp_brand_dir
+  echo $destdir
   exec_publican build --formats=xml --langs=all --publish
   exec_publican install_brand --web --path="${destdir}"
   cd "$old_pwd"
@@ -329,6 +331,8 @@ brand_website() {
   # First common brand
   [ -d "$tmp_brand_dir" ] && rm -rf "$tmp_brand_dir"
   mkdir "$tmp_brand_dir"
+  echo $publican_brand_path
+  echo $tmp_brand_dir
   if [ -d "$publican_brand_path" ]; then
     cp "$publican_brand_path/publican.cfg" "$tmp_brand_dir"
     cp -r "$publican_brand_path/${QL_LANG}" "$tmp_brand_dir"
@@ -596,8 +600,8 @@ update_site() {
     ${tmpdir}/db4.css
   cp -f $QL_BRAND_DIR/$QL_LANG/images/colorbox/* ${tmpdir}/images
   echo_bullet -i "Starting upload"
-  rsync --rsh='ssh -x' -az --delete ${tmpdir}/ www-data@${host}:$site_path
-  ssh -x www-data@${host} "chown -R www-data:www-data $site_path"
+  rsync --rsh='ssh -x' -az --delete ${tmpdir}/ senda@${host}:$site_path
+  ssh -x senda@${host} "chown -R senda:senda $site_path"
   #ssh root@${host} "if [ -d $site_path ]; then rm -rf $site_path; fi"
   #tar zcf - $tmpdir | ssh root@${host} \
   #  "cd ${site_path%/*}; tar zxf -; mv $tmpdir $site_path;

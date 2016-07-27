@@ -7,11 +7,11 @@
 ]>
 <appendix version="5.0" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<title>改訂履歴</title>
-	<simpara>
+	 <simpara>
 		<revhistory>
 			<revision>
-				<revnumber>9.1-0.1</revnumber>
-				<date>Mon Jul 18 2016</date>
+				<revnumber>2.1.1-0.1</revnumber>
+				<date>Wed Jul 27 2016</date>
 				<author>
 					<firstname>Yoshiaki</firstname>
 					<surname>SENDA</surname>
@@ -19,11 +19,30 @@
 				</author>
 				<revdescription>
 					<simplelist>
-						<member>Translation files synchronised with XML sources 9.1-0</member>
+						<member>Translation files synchronised with XML sources 2.1.1-0</member>
 					</simplelist>
 				</revdescription>
 			</revision>
+			 <revision>
+				<revnumber>9.1-0.1</revnumber>
+				 <date>Mon Jul 18 2016</date>
+				 <author>
+					<firstname>Yoshiaki</firstname>
+					 <surname>SENDA</surname>
+					 <email>ys@hpc.kyoto</email>
+				</author>
+				 <revdescription>
+					<simplelist>
+						<member>Translation files synchronised with XML sources 9.1-0</member>
+
+					</simplelist>
+
+				</revdescription>
+
+			</revision>
+
 		</revhistory>
+
 	</simpara>
 </appendix>
 
