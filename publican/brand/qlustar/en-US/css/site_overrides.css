@@ -180,6 +180,15 @@ body > #wrapper {
     font-size: 16px;
 }
 
+/* bullets for lists*/
+ul {
+    list-style-image: url("common/en-US/images/dot2.png") !important;
+}
+
+ul ul {
+    list-style-image: url("common/en-US/images/dot.png") !important;
+}
+
 /* Set the position of the image descriptions */
 .caption .para {
     margin-top: 0px;
@@ -211,6 +220,12 @@ h6 {
 }
 /* -------------------------------------------------- */
 
+/* ----------------- Header / Title ----------------- */
+
+.article .author {
+    text-align: center;
+}
+
 /* Set Background-color + opacity of Index-toc*/
 #floatingtoc .toc {
     background-color: #222222 !important;
@@ -221,7 +236,7 @@ h6 {
 }
 
 .book .toc dd dl dd dl dt{
-    margin-bottom: -0.3em !important;
+    margin-bottom: -0.1em !important;
 }
 
 .book .toc dd dl dd {
@@ -233,7 +248,7 @@ h6 {
 }
 
 .chapter .toc dd dl dt {
-    margin-bottom: -0.3em !important;
+    margin-bottom: -0.1em !important;
 }
 
 /* Modification for Chapter in Preface */
