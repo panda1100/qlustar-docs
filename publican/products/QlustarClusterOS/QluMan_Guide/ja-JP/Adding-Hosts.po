@@ -12,89 +12,89 @@ msgstr ""
 "X-Generator: Publican v4.3.0\n"
 
 msgid "Adding/Configuring Hosts"
-msgstr ""
+msgstr "ホストの追加と設定"
 
 msgid "Adding Hosts"
-msgstr ""
+msgstr "ホストの追加"
 
 msgid "The New Hosts Window"
-msgstr ""
+msgstr "New Hostsウィンドウ"
 
 msgid "To add new hosts to the cluster you can either select \"New Hosts\" from the context menu in the Enclosure View tree or from the \"Manage Hosts\" menu. This opens the \"Hosts Window\"."
-msgstr ""
+msgstr "クラスタへ新しくホストを追加するにはEnclosure Viewのツリーのコンテキストメニューから「New Hosts」を選択するか、「Manage Hosts」メニューから「New Hosts」を選択します。選択すると「Hosts Window」が開きます。"
 
 msgid "Adding a new host requires the specification of an IP address, hostname and MAC in the corresponding three text fields of the dialog. The entered values are checked for their validity. If one of them is not valid, the check-box to its right remains cleared. The tool-tip of the check-box will then show, why it is invalid. If all the values are valid, all check-boxes will show a solid check and the <guibutton>Add Host</guibutton> button will become selectable."
-msgstr ""
+msgstr "新しいホストを追加するには、ダイアログでIPアドレス、ホスト名、MACアドレスの3つを指定する必要があります。入力した値は有効性のチェックを受けます。もし1つでも無効な値であった場合、右にあるチェックボックスが空のままになります。そしてチェックボックスのツールチップが表示され、何故無効なのかその理由が表示されます。全ての値が有効になった場合、全てのチェックボックスは全てチェックが入った状態になり、<guibutton>Add Host</guibutton>ボタンが選択可能になります。"
 
 msgid "For convenience and if it makes sense, the IP address and the numeric part of the hostname (if there is one) will automatically be incremented by one, after a host was added. So in most cases, these fields will not have to be changed manually to add the next host. Only the new MAC will need to be entered."
-msgstr ""
+msgstr "作業効率を良くするため、ホストが追加された後、ダイアログのIPアドレスとホスト名の数字の部分は1ずつ加算されます。自動で加算しておくことで、次の新しいホストを追加する際に、IPアドレスとホスト名をマニュアルで変更する必要がなくなります。MACアドレスのみ入力すれば良いのです。"
 
 msgid "Table of unknown MACs"
-msgstr ""
+msgstr "未知のMACアドレスの表"
 
 msgid "To help adding new hosts, qlumand scans the <filename>DHCP log file</filename> for unknown hosts that have requested an IP address. For each unknown host found in the logs, the table at the top of the window shows the time of the first and last appearance in the log, its MAC address as well as the hardware vendor this MAC is assigned too (if known). Selecting a MAC in the table copies it into the MAC text field at the bottom and a double-click adds the host with the selected MAC. One can also select multiple lines (by holding the <keycap>CTRL</keycap> key and clicking or holding the <keycap>shift</keycap> key and dragging the mouse) and then click the <guibutton>Add Selected</guibutton> button at the bottom to add them all using the auto-increment feature for the IP address and hostname. If unsure, try adding a single host first and check the auto-increment does the right thing before adding a group of hosts."
-msgstr ""
+msgstr "新しいホストを追加しやすくするため、qlumandは<filename>DHCP log file</filename>の中にIPアドレスをリクエストしてきた未知のホストがないかスキャンします。ログの中で見つけた未知のホストは、それぞれログの中に初めて登場した日時、最後に登場した日時、MACアドレス、既知の場合はMACアドレスが所属するハードウェアベンダー名をウィンドウを一番上の表に表示します。表の中のMACアドレスを選択すると、ウィンドウ下のMACアドレス入力欄にMACアドレスがコピーされます。表の中のMACアドレスをダブルクリックすると、選択したMACアドレスでホストを追加します。表の中のMACアドレスは複数選択することができます（<keycap>CTRL</keycap>キーを押したままMACアドレスをクリックするか、<keycap>shift</keycap>キーを押したままマウスをドラッグする）。そして、ウィンドウ下にある<guibutton>Add Selected</guibutton>をクリックすると、IPアドレスとホスト名のオートインクリメント機能を使って全て追加することができます。もし不安な場合は、1つホストを追加してみて、複数のホストを追加する前にオートインクリメントが期待した動作をしているかチェックして下さい。"
 
 msgid "Selecting a template for new hosts"
-msgstr ""
+msgstr "新しいホストに適用するテンプレートの選択"
 
 msgid "Select host to copy settings from"
-msgstr ""
+msgstr "設定をコピーする元となるホストを選択する"
 
 msgid "Copy settings to new hosts"
-msgstr ""
+msgstr "新しいホストに設定をコピーする"
 
 msgid "One easy way to add groups of hosts is to power them on one at a time with a short delay (say 30 seconds). The hosts will then appear in the Unknown MACs table in the order they were powered on and can be added as a group with the click of a single button."
-msgstr ""
+msgstr "複数のホストを追加する簡単な方法は、1台ずつ少し時間を開けて（例えば30秒程度）電源を入れることです。そうすることで未知のMACアドレスの表に電源を投入した順にホストが現れます。それらのホストはボタン1つで追加することができます。 "
 
 msgid "At the bottom of the window a <link linkend=\"Host-Templates\">Host Template</link> can be selected that will be used as the default for new hosts. Most of the time, no additional configuration is needed for a new host. As an alternative way to make settings for the new hosts, one can select an existing properly configured host and choose to copy its settings to the new ones."
-msgstr ""
+msgstr "ウィンドウの一番下で<link linkend=\"Host-Templates\">Host Template</link>を選択することができます。選択することで、新しいホストに適用するデフォルトの<link linkend=\"Host-Templates\">Host Template</link>として使用することができます。新しいホストを設定する別の方法として、適切に設定された既存のホストを選択し、それらの設定を新しいホストにコピーして設定することができます。"
 
 msgid "Configuring Hosts"
-msgstr ""
+msgstr "ホストの設定"
 
 msgid "The configuration of a host consists of the definition and assignment of different types of properties and config classes. Properties are always a key + value pair and are further split into generic, hardware and specific properties."
-msgstr ""
+msgstr "ホストの設定は、プロパティセットの定義と割り当て、設定クラスの定義と割り当てから構成されます。プロパティは常にkey-valueの組み合わせで、ジェネリックプロパティ、ハードウェアプロパティ、固有のプロパティに分かれています。"
 
 msgid "Hardware Properties"
-msgstr ""
+msgstr "ハードウェアプロパティ"
 
 msgid "<literal>Hardware properties</literal> are used to describe the hardware of a host. Amongst others, hardware properties like the amount of RAM or number of CPU cores are used to configure resource management systems like slurm or torque, so jobs can be assigned to the desired hosts. Others, like e.g. the server model or BIOS version, are purely informational and might be used for inventory management."
-msgstr ""
+msgstr "<literal>Hardware properties</literal>はホストのハードウェアについて記述しています。特にメモリ量、CPUコア数のようなハードウェアプロパティは、slurmやtorqueのようなリソース管理システムの設定に使用されます。そうすることで、計算ジョブを期待したホストに割り当てることができるのです。他のハードウェアプロパティ、例えばサーバーモデルやBIOSのバージョンは、純粋に情報提供のためのプロパティで、マシン管理などに使用することができます。"
 
 msgid "Generic Properties"
-msgstr ""
+msgstr "ジェネリックプロパティ"
 
 msgid "A property that is not hardware related and not specific to a host is called generic. <literal>Generic properties</literal> can be configuration options, like <parameter>OpenSM Host</parameter>, or purely informational, like <parameter>Paid by</parameter>. While hardware properties are meant to be more rigid, typically with a configurable set of fixed values, generic properties are more flexible and can be defined at will. This will become more apparent in future versions of <application>QluMan</application>. <literal>Generic properties</literal> are also not necessarily unique, making it possible to assign multiple values for a single generic property. This is useful e.g. to add multiple torque host tags or to put hosts in multiple groups for dsh/pdsh (via the 'Host tag')."
-msgstr ""
+msgstr "プロパティの内、ハードウェアに関連せず、ホスト固有でもないものをジェネリックと読んでいます。 <literal>Generic properties</literal>は、<parameter>OpenSM Host</parameter>の有効/無効のようなオプション設定や、<parameter>Paid by</parameter>のような純粋に情報提供を目的としたものが含まれます。ハードウェアプロパティが、固定の値を設定するような厳格なものであるのに対して、ジェネリックプロパティはより柔軟で好きに定義することができます。<application>QluMan</application>の将来のバージョンではこの点がより明確になるでしょう。<literal>Generic properties</literal>は固有である必要もありません。1つのプロパティに複数の値を割り当てることも可能です。これは例えば複数のtorqueホストタグを割り当てたり、ホストを複数のdsh/pdsh（Host tagを使って）グループに割り当てる際に便利な機能です。"
 
 msgid "Specific Properties"
-msgstr ""
+msgstr "固有のプロパティ"
 
 msgid "As the name suggests, <literal>specific properties</literal> are specific to a single host. The best example for such a property is the serial number of the host."
-msgstr ""
+msgstr "<literal>specific properties</literal>はその名前が示すように、1つのホストに固有のプロパティです。最も良い例は、ホストのシリアルナンバーです。"
 
 msgid "Property/Config Sets"
-msgstr ""
+msgstr "プロパティ/設定セット"
 
 msgid "Selecting a Host Template"
-msgstr ""
+msgstr "ホストテンプレートの選択"
 
 msgid "Individual generic properties, hardware properties and config classes can be used to define generic property sets, hardware property sets and config sets. This is simply a means of grouping them together so they can be used as a single entity. A <literal>Host Template</literal> can then be created by choosing one generic property set, one hardware property set and one config set."
-msgstr ""
+msgstr "個々のジェネリックプロパティ、ハードウェアプロパティ、設定クラスは、ジェネリックプロパティセット、ハードウェアプロパティセット、設定セットの定義に使用できます。これらは単純に個々のプロパティをグループ化することで1つの塊として使用できるようにするためです。 <literal>Host Template</literal>は、1つのジェネリックプロパティセット、1つのハードウェアプロパティセット、1つの設定セットを選択して作成することができます。"
 
 msgid "Host Templates"
-msgstr ""
+msgstr "ホストテンプレート"
 
 msgid "Selecting a Host Template for multiple hosts"
-msgstr ""
+msgstr "複数のホストに対してホストテンプレートを選択する"
 
 msgid "When a correct <literal>Host Template</literal> exists, a host can be configured by selecting the desired template in the <classname>Enclosure View</classname> window. For a single host, this can be done by selecting it in the tree view. This brings up the host information on the right and a template can be selected from the drop-down menu. To configure multiple hosts, you would select them in the tree view and choose a <literal>Host Template</literal> from the context menu. The check-marks in the sub-menu indicate which <literal>Host Templates</literal> are currently assigned (if any) for the selected nodes. This action will override the previous assignment."
-msgstr ""
+msgstr "適切な<literal>Host Template</literal>が存在する場合、<classname>Enclosure View</classname>ウィンドウでお望みのテンプレートを選択することでホストを設定することができます。1つのホストに対しては、tree viewの中でホストを選択することで設定できます。そうすることで、ホストの情報が右に表示され、ドロップダウンメニューからテンプレートを選択することができます。複数のホストを設定するには、tree viewの中でそれらを選択し、コンテキストメニューから<literal>Host Template</literal>を選択して下さい。サブメニュー中のチェックマークは選択したノードに対して現在どのテンプレートが割り当てられているかを示しています（割り当て済みの場合）。この操作は以前の割り当てを上書きします。"
 
 msgid "Selecting a Generic Property"
-msgstr ""
+msgstr "ジェネリックプロパティの選択"
 
 msgid "<literal>Generic properties</literal> can also be assigned to a host individually. Such assigned properties take precedence over ones of the same type selected through the <literal>Host Template</literal>. This is useful when a property should be changed temporarily for some hosts or when a property should not be changeable globally through the Host Template. Note that by default, every new host has the generic property <parameter>Schedule Format: always</parameter>, which is required to format the disk on the first boot. This should be removed after the first successful boot of the host, so that log files will be preserved across boots in the future."
-msgstr ""
+msgstr "個々の<literal>Generic properties</literal>は同様の方法でホストに対して個別に割り当て可能です。このようにして割り当てられたプロパティは<literal>Host Template</literal>によって割り当てられた同一の項目よりも優先されます。これはいくつかのホストに対して一時的にプロパティを変えなければならない時や、システム全体に影響するホストテンプレートの変更が望ましくない場合などに便利な機能です。ここで注意して頂きたいのは、全ての新しいホストは<parameter>Schedule Format: always</parameter>というジェネリックプロパティが割り当てられていることです。このプロパティは、初回起動時にディスクを初期化する場合に必要となる設定です。このプロパティはホストが一度正しく起動したら取り除くことが望ましいでしょう。そうすることで、将来再起動をしてもログを保存しておくことができます。"
 
