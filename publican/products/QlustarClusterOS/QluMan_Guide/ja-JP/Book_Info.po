@@ -12,11 +12,11 @@ msgstr ""
 "X-Generator: Publican v4.3.0\n"
 
 msgid "QluMan Guide"
-msgstr ""
+msgstr "QluManガイド"
 
 msgid "This is the operation manual for QluMan, the Qlustar cluster management framework."
-msgstr ""
+msgstr "Qlustarクラスタ管理フレームワークQluManの運用マニュアル"
 
 msgid "Qlustar Cluster OS"
-msgstr ""
+msgstr "QlustarクラスタOS"
 
