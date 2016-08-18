@@ -12,119 +12,118 @@ msgstr ""
 "X-Generator: Publican v4.3.0\n"
 
 msgid "Cluster Connections"
-msgstr ""
+msgstr "クラスタへの接続"
 
 msgid "Connecting to a Cluster"
-msgstr ""
+msgstr "クラスタへ接続する"
 
 msgid "Enter Password"
-msgstr ""
+msgstr "パスワードの入力"
 
 msgid "Remember Password"
-msgstr ""
+msgstr "パスワードを記憶する"
 
 msgid "When starting <application>qluman-qt</application>, it requests the password for your <firstterm>certificate safe</firstterm>. This safe holds the login information for your clusters together with the private keys for the corresponding QluMan user account. The password for the certificate safe is required on every start and whenever changes to the safe need to be written. You can have the client remember the password for the duration it is running by checking the <classname>Remember password</classname> check-box. Without enabling this, you will have to input the password again, whenever changes to the safe need to be written. If you are starting <application>qluman-qt</application> for the first time and therefore have no certificate safe yet, this dialog is skipped and an empty <classname>Connect Cluster</classname> dialog opens directly. See <xref linkend=\"sec-add-cluster\" /> below about how to add a new cluster."
-msgstr ""
+msgstr "<application>qluman-qt</application>を開始すると、<firstterm>certificate safe</firstterm>のためのパスワードを要求します。パスワード認証を設けることで、QluManユーザアカウントに対応した公開鍵と共に、クラスタへのログイン情報を記録しています。<application>qluman-qt</application>を開始する際と、パスワードの変更などを書き込む際は、いつも<firstterm>certificate safe</firstterm>のためのパスワードが必要です。<classname>Remember password</classname>チェックボックスをチェックすることで<application>qluman-qt</application>を実行している間はパスワードを記憶させることができます。<classname>Remember password</classname>チェックボックスをチェックしない場合は、変更の書き込みの度にパスワードを入力する必要があります。<application>qluman-qt</application>を初めて起動し、まだ証明書の登録が済んでない場合は、このダイアログはスキップされ、空欄になった<classname>Connect Cluster</classname>ダイアログが直接開きます。新しいクラスタの追加の仕方については、以下の<xref linkend=\"sec-add-cluster\" />を参照して下さい。"
 
 msgid "Connect Cluster Dialog"
-msgstr ""
+msgstr "Connect Clusterダイアログ"
 
 msgid "Select a Cluster Connection"
-msgstr ""
+msgstr "Cluster Connectionを選択"
 
 msgid "Having entered the correct password for the certificate safe the <classname>Connect Cluster</classname> dialog opens. The last cluster used will be pre-selected but a different cluster can be selected from the drop-down menu. Click the <guibutton>Connect</guibutton> button to connect to the selected cluster. If this is the first time you connect to this cluster, the client generates a random public/private key pair. These keys will eventually be used for permanent authentification of the chosen user with this cluster. Following this, a connection to the server is made with an attempt to authenticate the client using the one-time token. On success, the server stores the public key of the client for future logins and the client stores both the private and public keys in the certificate safe. This finalizes the initial handshake."
-msgstr ""
+msgstr "<firstterm>certificate safe</firstterm>のための正しいパスワードを入力すると <classname>Connect Cluster</classname>ダイアログが開きます。最後に開いたクラスタが最初に選択された状態で表示されますが、ドロップダウンメニューから他のクラスタを選択することもできます（複数のクラスタを登録して管理している場合）。<guibutton>Connect</guibutton>ボタンを押して、選択したクラスタに接続して下さい。もし初めてクラスタに接続した場合は、クライアントはランダムな秘密鍵・公開鍵のペアを生成します。これらの鍵は、最終的に選択しているクラスタにおける当該QluManユーザアカウントの認証に使用されます。続いて、サーバに接続して、ワンタイムトークンを用いた<application>qluman-qt</application>の認証を試みます。もし認証に成功すれば、サーバは次回からのログインのためにクライアントの公開鍵を保存します。そして、クライアントは秘密鍵と公開鍵の両方をcertificate safeの中に保存します。これで最初のハンドシェークは完了です。"
 
 msgid "The GUI client asks for the password of the certificate safe to store the generated public/private key pair. It will only do so, when you initially connect with a one-time token. For future connections, it will use the stored key pair to connect and authenticate. The safe contents will then not be changed again."
-msgstr ""
+msgstr "GUIクライアントは生成した公開鍵・秘密鍵をcertificate safeに保存するためパスワードを要求します。これは初めてワンタイムトークンで接続した時のみ行われます。次回からの接続には、保存した鍵のペアを認証に用います。このようにすることで保存した安全な鍵が書き換わることはありません。"
 
 msgid "Managing Clusters"
-msgstr ""
+msgstr "クラスタの管理"
 
 msgid "Starting the connection editor"
-msgstr ""
+msgstr "connection editorの開始"
 
 msgid "The connection editor"
-msgstr ""
+msgstr "connection editor"
 
 msgid "The <classname>Manage Clusters</classname> dialog manages all your accounts on different clusters or as different users on the same cluster. It allows adding new cluster connections, editing existing and removing obsolete ones as well as changing the password for the certificate safe. It can be opened by clicking <guibutton>Edit</guibutton> in the <classname>Connect Cluster</classname> dialog."
-msgstr ""
+msgstr "<classname>Manage Clusters</classname>ダイアログは異なるクラスタ上の全てのQluManユーザアカウント、あるいは同じクラスタ上の異なるユーザアカウントを管理しています。本ダイアログは、新しいクラスタへの接続の追加、既存の接続の編集、不要となった接続の削除、certificate safeのパスワードの変更を行うことができます。<classname>Connect Cluster</classname>ダイアログの<guibutton>Edit</guibutton>をクリックすることで、本ダイアログを開くことができます。"
 
 msgid "Adding a new Cluster"
-msgstr ""
+msgstr "新しいクラスタの追加"
 
 msgid "Adding a new cluster connection"
-msgstr ""
+msgstr "新しいクラスタへの接続の追加"
 
 msgid "To add a new cluster click the <guibutton>New</guibutton> button and select <guibutton>New Cluster (paste)</guibutton> or <guibutton>New Cluster (file)</guibutton> from the menu depending on whether you want to paste the one-time token or load it from a file. If you don't have a one-time token for the cluster see <xref linkend=\"sec-User-Auth-Token\" />."
-msgstr ""
+msgstr "新しいクラスタを追加するには、<guibutton>New</guibutton>ボタンを押して、 ワンタイムトークンをクリップボードからペーストする場合は<guibutton>New Cluster (paste)</guibutton>を選択、ワンタイムトークンをファイルから読み込む場合は<guibutton>New Cluster (file)</guibutton>を選択して下さい。もしワンタイムトークンを持っていない場合は、<xref linkend=\"sec-User-Auth-Token\" />を参照して下さい。"
 
 msgid "Paste the one-time token data into the dialog and click <guibutton>Decrypt</guibutton> or select the file containing the token. When asked for the password, enter the pin"
-msgstr ""
+msgstr "ワンタイムトークンをダイアログの中にペーストして<guibutton>Decrypt</guibutton>をクリックするか、トークンを含んだファイルを選択して下さい。パスワードを求められた場合はpinを入力します。"
 
 msgid "Pasting the one-time token"
-msgstr ""
+msgstr "ワンタイムトークンのペースト"
 
 msgid "Using a token from a file"
-msgstr ""
+msgstr "トークンを含んだファイルの使用"
 
 msgid "that was used when creating the token (in case you didn't generate the token yourself, you should have been told the pin by your main cluster administrator). The dialog should then show the cluster/head-node infos that where packed into the one-time token. If you started <application>qluman-qt</application> on your workstation, then you might have to change the <parameter>Local Hostname</parameter> to use the external hostname of the head-node. Similarly, if you changed the port for qlumand or if you're"
-msgstr ""
+msgstr "pinはトークンを生成した際に使用したものです。もし自分自身でトークンを生成していない場合、メインのクラスタ管理者からpinを聞いておく必要があります。pinの入力の後、ダイアログはワンタイムトークンに埋め込まれたクラスタの管理ノードの情報を表示します。<application>qluman-qt</application>をワークステーションで開始した場合、管理ノードの外部向けホストネームを使用するために、<parameter>Local Hostname</parameter>を変更する必要があるかもしれません。同様に、qlumandのポートを変更していたり、"
 
 msgid "Entering the pin"
-msgstr ""
+msgstr "pinの入力"
 
 msgid "Customizing the connection"
-msgstr ""
+msgstr "接続の編集"
 
 msgid "connecting via port forwarding, you have to adjust that too. The <parameter>Alias</parameter> is the name this cluster will be shown as, when using the drop-down menu in the <classname>Connect Cluster</classname> dialog. Click <guibutton>Ok</guibutton> to add the cluster connection."
-msgstr ""
+msgstr "ポートフォワードを通して接続している場合、<parameter>Local Hostname</parameter>を変更する必要があるかもしれません。<parameter>Alias</parameter>は<classname>Connect Cluster</classname>ダイアログのドロップダウンメニューで表示されるクラスタの名前です。<guibutton>Ok</guibutton>をクリックしてクラスタの接続を追加して下さい。"
 
 msgid "Saving the cluster connection"
-msgstr ""
+msgstr "クラスタの接続の保存"
 
 msgid "Certificate password"
-msgstr ""
+msgstr "certificate safeのためのパスワード"
 
 msgid "Confirm password"
-msgstr ""
+msgstr "パスワードの確認"
 
 msgid "After adding the new cluster select <guibutton>Save</guibutton> to save the changes. If this is your first cluster then it will create the certificate safe and ask you to enter and confirm a password. Otherwise it will ask for the existing password unless the <guibutton>Remember password</guibutton> check-box was enabled."
-msgstr ""
+msgstr "新しいクラスタを追加したら<guibutton>Save</guibutton>を選択して変更を保存して下さい。もしこれが最初のクラスタの場合は、certificate safeが作成され、パスワードの入力と確認が求められます。最初のクラスタでない場合は、<guibutton>Remember password</guibutton>チェックボックスがチェックされていない場合は既存のパスワードの入力を求められます。"
 
 msgid "Sorting multiple clusters"
-msgstr ""
+msgstr "複数のクラスタのソート"
 
 msgid "Adding a connection group"
-msgstr ""
+msgstr "接続グループの追加"
 
 msgid "Naming a connection group"
-msgstr ""
+msgstr "接続グループの名付け"
 
 msgid "If multiple cluster connections are registered, the corresponding entries can be reordered using drag&amp;drop. This allows to move them to the desired location in the list. Clusters can also be grouped in sub-menus by first creating a new group (sub_menu) and then dragging cluster entries into it. The tree structure of the <classname>Manage Clusters</classname> dialog will be reflected in the drop-down menu"
-msgstr ""
+msgstr "もし複数のクラスタ接続を登録している場合、ドラッグ＆ドロップで順序を変更することが可能です。これはリストの中で希望する位置にクラスタを表示させることを可能にします。サブメニューから新しいグループを作成し、クラスタ名をドラッグしてグループに入れることで、クラスタをグループにすることもできます。<classname>Manage Clusters</classname>ダイアログのツリー構造は、<classname>Connect Cluster</classname>ダイアログのドロップダウンメニューにも反映されます。"
 
 msgid "Moving a connection to a group"
-msgstr ""
+msgstr "クラスタ接続をグループに移動する"
 
 msgid "Selecting a cluster in a group"
-msgstr ""
+msgstr "グループの中のクラスタを選択する"
 
 msgid "of the <classname>Connect Cluster</classname> dialog. This allows a nicely structured layout when dealing with a larger number of clusters as e.g. in the case of service providers. Standard cluster admins will most likely not need this feature."
-msgstr ""
+msgstr "この機能は非常に沢山のクラスタを管理している(サービスプロバイダなど)場合に、整理されたレイアウトを提供します。一般的なクラスタ管理者には必要のない機能かもしれません。"
 
 msgid "Changing the certificate safe password"
-msgstr ""
+msgstr "certificate safeパスワードの変更"
 
 msgid "Select changing the password"
-msgstr ""
+msgstr "パスワード変更を選択"
 
 msgid "Change password dialog"
-msgstr ""
+msgstr "パスワード変更ダイアログ"
 
 msgid "OK button disabled if mismatch"
-msgstr ""
+msgstr "ミスマッチの場合はOKボタンは無効"
 
 msgid "The <classname>Manage Clusters</classname> dialog allows changing the password for the certificate safe. This requires entering the old password for the safe as well as the new password and a confirmation of the new password. The <guibutton>Ok</guibutton> button will only be selectable if the new password and confirmation matches."
-msgstr ""
-
+msgstr "<classname>Manage Clusters</classname>ダイアログは、certificate safeのパスワードの変更を行うことができます。パスワードの変更には、古いパスワードの入力と新しいパスワードの入力、確認が必要です。<guibutton>Ok</guibutton>ボタンは、新しいパスワードの確認パスワードが一致した時のみ有効になります。"
