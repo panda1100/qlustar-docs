@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-08-21 12:06+0200\n"
+"PO-Revision-Date: 2016-08-21 12:06+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "product-home"
+msgstr ""
+
+msgid "Enter a short description here."
+msgstr ""
+
+msgid "Qlustar Cluster OS"
+msgstr ""
+
+msgid "A short overview and summary of the book's subject and purpose, traditionally no more than one paragraph long. Note: the abstract will appear in the front matter of your book and will also be placed in the description field of the book's RPM spec file."
+msgstr ""
+
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"Common_Content/images/title_logo.svg\" format=\"SVG\" /> </imageobject> </inlinemediaobject>"
+msgstr ""
+

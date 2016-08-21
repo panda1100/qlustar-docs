@@ -12,110 +12,110 @@ msgstr ""
 "X-Generator: Publican v4.3.0\n"
 
 msgid "Config Classes"
-msgstr ""
+msgstr "設定クラス(Config Classes)"
 
 msgid "Overview"
-msgstr ""
+msgstr "概要"
 
 msgid "<classname>Config Classes</classname> manage configurations that are too complex to fit into the key + value scheme used by properties. Therefore, there is no common interface to configure all classes. Instead, each class has its own configuration dialog, presenting the specific options it provides. Furthermore, some classes depend on sub-classes (e.g. <classname>Boot Configs</classname> depend on <classname>Qlustar Images</classname>). Only the top-level <classname>Config Classes</classname> are directly assignable to a <classname>Config Set</classname> or a host. Sub-classes are assigned indirectly via their parent class. Most of the functional subsystems of <productname>Qlustar</productname> have a dedicated <classname>Config Class</classname>. Currently, there are four of them: <classname>Boot</classname>, <classname>DHCP</classname>, <classname>Disk</classname>, and <classname>Slurm Configs</classname> complemented by a single sub-class, <classname>Qlustar Images</classname>."
-msgstr ""
+msgstr "<classname>設定クラス（Config Classes）</classname>はプロパティで用いられているkey-valueタイプに当てはめるには複雑過ぎる設定の管理のために使用します。従って、全てのクラスを設定するための共通したインターフェースはありません。その代わり、各クラスはクラスごとに設定ダイアログがあり、クラスごとに利用できるオプションを提示します。さらに、いくつかのクラスはサブクラスに依存しています。（例えば、<classname>起動設定（Boot Configs）</classname>クラスは、サブクラスの<classname>Qlustarイメージ（Qlustar Images）</classname>に依存しています。）トップレベルの<classname>設定クラス（Config Classes）</classname>のみが、直接<classname>設定セット（Config Set）</classname>又はホストに割り当て可能です。サブクラスは親クラスを通して、間接的に割り当てられます。ほとんどの機能している<productname>Qlustar</productname>のサブシステムは、専用の<classname>設定クラス（Config Class）</classname>を持っています。現在、4つのQlustarサブシステムがあります。"
 
 msgid "Writing Config Files"
-msgstr ""
+msgstr "設定ファイルの書き込み"
 
 msgid "The Write Files dialog"
-msgstr ""
+msgstr "ファイル書き込みダイアログ"
 
 msgid "The Write Files dialog with pending changes"
-msgstr ""
+msgstr "保留中の変更点がある場合のファイル書き込みダイアログ"
 
 msgid "The configurations managed in the <application>QluMan</application> GUI via <classname>Config Classes</classname> and sub-classes, are translated into automatically generated configuration files on the head-node(s). While <application>QluMan</application> configuration options are usually saved in the <application>QluMan</application> database immediately after they have been entered in the GUI, the write process of the real configuration files on disk is a separate step, that needs to be specifically initiated and confirmed."
-msgstr ""
+msgstr "<application>QluMan</application>GUIで<classname>設定クラス(Config Classes)</classname>とサブラクスを用いて管理されている設定は、管理ノードで自動的に生成される設定ファイルに翻訳される。<application>QluMan</application>の設定オプションは、通常はGUIで入力されると即座に<application>QluMan</application>データベースに保存される。ディスクへ実際の設定ファイルを書き込むプロセスは別のステップとして明示的に書き込みを指示し、確認する必要がある。"
 
 msgid "Each configuration dialog of a config class has a <guibutton>Preview</guibutton> and a <guibutton>Write</guibutton> button for its own config files. Additionally, there is a dedicated dialog for writing and previewing <emphasis role=\"bold\">all</emphasis> configuration files. You can access the latter from <guimenuitem>Manage Cluster</guimenuitem>-&gt;<guimenuitem>Write Files</guimenuitem> or via the <guibutton>Write Files</guibutton> button at the bottom right of the main window."
-msgstr ""
+msgstr "設定クラス(config class)の各設定ダイアログは、<guibutton>プレビュー(Preview)</guibutton>ボタンと設定ファイルを書き込むための<guibutton>書き込み(Write)</guibutton>ボタンを持っている。さらに、<emphasis role=\"bold\">全ての(all)</emphasis>設定ファイルをプレビューし、書き込むための専用のダイアログがある。この専用のダイアログは、<guimenuitem>Manage Cluster</guimenuitem>-&gt;<guimenuitem>Write Files</guimenuitem>メニューからか、メインウィンドウ右下の<guibutton>Write Files</guibutton>ボタンからアクセスできる。"
 
 msgid "Display of a config's content"
-msgstr ""
+msgstr "設定内容の表示"
 
 msgid "Display of a single config's content including a diff"
-msgstr ""
+msgstr "設定内容の差分表示"
 
 msgid "Display of multiple configs including their diffs"
-msgstr ""
+msgstr "複数の設定内容の差分表示"
 
 msgid "If a config class has no pending changes, the <guibutton>Preview</guibutton> button becomes a <guibutton>View</guibutton> button and the <guibutton>Write</guibutton> button becomes ghosted. The Preview window shows both, the new version of the config file that will be written, as well as a <parameter>context diff</parameter> of the changes compared to the current file on disk (if there are any differences). If a <classname>Config Class</classname> changes only one file, that file will be shown directly. If multiple files are involved, there will be one tab for each file."
-msgstr ""
+msgstr "設定クラスが保留中の変更点を持っていない場合、<guibutton>プレビュー(Preview)</guibutton>ボタンは<guibutton>表示(View)</guibutton>になり、<guibutton>書き込み(Write)</guibutton>ボタンはグレイアウトしクリックできない状態になる。プレビューウィンドウは、書き込まれる予定の新しいバージョンの設定ファイルと、現在のディスク上のファイルとの<parameter>差分(context　diff)</parameter>（もし何か変更点があれば）の両方を表示する。もし<classname>設定クラス(Config Class)</classname>が１つのファイルのみを変更する場合は、プレビューウィンドウにそのファイルが直接表示される。もし複数のファイルが変更される場合は、１つのファイルにつき１つのタブにそのファイルが表示される。"
 
 msgid "Checking the optional <guibutton>Force</guibutton> button, will initiate a rewrite of all config files, even if they haven't changed."
-msgstr ""
+msgstr "<guibutton>Force</guibutton>ボタンのオプションを有効にした場合、変更がない場合も含む全ての設定ファイルを再書き込みする。"
 
 msgid "The actual write command is performed via the <link linkend=\"chap-RX-Engine\">Qlustar RXEngine</link>. This allows for <emphasis role=\"bold\">consistent management</emphasis> of multiple head-nodes e.g. in a high-availability configuration."
-msgstr ""
+msgstr "実際の書き込みコマンドは<link linkend=\"chap-RX-Engine\">Qlustar RXEngine</link>を通して行われる。これは高可用性設定の場合などに複数の管理ノードで<emphasis role=\"bold\">一貫した管理(consistent management)</emphasis>を可能とするために使用される。"
 
 msgid "Boot Configs"
-msgstr ""
+msgstr "起動設定"
 
 msgid "Boot Config dialog"
-msgstr ""
+msgstr "起動設定ダイアログ"
 
 msgid "The <classname>Boot Config</classname> dialog allows to define settings for the PXE/tftp boot server. A boot configuration determines which <link linkend=\"sec-Qlustar-OS-Images\">Qlustar OS image</link> is delivered to a node, and optionally permits the specification of <firstterm>PXELinux</firstterm> commands and/or Linux kernel parameters. When opened, the <classname>Boot Config</classname> window shows a collapsed tree-list of all boot configs currently defined, sorted by their names."
-msgstr ""
+msgstr "<classname>起動設定(Boot Config)</classname>ダイアログはPXE/tftp boot serverの設定を定義することができる。起動設定は、どの<link linkend=\"sec-Qlustar-OS-Images\">Qlustar OS image</link>をノードに提供するか、<firstterm>PXELinux</firstterm>コマンドのオプションの指定、Linuxカーネルパラメータの指定を定義する。ダイアログを開くと、<classname>起動設定(Boot Config)</classname>ウィンドウは、名前でソートされた現在定義されている起動設定のツリーリストを折りたたんだ状態で表示する。"
 
 msgid "Note that the <classname>default config</classname> is special: It applies to any node without a specifically assigned (either through a template or directly) <classname>Boot Config</classname>. This means, that in the simplest configuration, where all nodes should boot identically, having just the <classname>default config</classname> will be sufficient."
-msgstr ""
+msgstr "<classname>デフォルト設定（default config）</classname>は特別な設定です。<classname>起動設定（Boot Config）</classname>を割り当てられていない（テンプレートを介して、または直接）全てノードに対して割り当てられます。これは、<classname>デフォルト設定（default config）</classname>が、あらゆるノードを同じ状態で起動するために必要十分な最小限の設定であることを意味します。"
 
 msgid "Changing a Boot Config"
-msgstr ""
+msgstr "起動設定の変更"
 
 msgid "By expanding a <classname>Boot Config</classname> item, the configured <productname>Qlustar</productname> image, PXELinux command, and kernel parameters become visible. You can change any of the values, by simply selecting a different option from the drop-down menus. In case of kernel parameters, you can also directly edit the entry and save the result by pressing <keycap>return</keycap>. Furthermore, it is possible to add more kernel parameters or remove them through the context menu."
-msgstr ""
+msgstr "<classname>起動設定（Boot Config）</classname>項目を展開すると、設定された<productname>Qlustar</productname>イメージ、PXELinuxコマンド、カーネルパラメータが表示されます。ドロップダウンメニューから別のオプションを選択することで、全ての設定値を変更することができます。カーネルパラメータの場合、直接編集することができ、<keycap>return</keycap>キーを押すと保存されます。さらに、カーネルパラメータをさらに追加することや、コンテキストメニューを使って削除することもできます。"
 
 msgid "Creating new Boot Configs"
-msgstr ""
+msgstr "起動設定の作成"
 
 msgid "The context menu also lets you create new <classname>Boot Configs</classname> and edit or delete an existing one. Alternatively, a new <classname>Boot Config</classname> can be created by clicking the <guibutton>New</guibutton> button at the bottom of the dialog. Both, the context menu and the button bring up the <classname>New Boot Config</classname> dialog. Simply enter the name and description for the new config, select a Qlustar image and (optionally) a PXELinux command. Finally press <guibutton>OK</guibutton> to create it. The new config will then appear in the <classname>Boot Config</classname> window and will be ready for use."
-msgstr ""
+msgstr "コンテキストメニューでは、新しい<classname>起動設定(Boot Configs)</classname>の作成、編集、既存設定の削除を行うことが可能です。ダイアログ下の<guibutton>New</guibutton>ボタンをクリックすることでも新しい<classname>起動設定(Boot Configs)</classname>を作成することができます。コンテキストメニュー、ボタンのどちらも<classname>New Boot Config</classname>ダイアログを表示します。新しい起動設定の名前と説明を記述し、Qlustarイメージを選択して、（オプションで）PXELinuxコマンドを選択します。最後に<guibutton>OK</guibutton>を押して設定を作成して下さい。これで、新しい設定が<classname>起動設定（Boot Config）</classname>ウィンドウに表示され、使用可能になります。"
 
 msgid "Pressing the <guibutton>Boot Parameter Editor</guibutton> button at the bottom of the dialog, will bring up a small edit dialog, where kernel parameters can be created, edited, or deleted."
-msgstr ""
+msgstr "ダイアログ下の<guibutton>Boot Parameter Editor</guibutton>ボタンを押すと、小さな編集ダイアログが現れます。そこでカーネルパラメータの作成、編集、削除が可能です。"
 
 msgid "DHCP Config"
-msgstr ""
+msgstr "DHCP設定"
 
 msgid "The global DHCP template"
-msgstr ""
+msgstr "グローバルDHCPテンプレート"
 
 msgid "The <classname>DHCP config</classname> dialog allows the configuration of the DHCP server and is provide by the main menu <guimenuitem>Manage Configs</guimenuitem>-&gt;<guimenuitem>DHCP Configs</guimenuitem>. The final DHCP server configuration file on disk is assembled from the header which defines global settings and the host part which contains the MAC/IP address and hostname of all the hosts registered with <application>QluMan</application>. The header can freely be edited in the <classname>Global DHCP Template</classname> part of the dialog. An initial version of it is created during installation and in most cases doesn't need to be changed. It contains many important parameters required for the cluster to function properly. Please consult the documentation of the DHCP server and the <filename>dhcpd.conf</filename> man page for the syntax of this file."
-msgstr ""
+msgstr "メインメニュー<guimenuitem>Manage Configs</guimenuitem>-&gt;<guimenuitem>DHCP Configs</guimenuitem>から開くことのできる<classname>DHCP設定（DHCP config）</classname>ダイアログでは、DHCPサーバの設定が可能です。最終的にディスクに書き込まれるDHCPサーバの設定ファイルは、グローバル設定を定義したヘッダーと、<application>QluMan</application>を通して登録された全てのホストのMAC/IPアドレス・ホスト名を含んだホストパートから構成されます。ヘッダーは、ダイアログの<classname>Global DHCP Template</classname>の箇所で自由に編集することができます。最初のバージョンのヘッダーは、インストール中に作成されます。そして、多くのケースで変更する必要はありません。ヘッダーにはクラスタが正しく機能するための重要なパラメータを沢山含んでいます。DHCPサーバのドキュメントとmanページの<filename>dhcpd.conf</filename>ファイルのシンタックスについて書かれた部分を参考にして下さい。"
 
 msgid "Editing the global DHCP template"
-msgstr ""
+msgstr "グローバルDHCPテンプレートの編集"
 
 msgid "To prevent multiple persons from editing at the same time and overwriting each others changes accidentally you must acquire a lock for the template by clicking the <guibutton>Edit</guibutton> button. If another user is already editing the file the button will be ghosted and the tool tip will show which user is holding a lock for the template."
-msgstr ""
+msgstr "同時に複数の人が書き込み、互いに上書きしてしまうことから保護するため、編集する際は<guibutton>Edit</guibutton>ボタンを押してテンプレートをロックして下さい。もし、他のユーザがすでにファイルを編集中の場合、ボタンはグレイアウトし、ツールチップにどのユーザがファイルを編集しているのかが表示されます。"
 
 msgid "After having finished editing a template, don't forget to save your changes by clicking the <guibutton>Save</guibutton> button. It will be ghosted, if there is nothing to"
-msgstr ""
+msgstr "テンプレートを編集し終わったら、<guibutton>Save</guibutton>ボタンを押して保存すること忘れないようにして下さい。もし変更点がなく保存するものが無い場合は、ボタンはグレイアウトします。"
 
 msgid "Saving the global DHCP template"
-msgstr ""
+msgstr "グローバルDHCPテンプレートの保存"
 
 #, fuzzy
 msgid "save. You can undo all your changes up to the last time the template was saved by clicking the <guibutton>Undo</guibutton> button. In case another admin has made changes to a template while you are viewing or editing it, the <guibutton>Refresh</guibutton> button will become enabled. By clicking it, the updated template is shown and you loose any unsaved changes you have already made in your own edit field. To delete a template click the <guibutton>Delete</guibutton> button."
-msgstr ""
+msgstr "<guibutton>Undo</guibutton>ボタンを押すことで、最後に保存した時点まで編集内容を戻すことができます。テンプレートを見ている時や編集中に、他の管理者がテンプレートに変更を加えた場合、<guibutton>Refresh</guibutton>ボタンが有効になります。<guibutton>Refresh</guibutton>ボタンをクリックすると、更新されたテンプレートが表示され、編集中で保存していない変更点は全て失われます。テンプレートを削除するには、<guibutton>Delete</guibutton>ボタンを押して下さい。"
 
 msgid "Note that the \"Global Template\" can not be deleted, since it is needed for the DHCP server to function correctly."
-msgstr ""
+msgstr "DHCPサーバーが正常に機能するために必要のため、\"Global Template\"は削除できません。"
 
 msgid "Lock expiration pop-up"
-msgstr ""
+msgstr "ロックの期限切れポップアップ"
 
 msgid "The template lock expires automatically after some time without activity so that the template is not deadlocked if someone forgets to release the lock. In such a case the above dialog will be shown notifying you about it. By selecting <guibutton>OK</guibutton> a new lock will be requested. If another user is editing the template at that time though the request will fail and an error dialog will inform you of the failure."
-msgstr ""
+msgstr "テンプレートのロックをリリースするのを誰かが忘れた場合にデッドロックにならないよう、テンプレートのロックはアクティビティがしばらくない場合は自動的に期限切れとなります。このような場合、上のダイアログが表示され、ロックの期限が切れたことを知らせます。<guibutton>OK</guibutton>を選択すると、新たにテンプレートのロックをリクエストします。その時点で、もし、他のユーザがテンプレートを編集している場合、リクエストは失敗し、エラーダイアログが失敗したことを知らせます。"
 
 msgid "Choosing group templates"
-msgstr ""
+msgstr "テンプレートのグループを選択する"
 
 msgid "DHCP options can also be set in separate group templates and targeted to specific hosts. For simple clusters, this is hardly ever needed, but for large clusters e.g. you might want to have more than one boot server to speed up cluster boot time. In this case you could assign different groups of hosts to different boot servers using this method. The defined group templates are available as configs to be added to config sets or hosts directly. You can select a group template from the drop-down menu at the bottom to view or edit it. As an example 2 templates specifying different boot-servers are included."
 msgstr ""
@@ -489,4 +489,3 @@ msgstr ""
 
 #~ msgid "The second source are the slurm node groups. Every host can belong to at most one such group. The membership is defined (see <xref linkend=\"sec-Slurm-Assign-Hosts\" />) by adding the desired group to the <link linkend=\"PropConf-Sets\">Config Set</link> that is assigned to the node via its <link linkend=\"Host-Templates\">Host Template</link>. Each Node Group is a collection of slurm node properties, that will be set for the members of the group. Per default, only the <code>MemSpecLimit</code> property is defined, but other properties like <parameter>Feature</parameter> or <parameter>Goes</parameter> can be added by using the <link linkend=\"sec-Slurm-Property-Editor\">Slurm Property Editor</link>."
 #~ msgstr ""
-

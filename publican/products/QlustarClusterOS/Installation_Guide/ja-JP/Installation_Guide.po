@@ -1,0 +1,262 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2016-08-21 11:59+0200\n"
+"PO-Revision-Date: 2016-08-21 11:59+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.0\n"
+
+msgid "Installation Requirements"
+msgstr ""
+
+msgid "To install the Qlustar OS you need:"
+msgstr ""
+
+msgid "A DVD or a USB flash-drive (minimum size 2GB) loaded with the Qlustar installer"
+msgstr ""
+
+msgid "A 64bit x86 server/PC (or virtual machine) with"
+msgstr ""
+
+msgid "at least two network adapters"
+msgstr ""
+
+msgid "at least one disk with a minimum size of 160GB"
+msgstr ""
+
+msgid "optionally a second (or more) disk(s) with a minimum size of 160GB"
+msgstr ""
+
+msgid "CPU supporting virtualization (for virtual front-end and demo nodes)"
+msgstr ""
+
+msgid "Internet connection"
+msgstr ""
+
+msgid "The only virtual machine (VM) we test the installation process on is <firstterm>KVM</firstterm>. Hence, this is the only VM officially supported by Qlustar. Furthermore, while nesting of VMs is supported, it will be rather slow to start a virtual front-end node or a virtual demo-cluster directly from within a head-node that is itself running as a VM."
+msgstr ""
+
+msgid "The Qlustar kernel is configured for cluster server hardware. Hence, it's possible, that drivers for some network or storage adapters on Laptops or other non-server PCs are missing. If you run into such problems, please post it in the <link xlink:href=\"https://qlustar.com/forums/installation/___blank___\"> Installation forum</link>. Qlustar also has no support for secure boot (UEFI). If your hardware uses UEFI by default, you need to configure your BIOS to allow so-called <firstterm>legacy boot</firstterm>."
+msgstr ""
+
+msgid "Loading the installer to a USB flash-drive"
+msgstr ""
+
+msgid "Starting form Qlustar 9, we provide an ISO install image, that can be burned onto a DVD or be loaded onto a USB flash-drive. This section explains the USB method. If you already have an up-to-date Qlustar USB drive you can skip this step. But make sure that you have the latest installer to be found at <link xlink:href=\"https://qlustar.com/download/___blank___\">the Qlustar website</link>."
+msgstr ""
+
+msgid "After downloading the installer image, verify its integrity, by executing the following command:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 user@workstation ~ $ </prompt>\n"
+"<command>sha256sum qlustar-installer.iso.gz</command>\n"
+"	"
+msgstr ""
+
+msgid "Now compare the such-generated checksum with the value that is published at the above download page. If the checksums are not identical, do not proceed with the installation, since that means the installer is corrupt (either due to hardware errors or a malicious attack). In this case, you should download the image once more. If the problem persists, also after downloading from a different computer, please post the incidence in the <link xlink:href=\"https://qlustar.com/forum/___blank___\">support forum</link>."
+msgstr ""
+
+msgid "The instructions in this guide only apply to the latest version. With the downloaded disk image you can easily create a bootable drive under Linux as follows (note that the USB drive should have a minimum size of 2GB): Given that the downloaded installer image file is named <filename>qlustar-installer.iso.gz</filename> and that the device name of the drive is <filename>/dev/sdb</filename>, the following command (executed as root) will load the image to the flash-drive:"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 root@workstation ~ # </prompt>\n"
+"<command>gunzip -c qlustar-installer.iso.gz | dd of=/dev/sdb</command>\n"
+"      "
+msgstr ""
+
+msgid "Depending on the speed of your flash-drive, this can take up to 20 minutes."
+msgstr ""
+
+msgid "The above command will destroy all data on the USB drive or to be more precise, it will destroy the data of the device named <filename>/dev/sdb</filename>! So make sure to find out the correct device name of the drive."
+msgstr ""
+
+msgid "This can be achieved e.g. by executing the command"
+msgstr ""
+
+msgid ""
+"\n"
+"<prompt>0 root@workstation ~ # </prompt>\n"
+"<command>tail -f /var/log/kern.log</command>\n"
+"    "
+msgstr ""
+
+msgid "at the shell prompt before you insert the drive. Just after you have inserted it, a message like"
+msgstr ""
+
+msgid ""
+"\n"
+"<computeroutput>[sdb] Attached SCSI removable disk</computeroutput>\n"
+"      "
+msgstr ""
+
+msgid "should appear. In this case your USB drive would have the device name <filename>/dev/sdb</filename>. If the above <command>dd</command> command finished successfully, you can use the drive to install the Qlustar OS on the target machine. This is described in the next paragraph."
+msgstr ""
+
+msgid "Installation process"
+msgstr ""
+
+msgid "Step by step instructions"
+msgstr ""
+
+msgid "Booting from the USB Drive"
+msgstr ""
+
+msgid "Insert the drive into the server that you want to install the Qlustar OS on and boot. Make sure to select the USB drive as the boot device, either by entering the BIOS and changing the boot order or by entering a boot menu and then selecting the drive. On some BIOSes the latter is achieved by pressing the key <keycap>F7</keycap> or <keycap>F12</keycap>."
+msgstr ""
+
+msgid "Starting the installation process"
+msgstr ""
+
+msgid "Boot Screen"
+msgstr ""
+
+msgid "Welcome Screen"
+msgstr ""
+
+msgid "When the server boots from your drive, it will present a menu with various alternative boot options of which the first is highlighted (see picture). If you install via a <firstterm>serial console</firstterm> (e.g. IPMI serial-over-LAN) select the correct entry <replaceable>(ttyS0/1/2)</replaceable> depending on your hardware setup. Press <keycap>Enter</keycap> to start the installation. After the kernel was loaded, you will see the kernel messages on the screen followed by some messages of the installation system. Finally the installer will present its welcome screen at which you can start the installer configuration process by pressing <keycap>Enter</keycap>."
+msgstr ""
+
+msgid "Localization settings"
+msgstr ""
+
+msgid "Localization Screen"
+msgstr ""
+
+msgid "In the first screen you can select the timezone and keyboard mapping. After you have made your choices, selected OK and pressed <keycap>Enter</keycap>, the keyboard mapping will be configured according your choice. If you have selected a wrong mapping the keyboard will not function properly. If this is still the case after changing the mapping to the correct value, you will have to reboot the server and start the installation from scratch."
+msgstr ""
+
+msgid "Disk Configuration"
+msgstr ""
+
+msgid "Disk Config Screen"
+msgstr ""
+
+msgid "In this screen you can select the disk(s) to install Qlustar on. If there is more then one disk in the system you can select multiple disks and create a RAID array (different RAID levels can be chosen depending on the number of the disks available). The chosen disk (or created RAID device) will then be used as a LVM physical volume to create a LVM volume group (the name of which can be specified). Four ext4 file-systems <filename>(root, var, tmp, apps)</filename> will automatically be created on equally named LVM logical volumes within this volume group."
+msgstr ""
+
+msgid "Home File-System"
+msgstr ""
+
+msgid "Home File-System Screen"
+msgstr ""
+
+msgid "A separate file-system is used for the home directories. If there are additional unused disks in the system you are offered the choice to use them in the next screen. If not, you can use the previously configured volume group for this additional file-system. If you choose <guimenuitem>\"Other\"</guimenuitem>, then no configuration for a home file-system will be done. In this case, you won't be able to add any cluster users without further manual steps to setup a home file-system."
+msgstr ""
+
+msgid "Home File-System on separate Disks"
+msgstr ""
+
+msgid "Home on separate disks (1)"
+msgstr ""
+
+msgid "Home on separate disks (2)"
+msgstr ""
+
+msgid "This screen only appears if you have selected <guimenuitem>\"Select disks\" </guimenuitem> in the previous step. You can choose the disks and possibly the raid level to use for the home file-system similar to the previous dialog."
+msgstr ""
+
+msgid "Network Settings (1)"
+msgstr ""
+
+msgid "Network (1)"
+msgstr ""
+
+msgid "In this screen, you configure the IP addresses for the cluster and public network. The installer has some logic to check for valid network configuration parameters as well as suggesting reasonable values. The chosen number of compute nodes <replaceable>NK</replaceable> in the cluster determines the suggested cluster network address and other parameters. It doesn't have to be accurate, just an approximate number will do."
+msgstr ""
+
+msgid "Note that Qlustar requires cluster-internal IP networks to be in a <emphasis role=\"bold\">non-public</emphasis> range. If you're unhappy with the range suggested, you can change NK to another number (e.g. NK=1000 suggests 10.x.x.x, NK=200 172.16.x.x and NK=16 192.168.x.x)."
+msgstr ""
+
+msgid "Choose network adapter"
+msgstr ""
+
+msgid "You can also set the hostname (associated with the public IP) for the new head-node. The name of the cluster-internal interface is <systemitem class=\"systemname\">beosrv-c</systemitem>. Note that two network adapters are necessary for proper operation of your cluster."
+msgstr ""
+
+msgid "It's important that you correctly identify external (public/access to the Internet) and internal (cluster) network adapters. If you select DHCP as the configuration method for the public interface, make sure to add its IP address later to the NIS and ssh related header configurations in the graphical QluMan management interface. If you don't have any special reason for changing the suggested address/netmask of the internal adapter, we recommend to leave them unchanged."
+msgstr ""
+
+msgid "Postfix is running on the head-node as the central <emphasis role=\"bold\"> mail transfer agent</emphasis>. You need to specify a mail relay host (either by name if resolvable via DNS or by IP) in your LAN, where mail of the cluster will be accepted and redistributed. Root mails generated on the cluster, will be redirected to a list of e-mail addresses, that you can enter next (multiple addresses should be separated by a comma)."
+msgstr ""
+
+msgid "Network Settings (2)"
+msgstr ""
+
+msgid "Here you have the possibility to configure optional <parameter>Infiniband </parameter> (IB) and/or <parameter>IPMI</parameter> network parameters, if you have the corresponding hardware in your cluster."
+msgstr ""
+
+msgid "If there are nodes with IB in the cluster, you first need to set the option whether the head-node itself also has IB hardware or not. If it doesn't, you only need to choose the IB TCP/IP network address parameters (defaults are again recommended)."
+msgstr ""
+
+msgid "Otherwise, you have the additional choice to run <command>OpenSM</command> (IB subnet manager) on the head-node. Note, that at least one node (or switch) in an IB fabric has to run a subnet manager. Given the value of the IB network address, the host part of the IB adapters IP address will be set from the host part of the Ethernet address of the node in the cluster network. Example: IP cluster network 192.168.52.100 - IP IB network 192.168.53.100."
+msgstr ""
+
+msgid "As with IB, if some of the nodes of your cluster have an IPMI adapter, that is connected to a switch, you can enter the network address parameters that will be used to configure its IP address. Again, the host part of the IPMI adapters IP will be derived from its cluster network IP (see above). Additional, host specific IPMI configuration options can be set in <link xlink:href=\"../QluMan_Guide/index.html#sec-IPMI-Settings___blank___\">QluMan</link>. Please note, that the configuration of IPMI adapters is hardware dependent. The method, we use, works on most systems, but we can't give any guarantee, that it will work on yours. Please contact us in case of problems."
+msgstr ""
+
+msgid "Additional Settings"
+msgstr ""
+
+msgid "For the sake of system stability and performance, it is usually a good idea to <emphasis role=\"bold\">separate user from system activities</emphasis> as much as possible. To achieve this, we suggest to run only system-related tasks directly on the cluster's head-node(s) and have physical or virtual front-end (FE) nodes for user access/activity. In this dialog you can choose to setup a <emphasis role=\"bold\">virtual FE node</emphasis> as a virtual machine running on the head-node. If you decide not to do so, we advise to assign a physical machine as a FE node at a later stage. The suggestions for the network parameters of the FE VM are derived from the head-node's values. Again, if you select DHCP as the configuration method for the public interface, make sure to add its IP address later to the NIS and ssh related header configurations in the graphical QluMan management interface. The name of the FE's cluster-internal interface would be <code>login-c</code>."
+msgstr ""
+
+msgid "You also have the option to create a <emphasis role=\"bold\">virtual demo-cluster </emphasis> on the head-node, provided the latter has enough main memory. When choosing the number of demo-nodes, keep in mind, that each one of them will be configured with 1.5GB of main memory. Even if configured, the VMs will not be started automatically though, so the head-node will be able to boot, even if an insane number of demo VMs are chosen."
+msgstr ""
+
+msgid "If you choose neither the option for the virtual FE node, nor the virtual demo-cluster, the necessary network pre-configurations (bridge setup, etc.) for starting VMs will not be done. This means, that you'll have to do a number of non-trivial manual steps after installation, in case you find out, that you need support for VMs later on."
+msgstr ""
+
+msgid "If you intend to follow all the instructions in the <link xlink:href=\"../First_Steps_Guide/index.html#First-boot___blank___\"> First Steps Guide</link>, a virtual demo-cluster is a requirement."
+msgstr ""
+
+msgid "If you need a <emphasis role=\"bold\">proxy</emphasis> to access the WWW, you can enter the relevant proxy parameters here. To speed up the installation of additional packages later on, you could copy the software packages on the USB drive to the hard-drive of the installed machine. But note that the advantage of this fades away over time, once more and more packages will have newer versions/updates and hence will have to be downloaded from the Qlustar repository on the Internet anyway. To use a <emphasis role=\"bold\">serial device for console access</emphasis>, select the next option and enter the device name. Additional kernel parameters for the head-node can be specified next (typically, none are needed). Finally type in the password for the root user twice."
+msgstr ""
+
+msgid "Edge Platform &amp; Package Bundle Selection"
+msgstr ""
+
+msgid "Edge Platform Selection"
+msgstr ""
+
+msgid "Starting from version 8.1.1 Qlustar supports multiple so-called <link xlink:href=\"https://qlustar.com/intro/platform___blank___\"> Edge Platforms</link>. Currently the choices are <emphasis role=\"bold\">Ubuntu/Precise</emphasis> and <emphasis role=\"bold\">Debian/Wheezy</emphasis>. Please select your favorite platforms. Multiple choices are possible. At least one must be selected."
+msgstr ""
+
+msgid "In essence, this option corresponds to the choice of what Linux distribution you (or your users, if you're an administrator) like to work with/develop for. Note that you can always add support for a previously unselected edge platform later on by creating corresponding <link xlink:href=\"../QluMan_Guide/index.html#sec-UnionFS-Chroots___blank___\">chroots</link> and <link xlink:href=\"../QluMan_Guide/index.html#sec-Qlustar-OS-Images___blank___\">Qlustar images</link> using QluMan."
+msgstr ""
+
+msgid "Technically, choosing a specific edge platform (e.g. Debian/Wheezy) will cause Qlustar images based on Debian/Wheezy to be created along with an associated chroot. The latter will hold a complete Debian/Wheezy installation in which you can later <link xlink:href=\"../First_Steps_Guide/index.html#sec-Adding-Software___blank___\">add packages</link>. By assigning such an image to some nodes later on, you will have a <emphasis role=\"bold\">full-featured</emphasis> Debian Wheezy installation available on these nodes, once they have booted over the network. Since multiple edge platforms are available, it is fully supported and easily achieved to have subsets of nodes running Ubuntu/Precise and Debian/Wheezy <emphasis role=\"bold\">simultaneously</emphasis> in the same cluster."
+msgstr ""
+
+msgid "Package Bundle Selection"
+msgstr ""
+
+msgid "The default installation will only install a minimal set of basic packages on the head-node of your cluster. Here you can select additional package bundles to install. Among others, you have the choice of two workload managers: Slurm and Torque. If you don't have a strong preference, we suggest to use Slurm. In particular, if you intend to follow all the instructions in the <link xlink:href=\"../First_Steps_Guide/index.html##First-boot___blank___\"> First Steps Guide</link>, Slurm is a requirement and is also sufficient for a basic evaluation setup."
+msgstr ""
+
+msgid "Beware, that you should choose Lustre as an option here, only if the head-node itself is supposed to run Lustre services (MGS/MDTs/OSTs). If you merely intend to try out Lustre, it is recommended to <link xlink:href=\"../QluMan_Guide/index.html#sec-Qlustar-OS-Images___blank___\"> configure an image</link> with Lustre support in QluMan, and assign it to some nodes of the <link xlink:href=\"../First_Steps_Guide/index.html#sec-Starting-Virtual-Demo-Cluster___blank___\"> virtual demo-cluster</link>"
+msgstr ""
+
+msgid "Apart from Nvidia Cuda software, the packages selected here will only be installed on the head-node. Selecting and generating boot-image modules as well as the process of general package installation for compute/storage nodes booting from the network must be done elsewhere. This is discussed in the <link xlink:href=\"../First_Steps_Guide/index.html#sec-Adding-Software___blank___\"> First Steps</link> and the <link xlink:href=\"../QluMan_Guide/index.html#sec-UnionFS-Chroots___blank___\"> QluMan Guide</link>"
+msgstr ""
+
+msgid "Reviewing Installation Settings"
+msgstr ""
+
+msgid "Before the actual installation will begin, the final screen shows a summary of the settings, that have been selected/will be used (you will have to move back with the left arrow key in order to scroll down in the summary screen). If there are any parameters, you want to change, just go back and make the required modifications."
+msgstr ""
+
+msgid "Actual Installation"
+msgstr ""
+
+msgid "The actual installation process will take a few minutes to complete. Press <keycap>Enter</keycap> when requested at the end of the process. Remove the USB drive and press <keycap>Enter</keycap> again to reboot. Please note that the head-node has a text-only console. An X server (graphical interface) is not installed, in order to keep resource consumption low and eliminate package overhead."
+msgstr ""
+
